@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,18 +14,35 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/login.css">
+
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body>
 
     @include('partials.navbar')
-    @yield('container')
-    @include('partials.footer')
 
+    <section class="login align-items-center">
+        <div class="container mt-5 mx-auto ">
+            <h2 class="login-tittle text-center">Sign In</h2>
+            <form action="/login" method="post">
+                @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
+                <div class="form-group ">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+               
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                    
+                    <button type="submit" class="login-button btn">Login</button>
+                </div>
+          
+             
+            </form>
 
-
+        </div>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
     </script>
@@ -38,14 +55,14 @@
             $('.ProductPertama .card').click(function() {
                 window.location.href = '/product/index';
             });
-    
+
             // Menangani klik pada card ProductKedua
             $('.ProductKedua .card').click(function() {
                 window.location.href = '/product/index';
             });
         });
     </script>
-    
+
 </body>
 
 </html>

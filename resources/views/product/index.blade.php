@@ -1,15 +1,24 @@
-@extends('layouts.main')
-
+@extends('layouts/main')
 @section('container')
-    <section class="hero align-items-center text-center">
-        <div class="container pt-5 text-white">
-            <h1 class="hero-title">Pre-<span class="hero-title2">Order</span></h1>
-            <h3 class="pt-3">Pre-Order Your Fav Food Here!</h3>
-            <p>Order your favorite meals here, on our web. Ass smooth as <br> in the app. Some fast delivery. Countless
-                restos to try.</p>
+    <section class="heroproduct text-center">
+        <div class="container pt-5">
+            <div class="row">
+                <!-- Kolom Kiri (Nama Produk dan Pesan) -->
+                <div class="col-lg-6">
+                    <div class="product-info">
+                        <h3>Nama Produk</h3>
+                        <p>Ini adalah deskripsi produk atau pesanan. Anda dapat menambahkan teks yang menjelaskan produk
+                            atau pesanan di sini.</p>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan (Gambar Produk) -->
+                <div class="col-lg-6">
+                    <img src="img/Poster-Product.svg" alt="Gambar Produk" class="product-image">
+                </div>
+            </div>
         </div>
     </section>
-
 
     <section class="product justify-content-center">
         <div class="container pt-5">

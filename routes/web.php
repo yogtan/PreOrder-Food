@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get("/Admin", function(){
-    return view("/Admin/dashboard");
+Route::get("/admin", function () {
+    return view("admin/dashboard");
+});
+Route::get('/product', function () {
+    return view('product/index'); // 'product.index' merujuk ke nama file blade.php
+});
+
+Route::get('/login', function () {
+    return view('login'); // 'product.index' merujuk ke nama file blade.php
+});
+Route::get('/daftar', function () {
+    return view('daftar'); // 'product.index' merujuk ke nama file blade.php
 });
