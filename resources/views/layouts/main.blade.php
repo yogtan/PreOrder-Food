@@ -15,7 +15,6 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/sejarah.css">
-    <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body>
