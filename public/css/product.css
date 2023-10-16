@@ -7,12 +7,84 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.info-profile {
+    font-weight: 100; /* Atur ketebalan teks pada elemen h3 menjadi 400 (normal/regular) */
+    margin-bottom: 30px;
+}
+
+
 .heroproduct {
     margin-top: 105px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     background-position: center;
-    min-height: 100vh;
+    min-height: 70vh;
   
     position: relative;
+}
+
+.product-penjual {
+    /* margin-top: 20px; */
+    /* text-align: center; */
+    display: flex;
+    min-height: 165vh;
+    position: relative;
+}
+
+.product-info-penjual{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    justify-content: space-between;
+    display: flex;
+    color: black;
+    position: relative;    
+    padding-left: 530px;
+    /* margin-left: 100px; */
+}
+
+.product-info-produk{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    justify-content: space-between;
+    display: flex;
+    color: black;
+    position: relative;
+}
+
+.deskrip{
+    padding: 20px 0px;
+    font-weight: 100;
+}
+
+.info-pesan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    
+}
+
+.btn-panjang {
+    background-color: black;
+    color: white;
+    padding: 10px 100px; /* Sesuaikan padding sesuai kebutuhan */
+}
+
+.info-preorder{
+    margin-top: 30px;
+    /* padding-top: 100px; */
+    position: relative;
+    display: flex;
+    font-weight: 500;
+}
+.info-kirim{
+    
+    font-weight: 100;
+}
+
+.product-image {
+    position: relative;
+    display: flex;
+    width: 700px; /* Atur lebar gambar menjadi 400px */
+    height: 400px; /* Atur panjang gambar menjadi otomatis (tetap panjang) */
 }

@@ -36,12 +36,12 @@
         $(document).ready(function() {
             // Menangani klik pada card ProductPertama
             $('.ProductPertama .card').click(function() {
-                window.location.href = '/product/index';
+                window.location.href = '/product';
             });
     
             // Menangani klik pada card ProductKedua
             $('.ProductKedua .card').click(function() {
-                window.location.href = '/product/index';
+                window.location.href = '/product';
             });
         });
     </script>
