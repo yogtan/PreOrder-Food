@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    @include('partials.NavbarAdmin')
     @yield('adminContent')
 
 

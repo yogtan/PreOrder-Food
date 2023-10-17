@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get("/Admin", function(){
+Route::get("/admin/dashboard", function(){
     return view("/Admin/dashboard");
 });
