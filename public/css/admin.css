@@ -121,6 +121,10 @@ header{
     background-color : #00bf63;
 }
 
+.bg-red{
+    background-color : #FF3131;
+}
+
 .bTambah:focus{
     background-color : #00aa63;
 }
@@ -138,4 +142,8 @@ header{
 
 .menus .card{
     box-shadow:none;
+}
+
+.text-red{
+    color: #FF3131;
 }

@@ -25,6 +25,10 @@ Route::get("/penjual/product",function() {
     return view("/penjual/Products");
 });
 
+Route::get("/penjual/kelolaPesanan",function(){
+    return view("/penjual/pesanan");
+});
+
 Route::get('/product', function () {
     return view('product/index'); // 'product.index' merujuk ke nama file blade.php
 });
