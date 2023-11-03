@@ -9,7 +9,7 @@
     <img src="/img/icon_kart.svg" class="h-100" alt="" width=30 class="me-3"/>
     <h3 class="h-100 px-3">Product</h3>
   </a>
-  <a class="nav-link fs-4 text-center d-flex items-center justify-content-center" href="#">
+  <a class="nav-link fs-4 text-center d-flex items-center justify-content-center" href="/penjual/kelolaPesanan">
     <img src="/img/icon_document.svg" class="h-100 " alt="" width=30 class="me-3"/>
     <h3 class="h-100  px-3">Pesanan</h3>
   </a>

@@ -20,6 +20,11 @@ Route::get('/', function () {
 Route::get("/penjual", function () {
     return view("penjual/dashboard");
 });
+
+Route::get("/penjual/product",function() {
+    return view("/penjual/Products");
+});
+
 Route::get('/product', function () {
     return view('product/index'); // 'product.index' merujuk ke nama file blade.php
 });
@@ -29,8 +34,4 @@ Route::get('/login', function () {
 });
 Route::get('/daftar', function () {
     return view('daftar'); // 'product.index' merujuk ke nama file blade.php
-});
-
-Route::get("/penjual/product",function() {
-    return view("/penjual/Products");
 });
