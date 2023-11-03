@@ -3,15 +3,16 @@ nav{
 }
 .nav-link {
     color: grey;
-    padding-top:3rem;
-    padding-bottom:3rem;
+    padding-top:1rem;
+    padding-bottom:1rem;
 }
 
-.color-red {
-    color: ;
+.nav-link:hover{
+    background-color: #00bf63;
+    color : white;
 }
 
-.nav-link h2 {
+.nav-link h3 {
     width: 12rem;
     text-align: left;
     padding-left: 5px;
@@ -110,4 +111,31 @@ header{
     background-color : white;
     padding:4rem;
     box-shadow:0px 0px 17px black;
+}
+
+.produk{
+    box-shadow:0px 0px 17px black;
+}
+
+.bg-green{
+    background-color : #00bf63;
+}
+
+.bTambah:focus{
+    background-color : #00aa63;
+}
+
+.bTambah:hover{
+    transform: translate(-5px,-5px);
+    box-shadow: 2px 5px 5px grey;
+}
+
+.menus{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    gap:2rem;
+}
+
+.menus .card{
+    box-shadow:none;
 }
