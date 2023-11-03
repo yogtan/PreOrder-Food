@@ -147,3 +147,15 @@ header{
 .text-red{
     color: #FF3131;
 }
+
+.t-Pesanan tbody tr td{
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;  
+    border:1px solid black;
+}
+
+.t-Pesanan thead th{
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    border:1px solid black;
+}
