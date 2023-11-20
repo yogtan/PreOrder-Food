@@ -15,7 +15,8 @@
                         <div class="info-preorder">Pre Order H-1</div>
                         <div class="info-pesan">
                             <div class="info-kirim">Tanggal Pengiriman 21 Sept 2023</div>
-                            <button class="btn btn-dark btn-panjang">Pesan</button>
+                            <button class="btn btn-dark btn-panjang" id="btnPesan">Pesan</button>
+
                         </div>
                     </div>
                 </div>
@@ -44,7 +45,7 @@
                 <!-- Kolom Kanan (Gambar Produk) -->
                 <div class="col-lg-6 ">
                     <div class="product-info-penjual text-right" >
-                        Lihat Semua
+                        <a href="outlet">Lihat Semua</a>
                     </div>
                 </div>
             </div>
@@ -144,7 +145,7 @@
                 </div>
 
                 <div class="col-md-3">
-                        <div class="card" sstyle="width: 19rem; height: 27rem">
+                        <dAiv class="card" sstyle="width: 19rem; height: 27rem">
                             <img src="img/Poster-Product2.svg" class="card-img-top" alt="...">
                             <div style="text-align:left" class="card-body">
                                 <h5 class="card-title">Johanes Yogtannn</h5>
@@ -160,5 +161,12 @@
 
 
         </div>
+        <script>
+            document.getElementById('btnPesan').addEventListener('click', function() {
+                // Mengarahkan ke folder "orders" dan file "index"
+                window.location.href = '/orders';
+            });
+            </script>
+            
     </section>
 @endsection

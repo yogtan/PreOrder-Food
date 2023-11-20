@@ -1,0 +1,40 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.info-profile {
+    font-weight: 100; /* Atur ketebalan teks pada elemen h3 menjadi 400 (normal/regular) */
+    margin-bottom: 30px;
+}
+
+
+.heroutlet {
+    margin-top: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    background-position: center;
+    min-height: 100vh;
+    position: relative;
+    border-radius: 2% 2% 2% 2%;
+}
+
+section.heroutlet img {
+    border-radius: 10%;
+}
+
+.nama-outlet{
+    font-weight: 700;
+}
+
+.text-txt {
+   font-weight: 600;
+}
+
+.text-txt span {
+    margin: 0px 50px;
+}

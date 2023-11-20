@@ -45,6 +45,7 @@ body {
 .product-info-produk{
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+    
     justify-content: space-between;
     display: flex;
     color: black;
