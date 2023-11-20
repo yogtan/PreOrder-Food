@@ -29,7 +29,7 @@ body {
     background-size: cover;
     position: relative;
     border-radius: 2% 2% 2% 2%;
-    
+
 }
 
 
@@ -37,14 +37,14 @@ body {
 .hero .container {
     position: relative;
     z-index: 1;
-    
+
 }
 
 .hero .hero-title {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     color: black;
-   /* Menghilangkan margin bawaan untuk h1 */
+    /* Menghilangkan margin bawaan untuk h1 */
 }
 
 .hero .hero-title2 {
@@ -52,7 +52,7 @@ body {
     font-weight: 700;
     color: white;
     /* color: black; */
-   /* Menghilangkan margin bawaan untuk h1 */
+    /* Menghilangkan margin bawaan untuk h1 */
 }
 
 
@@ -78,7 +78,43 @@ body {
     /* Tambahkan bayangan pada tombol */
     color: black;
     padding: 7px 18px;
+
+
+    border: none;
+    cursor: pointer;
     /* transition: background-color 0.3s ease, color 0.3s ease; */
+}
+
+
+/* Position the dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    margin-top: 150px;
+    margin-left: 9px;
+    min-width: 149px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Show the dropdown content */
+.show {
+    display: block;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
 }
 
 .btn-container .btn:hover {
@@ -86,8 +122,19 @@ body {
     color: #FFFFFF;
 }
 
+
+.history {
+    /* background-color: red; */
+    padding-right: 30px;
+
+}
+
+.search-form {
+    margin-right: 200px;
+}
+
 .search-input {
-    width: 700px;
+    width: 600px;
     /* Sesuaikan lebar sesuai kebutuhan Anda */
     /* margin-left: 20px; */
     padding-left: 35px;/
@@ -114,6 +161,30 @@ body {
 
 }
 
+.his-link {
+    display: inline-block; /* Menjadikan tautan sebagai blok inline */
+    position: relative;
+    text-decoration: none;
+    color: #000;
+}
+
+/* Jika ingin memberikan efek hover pada tautan */
+
+.his-link::before {
+    content: ''; /* Menambahkan konten untuk pseudo-element */
+    position: absolute; /* Mengatur posisi absolut untuk pseudo-element */
+    bottom: -2px;
+    left: 0; /* Mulai dari posisi kiri */
+    width: 0; /* Awalnya lebarnya 0 */
+    height: 2px; /* Ketebalan garis */
+    background-color: #000; /* Warna garis bawah */
+    transition: width 0.3s ease; /* Animasi lebar garis */
+}
+
+.his-link:hover::before {
+    width: 82%; /* Mengubah lebar garis saat dihover menjadi 100% */
+}
+
 
 .product {
     /* margin-top: 20px; */
@@ -123,28 +194,33 @@ body {
     position: relative;
 }
 
-.product-tittle{
+.product-tittle {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     color: black;
 }
+
 .btn-showmore {
     display: flex;
     align-items: center;
-    justify-content: center; /* Ini akan memposisikan tombol di tengah */
+    justify-content: center;
+    /* Ini akan memposisikan tombol di tengah */
     position: relative;
-    margin-top: 20px; /* Sesuaikan margin atas sesuai kebutuhan */
+    margin-top: 20px;
+    /* Sesuaikan margin atas sesuai kebutuhan */
 }
 
 .btn-showmore .btn {
-    border-radius: 20px; /* Mengatur sudut melengkung */
+    border-radius: 20px;
+    /* Mengatur sudut melengkung */
     border: 1px solid black;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color: #000000;
     padding: 7px 18px;
     background-color: #00BF63;
     transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: pointer; /* Tambahkan cursor pointer untuk memberi tahu pengguna bahwa ini adalah tombol */
+    cursor: pointer;
+    /* Tambahkan cursor pointer untuk memberi tahu pengguna bahwa ini adalah tombol */
 }
 
 /* Efek hover saat mouse di atas tombol */
@@ -152,18 +228,35 @@ body {
     background-color: #000000;
     color: #FFFFFF;
 }
+
 .footer {
     background-color: rgb(255, 255, 255);
-    min-height: 80vh;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Mengatur bayangan ke bawah dengan blur dan spread */
+    min-height: 100vh;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    /* Mengatur bayangan ke bawah dengan blur dan spread */
 }
 
-.FooterPertama{
+.FooterPertama {
     position: relative;
     display: flex;
 }
 
-.footer .fotter-tittle{
+.footer .fotter-tittle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: black;
+    /* color: black; */
+}
+
+.footer .fotter-tittle2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+    /* color: black; */
+}
+
+.footer .fotter-tittle3 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: black;
@@ -171,28 +264,41 @@ body {
 }
 
 .kendala-container {
-    background-color: #ffffff; /* Warna latar belakang kotak */
+    background-color: #ffffff;
+    /* Warna latar belakang kotak */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px; /* Ruang dalam kotak */
-    margin-top: 50px; /* Jarak antara kotak dengan elemen di atasnya */
-    border-radius: 10px; /* Sudut melengkung kotak */
-    text-align: center; /* Posisi teks di tengah kotak */
+    padding: 20px;
+    /* Ruang dalam kotak */
+    margin-top: 50px;
+    /* Jarak antara kotak dengan elemen di atasnya */
+    border-radius: 10px;
+    /* Sudut melengkung kotak */
+    text-align: center;
+    /* Posisi teks di tengah kotak */
 }
 
 .whatsapp-button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #00BF63; /* Warna latar belakang tombol */
-    color: #000000; /* Warna teks tombol */
-    padding: 10px 50px; /* Ukuran padding tombol */
-    border: none; /* Tanpa border */
-    border-radius: 50px; /* Sudut melengkung tombol */
-    cursor: pointer; /* Kursor berubah saat mengarahkan ke tombol */
-    margin-top: 10px; /* Jarak antara tombol dengan teks di atasnya */
-    cursor: pointer; 
+    background-color: #00BF63;
+    /* Warna latar belakang tombol */
+    color: #000000;
+    /* Warna teks tombol */
+    padding: 10px 50px;
+    /* Ukuran padding tombol */
+    border: none;
+    /* Tanpa border */
+    border-radius: 50px;
+    /* Sudut melengkung tombol */
+    cursor: pointer;
+    /* Kursor berubah saat mengarahkan ke tombol */
+    margin-top: 10px;
+    /* Jarak antara tombol dengan teks di atasnya */
+    cursor: pointer;
     border: 1px solid black;
 }
 
 .whatsapp-button:hover {
-    background-color: #000000; /* Warna latar belakang tombol saat dihover */
+    background-color: #000000;
+    /* Warna latar belakang tombol saat dihover */
     color: #FFFFFF;
 }

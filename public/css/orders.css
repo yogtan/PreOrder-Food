@@ -1,0 +1,57 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.herorders {
+    margin-top: 105px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    background-position: center;
+    min-height: 150vh;
+  
+    position: relative;
+}
+
+
+.pesanan{
+    font-weight: 600;
+    font-size: 20px;
+}
+.pesanan2{
+    font-weight: 500;
+    /* font-size: 20px; */
+}
+
+.produk{
+    font-weight: 600;
+}
+
+.harga{
+    margin-bottom: 70;
+    font-size: 14px;
+}
+
+.uploadbtn{
+    width: 100%;
+    background-color: black;
+    padding: 5px ;
+    /* background-color: #4caf50; */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-container .form-control {
+    flex: 1;
+}

@@ -24,21 +24,26 @@
     @include('partials.navbar')
 
     <section class="login align-items-center">
-        <div class="container mt-5 mx-auto ">
-            <h2 class="login-tittle text-center">Sign In</h2>
+        <div class="container mt-1 mx-auto ">
+            <h2 class="login-tittle text-center">Login</h2>
             <form action="/login" method="post">
                 @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
-                <div class="form-group ">
-                    <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" required>
-               
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-                    
+                <div class="form-group pt-4 ">
+                    <input type="text" class="form-control" id="nomortelepon" name="Nomor Telepon"
+                        placeholder="  Nomor Telepon" required>
+
+                    <input type="password" class="form-control" id="password" name="password" placeholder="  Password"
+                        required>
+
+
                     <button type="submit" class="login-button btn">Login</button>
+                    <div class="text-center">
+                    <p class="pt-4">Dont have an account merchant or customer? <br><a href="/register-merchant">Create Merchant</a> <a href="/register">Create Customer</a></p>
+                       
+                    </div>
                 </div>
-          
-             
+
+
             </form>
 
         </div>
@@ -62,6 +67,7 @@
             });
         });
     </script>
+
 
 </body>
 

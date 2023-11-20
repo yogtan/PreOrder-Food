@@ -32,6 +32,19 @@ Route::get('/product', function () {
 Route::get('/login', function () {
     return view('login'); // 'product.index' merujuk ke nama file blade.php
 });
-Route::get('/daftar', function () {
-    return view('daftar'); // 'product.index' merujuk ke nama file blade.php
+Route::get('/register-merchant', function () {
+    return view('register-merchant'); // 'product.index' merujuk ke nama file blade.php
+});
+Route::get('/register', function () {
+    return view('register'); // 'product.index' merujuk ke nama file blade.php
+});
+
+Route::get('/outlet', function () {
+    return view('outlet/index'); // 'product.index' merujuk ke nama file blade.php
+});
+Route::get('/orders', function () {
+    return view('orders/index'); // 'product.index' merujuk ke nama file blade.php
+});
+Route::get('/history', function () {
+    return view('history/index'); // 'product.index' merujuk ke nama file blade.php
 });
