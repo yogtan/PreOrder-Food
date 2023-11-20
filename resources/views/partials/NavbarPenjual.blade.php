@@ -15,7 +15,7 @@
   </a>
   <a class="nav-link fs-4 text-center d-flex items-center justify-content-center" href="#">
     <img src="/img/icon_money.svg" class="h-100" alt="" width=30 class="me-3"/>
-    <h3 class="h-100 px-3">Pembayaran</h3>
+    <h3 class="h-100 px-3">Laporan Bulanan</h3>
   </a>
 </nav>
 
