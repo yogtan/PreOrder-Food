@@ -23,9 +23,18 @@ Route::get('/home', function () {
     return view('home', ['title' => 'Pre-Order']);
 });
 
-Route::get("/admin", function () {
-    return view("admin/dashboard");
+Route::get("/penjual", function () {
+    return view("penjual/dashboard");
 });
+
+Route::get("/penjual/product",function() {
+    return view("/penjual/Products");
+});
+
+Route::get("/penjual/kelolaPesanan",function(){
+    return view("/penjual/pesanan");
+});
+
 Route::get('/product', function () {
     return view('product/index'); // 'product.index' merujuk ke nama file blade.php
 });
