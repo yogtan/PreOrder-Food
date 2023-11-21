@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Website Pre-Order</title>
+    <title>{{ $title }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
@@ -26,43 +26,50 @@
     <section class="daftar align-items-center">
         <div class="container mt-1  mx-auto ">
             <h2 class="daftar-title text-center">Create Account Merchant</h2>
-            <form action="/login" method="post">
+            <form action="/register-merchant" method="post" enctype="multipart/form-data">
                 @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
                 <div class="form-group pt-4">
-                    <input type="text" class="form-control" id="restaurantName" name="restaurantName"
-                        placeholder="  Nama Restoran" required>
-
-                    <input type="text" class="form-control" id="fullName" name="fullName"
+                    <input type="text" class="form-control" id="name" name="name"
                         placeholder="  Nama Lengkap" required>
-
-                        
-                        
-                        
-                        
-                        
-                        <input type="text" class="form-control" id="ownerPhone" name="ownerPhone"
+                        @error('name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        <input type="text" class="form-control" id="telepon" name="telepon"
                         placeholder="  Nomor Telepon" required>
-                        
-                        <input type="text" class="form-control" id="ownerEmail" name="ownerEmail" placeholder="  Email"
+                        @error('telepon')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        <input type="text" class="form-control" id="ownerEmail" name="email" placeholder="email" required>
+                        @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        <input type="password" class="form-control" id="password" name="password" placeholder="password"
                         required>
-                        
-                        <input type="password" class="form-control" id="password" name="password" placeholder="  Password"
-                        required>
-                        
+                        @error('password')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                         <div class="file-input">
                             <label for="ktpUpload" class="form-label">Upload Foto KTP</label>
-                            <input type="file" class="input-file" id="ktpUpload" name="ktpUpload" accept="image/*" required>
-                           
-                          </div>
-                        
+                            <input type="file" class="input-file @error ('foto_ktp') is-invalid @enderror " id="ktpUpload" name="foto_ktp" accept="image/*" required>
+                        </div>
+                        @error('foto_ktp')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                         <button type="submit" class="daftar-button btn">Create Account Merchant</button>
-                        
                         
                         <p class="text-center pt-4">Already have an account merchant? <a href="/login">Login here</a></p>
                         
                     </div>
-                    
-                    
                 </form>
 
         </div>

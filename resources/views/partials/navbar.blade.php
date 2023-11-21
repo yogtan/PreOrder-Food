@@ -10,17 +10,36 @@
                     placeholder="Pre-order makanan apa ya hari ini?" aria-label="Search">
             </div>
         </form>
+        @auth
         <div class="history his-link">
             <a href="history" class="his-link">Purchase History</a>
         </div>
-
-        <div class="btn-container">
-            <button onclick="toggleDropdown()" class="btn">Masuk/Daftar</button>
-            <div id="myDropdown" class="dropdown-content">
-                <a href="/register-merchant" onclick="selectOption('Merchant')">Merchant</a>
-                <a href="/register" onclick="selectOption('Customer')">Customer</a>
+        <div class="btn-group">
+            <button type="button" class="btn">Welcome, {{ auth()->user()->name }}</button>
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/home">Action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <form action="/logout" method="post">
+                  @csrf
+                <button type="submit" class="dropdown-item">Log Out</button>
+              </form>
+            </li>
+            </ul>
+          </div>
+          @else
+            <div class="btn-container">
+                <button onclick="toggleDropdown()" class="btn">Masuk/Daftar</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="/login">Login</a>
+                    <a href="/register-merchant" onclick="selectOption('Merchant')">Merchant</a>
+                    <a href="/register" onclick="selectOption('Customer')">Customer</a>
+                </div>
             </div>
-        </div>
+        @endauth
     </div>
 </nav>
 

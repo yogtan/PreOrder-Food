@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MerchantRegisterController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', ['title' => 'Pre-Order']);
+});
+Route::get('/home', function () {
+    return view('home', ['title' => 'Pre-Order']);
 });
 
 Route::get("/admin", function () {
@@ -24,15 +30,15 @@ Route::get('/product', function () {
     return view('product/index'); // 'product.index' merujuk ke nama file blade.php
 });
 
-Route::get('/login', function () {
-    return view('login'); // 'product.index' merujuk ke nama file blade.php
-});
-Route::get('/register-merchant', function () {
-    return view('register-merchant'); // 'product.index' merujuk ke nama file blade.php
-});
-Route::get('/register', function () {
-    return view('register'); // 'product.index' merujuk ke nama file blade.php
-});
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/register-merchant',  [MerchantRegisterController::class, 'index']);
+Route::post('/register-merchant',  [MerchantRegisterController::class, 'store']);
+
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/outlet', function () {
     return view('outlet/index'); // 'product.index' merujuk ke nama file blade.php

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Website Pre-Order</title>
+    <title>{{ $title }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
@@ -25,16 +25,16 @@
     <section class="daftar align-items-center">
         <div class="container mt-2 mx-auto">
             <h2 class="daftar-title text-center">Create Account Customer</h2>
-            <form action="/daftar" method="post">
-
+            <form action="/register" method="post">
+                @csrf
                 <div class="form-group pt-4">
-                    <input type="text" class="form-control" id="username" name="username" placeholder="  Nama Lengkap"
+                    <input type="text" class="form-control" id="username" name="name" placeholder="  Nama Lengkap"
                         required>
 
                     <input type="text" class="form-control" id="email" name="email" placeholder="  Email"
                         required>
 
-                    <input type="text" class="form-control" id="phone_number" name="phone_number"
+                    <input type="text" class="form-control" id="phone_number" name="telepon"
                         placeholder="  Nomor Telepon" required>
 
                     <input type="password" class="form-control" id="password" name="password" placeholder="  Password"

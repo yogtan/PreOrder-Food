@@ -29,8 +29,8 @@
             <form action="/login" method="post">
                 @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
                 <div class="form-group pt-4 ">
-                    <input type="text" class="form-control" id="nomortelepon" name="Nomor Telepon"
-                        placeholder="  Nomor Telepon" required>
+                    <input type="text" class="form-control" id="nomortelepon" name="name"
+                        placeholder="  Username" required>
 
                     <input type="password" class="form-control" id="password" name="password" placeholder="  Password"
                         required>
