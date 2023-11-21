@@ -13,9 +13,9 @@
     <img src="/img/icon_document.svg" class="h-100 " alt="" width=30 class="me-3"/>
     <h3 class="h-100  px-3">Pesanan</h3>
   </a>
-  <a class="nav-link fs-4 text-center d-flex items-center justify-content-center" href="#">
+  <a class="nav-link fs-4 text-center d-flex items-center justify-content-center border" href="#">
     <img src="/img/icon_money.svg" class="h-100" alt="" width=30 class="me-3"/>
-    <h3 class="h-100 px-3">Laporan Bulanan</h3>
+    <h3 class="h-100 ms-3 border">Laporan Bulanan</h3>
   </a>
 </nav>
 
