@@ -23,6 +23,7 @@ Route::get('/home', function () {
     return view('home', ['title' => 'Pre-Order']);
 });
 
+// Penjual
 Route::get("/penjual", function () {
     return view("penjual/dashboard");
 });
@@ -34,6 +35,11 @@ Route::get("/penjual/product",function() {
 Route::get("/penjual/kelolaPesanan",function(){
     return view("/penjual/pesanan");
 });
+
+Route::get('/penjual/laporanBulanan', function(){
+    return view("/penjual/laporanBulanan");
+});
+
 
 Route::get('/product', function () {
     return view('product/index'); // 'product.index' merujuk ke nama file blade.php
@@ -58,3 +64,4 @@ Route::get('/orders', function () {
 Route::get('/history', function () {
     return view('history/index'); // 'product.index' merujuk ke nama file blade.php
 });
+

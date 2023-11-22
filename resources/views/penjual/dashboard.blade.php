@@ -2,17 +2,10 @@
 
 @section('penjualContent')
 <div class="content">
-    <header>
-        <div class="container px-5 my-auto justify-content-end d-flex">
-            <h2 class="my-auto me-3 d-inline text-white">DodolMaem</h2>
-            <img src="/img/icon_Profile white.svg" alt="Img Profile">
-            
-        </div>
-    </header>
     <div class="container px-5 mt-5">
         <h1 class="text-white">Dashboard</h1>
-        <div class="cards mt-5">
-            <div class="card mx-auto p-3" style="width: 30rem; height:20rem;">
+        <div class="cards mt-5 ">
+            <div class="card mx-auto p-3 shadow-1" style="width: 30rem; height:20rem;">
                 <div class="card-body">
                     <div class="mb-6 card-content">
                         <h6 class="fs-3">PRODUCT</h6>
@@ -27,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card mx-auto p-3" style="width: 30rem; height:20rem;">
+            <div class="card mx-auto p-3 shadow-1" style="width: 30rem; height:20rem;">
                 <div class="card-body">
                     <div class="mb-6 card-content">
                         <h6 class="fs-3">PESANAN</h6>
@@ -44,7 +37,7 @@
             </div>
         </div>
 
-        <div class="pendapatan container">
+        <div class="pendapatan container shadow-1 rounded-1 h-auto">
             <div class="title d-flex justify-content-between items-center">
                 <h3>PENDAPATAN</h6>
                 <img src="/img/icon_money green.svg" alt="moneyicon" width="80">
@@ -55,16 +48,23 @@
                 <p class="fs-5 my-auto ms-2">Total Pendapatan</p>
             </div>
             <hr>
-            <table class="border w-100">
+            <table class="border w-100 h-auto">
                 <thead class="border text-center bg-hijau text-white fw-bold">
-                    <th class="border py-4">No</th>
-                    <th class="border py-4">Nama Pembeli</th>
-                    <th class="border py-4">Nama Produk</th>
-                    <th class="border py-4">Kuantitas</th>
-                    <th class="border py-4">Total harga</th>
+                    <th class=" py-4">No</th>
+                    <th class=" py-4">Nama Pembeli</th>
+                    <th class=" py-4">Nama Produk</th>
+                    <th class=" py-4">Kuantitas</th>
+                    <th class=" py-4">Total harga</th>
                 </thead>
                 <tbody class="text-center">
-                    <tr>
+                    <tr class="">
+                        <td class="py-4">1</td>
+                        <td class="py-4">Abdi sang</td>
+                        <td class="py-4">Risoles</td>
+                        <td class="py-4">1</td>
+                        <td class="py-4">Rp.10.000</td>
+                    </tr>
+                    <tr class="">
                         <td class="py-4">1</td>
                         <td class="py-4">Abdi sang</td>
                         <td class="py-4">Risoles</td>
