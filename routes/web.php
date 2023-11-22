@@ -31,6 +31,9 @@ Route::get("/penjual", function () {
 Route::get("/penjual/product",function() {
     return view("/penjual/Products");
 });
+Route::get("/penjual/product/edit",function() {
+    return view("/penjual/editProducts");
+});
 
 Route::get("/penjual/kelolaPesanan",function(){
     return view("/penjual/pesanan");
@@ -38,6 +41,13 @@ Route::get("/penjual/kelolaPesanan",function(){
 
 Route::get('/penjual/laporanBulanan', function(){
     return view("/penjual/laporanBulanan");
+});
+
+Route::get('/penjual/editProfile',function(){
+    return view("/penjual/editPenjual");
+});
+Route::get('/penjual/tambahProduk',function(){
+    return view("/penjual/tambahProduct");
 });
 
 

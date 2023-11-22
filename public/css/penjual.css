@@ -249,3 +249,24 @@ header{
 .totalPenjualan{
     width:19rem;
 }
+
+#bannerPenjual{
+    width: 75rem;
+    height: 25rem;
+    cursor:pointer;
+    object-fit:cover;
+}
+
+#imageBanner{
+    object-fit:cover;
+}
+
+#editPenjual{
+    background-color:white;
+    width:90vh;
+    padding:10px;
+}
+
+#deskripsiToko {
+    resize:none;
+}

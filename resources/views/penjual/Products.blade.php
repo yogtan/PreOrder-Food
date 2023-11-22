@@ -19,7 +19,7 @@ $menus = [];
                     <p class="py-2"><img src="/img/icon_arrow.svg" class="px-2"/>Jumlah produk yang tersedia</p>
                 </div>
                 <div class="w-100 d-flex justify-content-end py-3">
-                    <button class="py-2 px-4 rounded-1 bg-green border-0 text-white ms-auto me-0 bTambah">Tambah</button>
+                    <a href="/penjual/tambahProduk" class="py-2 px-4 rounded-1 bg-green border-0 text-white ms-auto me-0 bTambah text-decoration-none">Tambah</a>
                 </div>
                 <div class="menus">
                         <div class="card p-1">
@@ -29,7 +29,7 @@ $menus = [];
                                 <p class="card-text">Rp.12.000,-</p>
                                 <div class="d-flex justify-content-center">
                                     <a href="#" class="px-2"><img src="/img/icon_delete.svg" alt=""></a>
-                                    <a href="#" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
+                                    <a href="/penjual/product/edit" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -40,7 +40,7 @@ $menus = [];
                                 <p class="card-text">Rp.12.000,-</p>
                                 <div class="d-flex justify-content-center">
                                     <a href="#" class="px-2"><img src="/img/icon_delete.svg" alt=""></a>
-                                    <a href="#" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
+                                    <a href="/penjual/product/edit" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@ $menus = [];
                                 <p class="card-text">Rp.12.000,-</p>
                                 <div class="d-flex justify-content-center">
                                     <a href="#" class="px-2"><img src="/img/icon_delete.svg" alt=""></a>
-                                    <a href="#" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
+                                    <a href="/penjual/product/edit" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ $menus = [];
                                 <p class="card-text">Rp.12.000,-</p>
                                 <div class="d-flex justify-content-center">
                                     <a href="#" class="px-2"><img src="/img/icon_delete.svg" alt=""></a>
-                                    <a href="#" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
+                                    <a href="/penjual/product/edit" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -73,7 +73,7 @@ $menus = [];
                                 <p class="card-text">Rp.12.000,-</p>
                                 <div class="d-flex justify-content-center">
                                     <a href="#" class="px-2"><img src="/img/icon_delete.svg" alt=""></a>
-                                    <a href="#" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
+                                    <a href="/penjual/product/edit" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -84,29 +84,7 @@ $menus = [];
                                 <p class="card-text">Rp.12.000,-</p>
                                 <div class="d-flex justify-content-center">
                                     <a href="#" class="px-2"><img src="/img/icon_delete.svg" alt=""></a>
-                                    <a href="#" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card p-1">
-                            <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=298>
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Nasi Goreng</h5>
-                                <p class="card-text">Rp.12.000,-</p>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="px-2"><img src="/img/icon_delete.svg" alt=""></a>
-                                    <a href="#" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card p-1">
-                            <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=298>
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Nasi Goreng</h5>
-                                <p class="card-text">Rp.12.000,-</p>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="px-2"><img src="/img/icon_delete.svg" alt=""></a>
-                                    <a href="#" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
+                                    <a href="/penjual/product/edit" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -116,3 +94,4 @@ $menus = [];
     </div>
 </div>
 @endsection
+
