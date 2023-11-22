@@ -6,15 +6,9 @@ $menus = [];
 ?>
 
 <div class="content">
-    <header>
-        <div class="container px-5 my-auto justify-content-end d-flex">
-            <h2 class="my-auto me-3 d-inline text-white">DodolMaem</h2>
-            <img src="/img/icon_Profile white.svg" alt="Img Profile">
-        </div>
-    </header>
     <div class="container px-5 mt-5 py-2">
         <h1 class="text-white fw-bold">Kelola Produk</h1>
-        <div class="rounded-2 bg-white w-100 h-100 mt-4 produk relative">
+        <div class="rounded-2 bg-white w-100 h-100 mt-4 shadow-1 relative">
             <div class="p-5">
                 <div>
                     <div class="d-flex justify-content-between items-top">
@@ -28,7 +22,7 @@ $menus = [];
                     <button class="py-2 px-4 rounded-1 bg-green border-0 text-white ms-auto me-0 bTambah">Tambah</button>
                 </div>
                 <div class="menus">
-                        <div class="card p-1" style="width: 18rem; ">
+                        <div class="card p-1">
                             <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=298>
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">Nasi Goreng</h5>
@@ -39,7 +33,7 @@ $menus = [];
                                 </div>
                             </div>
                         </div>
-                        <div class="card p-1" style="width: 18rem; ">
+                        <div class="card p-1">
                             <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=298>
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">Nasi Goreng</h5>
@@ -50,7 +44,7 @@ $menus = [];
                                 </div>
                             </div>
                         </div>
-                        <div class="card p-1" style="width: 18rem; ">
+                        <div class="card p-1">
                             <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=298>
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">Nasi Goreng</h5>
@@ -61,7 +55,51 @@ $menus = [];
                                 </div>
                             </div>
                         </div>
-                        <div class="card p-1" style="width: 18rem; ">
+                        <div class="card p-1">
+                            <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=298>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Nasi Goreng</h5>
+                                <p class="card-text">Rp.12.000,-</p>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="px-2"><img src="/img/icon_delete.svg" alt=""></a>
+                                    <a href="#" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card p-1">
+                            <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=298>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Nasi Goreng</h5>
+                                <p class="card-text">Rp.12.000,-</p>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="px-2"><img src="/img/icon_delete.svg" alt=""></a>
+                                    <a href="#" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card p-1">
+                            <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=298>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Nasi Goreng</h5>
+                                <p class="card-text">Rp.12.000,-</p>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="px-2"><img src="/img/icon_delete.svg" alt=""></a>
+                                    <a href="#" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card p-1">
+                            <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=298>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Nasi Goreng</h5>
+                                <p class="card-text">Rp.12.000,-</p>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="px-2"><img src="/img/icon_delete.svg" alt=""></a>
+                                    <a href="#" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card p-1">
                             <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=298>
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">Nasi Goreng</h5>
