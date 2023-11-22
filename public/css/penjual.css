@@ -1,0 +1,251 @@
+nav{
+    z-index:99;
+}
+.nav-link {
+    color: grey;
+    padding-top:1rem;
+    padding-bottom:1rem;
+}
+
+.nav-link:hover{
+    background-color: #00bf63;
+    color : white;
+}
+
+.nav-link h3 {
+    width: 12rem;
+    text-align: left;
+    padding-left: 5px;
+    padding-top:23px;
+    padding-bottom:23px;
+}
+
+header{
+    position:relative;
+    width: 100%;
+    padding : 2rem;
+    background-color: #00bf63;
+    z-index:98;
+}
+
+.content::before{
+    content:"";
+    position:absolute;
+    top:0rem;
+    left:0;
+    width:100%;
+    height:30rem;
+    background-color : #00bf63;
+    z-index:97;
+}
+
+.content{
+    font-family: "poppins", "sans-serif";
+}
+
+.bg-hijau{
+    background-color : #00bf63;
+}
+
+
+.content {
+    width: 75.01%;
+    float: right;
+    position:relative;
+}
+
+.container{
+    position:relative;
+    z-index:98;
+}
+
+
+.card-content{
+    width:100%;
+    display:grid;
+    grid-template-columns : auto auto;
+    text-align:left;
+    column-gap : 50px;
+    row-gap:0px;
+}
+.card-content h3{
+    grid-row-start:2;
+}
+
+.card-content h6{
+    grid-row-start:1;
+}
+
+.card-content div{
+    grid-row-start: 1;
+    grid-row-end:3;
+}
+
+
+.cards{
+    display:grid;
+    grid-template-columns:auto auto;
+}
+
+.mt-7{
+    padding-top:7rem;
+}
+
+.mt-8{
+    padding-top:8rem;
+}
+
+.mb-8{
+    padding-bottom:8rem;
+}
+
+.mb-7{
+    padding-bottom:7rem;
+}
+
+.mb-6{
+    padding-bottom:6rem;
+}
+
+.pendapatan{
+    margin-top:4rem;
+    background-color : white;
+    padding:4rem;
+    
+}
+
+.produk{
+    box-shadow:0px 0px 17px black;
+}
+
+.bg-green{
+    background-color : #00bf63;
+}
+
+.bg-red{
+    background-color : #FF3131;
+}
+
+.bTambah:focus{
+    background-color : #00aa63;
+}
+
+.bTambah:hover{
+    transform: translate(-5px,-5px);
+    box-shadow: 2px 5px 5px grey;
+}
+
+.menus{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    gap:2rem;
+}
+
+.menus .card{
+    box-shadow:none;
+}
+
+.text-red{
+    color: #FF3131;
+}
+
+.t-Pesanan tbody tr td{
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;  
+    border:1px solid black;
+}
+
+.t-Pesanan thead th{
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    border:1px solid black;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns: auto auto;
+}
+
+.grid h3{
+    width:250px;
+}
+
+.menus {
+    diplay:grid;
+    grid-template-columns: auto auto auto;
+}
+
+.menus .card:hover {
+    transform:scale(1.05);
+}
+
+.menus .card .card-body div a:hover {
+    transform:scale(1.50);
+}
+
+#chartContainer{
+    width:80vh;
+}
+
+.shadow-1{
+    box-shadow: 0px 4px 19px 0px rgba(0, 0, 0, 0.25);
+}
+
+#ketPendapatan{
+    width:55vh;
+}
+
+
+.color-green{
+    color : #08C168;
+}
+
+.color-red {
+    color:#FF3131;
+}
+
+.fw-700{
+    font-weight: 700;
+}
+
+.subTitle-2{
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.subTitle-1{
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.subTitle-3{
+    text-align: center;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.subTitle-4{
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.tabelLaporan{
+    width: 55rem;
+    height:35rem;
+}
+
+.totalPenjualan{
+    width:19rem;
+}
