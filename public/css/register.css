@@ -15,9 +15,9 @@ body {
 }
 
 .daftar {
-    margin-top: 190px;
+    /* margin-top: 190px; */
     display: flex;
-    min-height: 50vh;
+    height: 87.5vh;
     background-size: cover;
     position: relative;
 }

@@ -75,3 +75,10 @@ Route::get('/history', function () {
     return view('history/index'); // 'product.index' merujuk ke nama file blade.php
 });
 
+Route::get('/Admin/',function(){
+    return view('Admin/PersetujuanAkun');
+});
+Route::get('/Admin/hapusproduk',function(){
+    return view('Admin/HapusProduk');
+});
+
