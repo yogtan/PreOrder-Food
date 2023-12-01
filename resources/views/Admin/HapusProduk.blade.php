@@ -54,8 +54,8 @@
                                             <thead>
                                                 <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Nama Toko</th>
-                                                <th scope="col">Last</th>
+                                                <th scope="col">Nama Produk</th>
+                                                <th scope="col">Harga</th>
                                                 <th scope="col">Handle</th>
                                                 </tr>
                                             </thead>

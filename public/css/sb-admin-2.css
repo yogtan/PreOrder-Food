@@ -11283,3 +11283,8 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
+#bodyT-PA tr td button{
+  width:200px;
+  height:200px;
+}
