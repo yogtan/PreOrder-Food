@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_produk'); // Kolom nama_produk sebagai string
             $table->string('foto_produk'); // Kolom nama_produk sebagai string
             $table->bigInteger('harga');
+            $table->string('deskripsi'); // Kolom nama_produk sebagai string
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

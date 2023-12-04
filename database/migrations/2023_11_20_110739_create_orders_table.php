@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->date('tanggal_pemesanan');
             $table->integer('total_produk'); 
-            $table->string('status'); 
+            $table->string('status')->default("Belum Konfirmasi"); 
             $table->string('bukti_pembayaran'); 
             $table->bigInteger('harga_pembayaran'); 
             $table->string('keterangan');
@@ -26,8 +26,8 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
             // Foreign key untuk produk_id yang mengacu pada id di tabel produks
-            $table->unsignedBigInteger('produk_id');
-            $table->foreign('produk_id')->references('id')->on('produks');
+            $table->unsignedBigInteger('pembuatan_id');
+            $table->foreign('pembuatan_id')->references('id')->on('pembuatans');
         });
     }
 

@@ -4,27 +4,13 @@
 <div class="content">
     <section class="container px-5 mt-5 py-2">
         <div id="editPenjual" class="rounded-1  shadow-1 mx-auto mt-2 p-5">
-            <h1 class="">Tambah Produk</h1>
-            <form action="" method="POST" enctype="multipart/form-data">
+            <h1 class="">Tambah Tanggal Pembuatan {{ $produk->nama_produk }} Baru</h1>
+            <form action="/penjual/product/addPembuatan" method="POST" enctype="multipart/form-data">
                 @csrf
             <div id="profilePicture" class=" my-2">
-                <div id="bannerProduk" class="border mx-auto rounded-1 border bg-white d-flex shadow-1 w-100 h-100 p-2">
-                    <div  class="mx-auto my-auto text-center">
-                        <!-- <img id="imageBanner" src="" alt="" class="d-none"> -->
-                        <img id="imageProduct"src="/img/icon_UploadIMG.svg" alt="" class="" >
-                        <div id="placeholder" class="">
-                            <p>klik untuk memasukkan Gambar</p>
-                            <input type="file" id="file" name="foto_produk" class="border rounded-1 start-0 top-0" accept="image/*">    
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="d-flex justify-content-center items-center my-3">
                     <div class="me-2">
-                        <div class="d-flex justify-content-between">
-                            <input type="text" name="nama_produk" id="nama_produk" placeholder="Nama produk" class="rounded-1 ps-2 fs-5 d-block mb-3 me-2" style="width:50%; height:40px;">
-                            <input type="text" name="harga" id="harga" placeholder="harga" class="rounded-1 ps-2 fs-5 d-block mb-3 ms-2" style="width:50%; height:40px;">
-
-                        </div>
                         <div class="d-flex justify-content-between">
                             <div class="w-50 pe-2">
                                 <label for="tanggalOpenPreOrder" class=" w-100">Tanggal Open Pre-Order</label>
@@ -34,9 +20,9 @@
                                 <label for="tanggalOpenPreOrder" class=" w-100">Tanggal Pre-Order Jadi</label>
                                 <input type="date" name="tanggal_jadi" placeholder="" class="rounded-1 ps-2 fs-5 mb-3" style="width:100%; height:40px;">
                             </div>
-                            
+                            <input type="hidden" name="produk_id" value="{{ $produk->id }}">
                         </div>
-                        <textarea name="deskripsi" id="deskripsiToko" cols="70" rows="5" placeholder="deskripsi produk" class="rounded-1 p-2 fs-5"></textarea>
+                        {{-- <textarea name="deskripsi" id="deskripsiToko" cols="70" rows="5" placeholder="deskripsi produk" class="rounded-1 p-2 fs-5"></textarea> --}}
                     </div>
                 </div>
             </div>

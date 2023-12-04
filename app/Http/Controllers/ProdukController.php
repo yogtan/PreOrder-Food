@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\Pembuatan;
 use App\Http\Requests\StoreProdukRequest;
 use App\Http\Requests\UpdateProdukRequest;
+use Illuminate\Database\QueryException;
+
 
 class ProdukController extends Controller
 {
@@ -13,7 +16,13 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        //
+        $produks = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
+                            ->join('users', 'produks.user_id', '=', 'users.id')
+                            ->select('pembuatans.*', 'produks.*', 'users.name')
+                            ->where('pembuatans.tanggal_jadi', '>=', now())
+                            ->get();
+        // dd($produks);
+        return view('home', compact('produks'));
     }
 
     /**
@@ -29,15 +38,26 @@ class ProdukController extends Controller
      */
     public function store(StoreProdukRequest $request)
     {
-        //
+        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Produk $produk)
+    public function show($id)
     {
-        //
+        $produk = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
+                            ->join('users', 'produks.user_id', '=', 'users.id')
+                            ->select('pembuatans.*', 'produks.*', 'users.name')
+                            ->where('produks.id', '=', $id)
+                            ->first();
+        $others = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
+                            ->join('users', 'produks.user_id', '=', 'users.id')
+                            ->select('pembuatans.*', 'produks.*', 'users.name')
+                            ->where('produks.id', '!=', $id)
+                            ->get();
+        // dd($produk);
+        return view('product.index', compact('produk', 'others'));
     }
 
     /**
@@ -62,5 +82,21 @@ class ProdukController extends Controller
     public function destroy(Produk $produk)
     {
         //
+    }
+
+    public function find($id)
+    {
+        $produk = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
+                            ->join('users', 'produks.user_id', '=', 'users.id')
+                            ->select('pembuatans.*', 'produks.*', 'users.name')
+                            ->where('produks.id', '=', $id)
+                            ->first();
+        $others = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
+                            ->join('users', 'produks.user_id', '=', 'users.id')
+                            ->select('pembuatans.*', 'produks.*', 'users.name')
+                            ->where('produks.id', '!=', $id)
+                            ->get();
+        // dd($produk);
+        return view('product.index', compact('produk', 'others'));
     }
 }

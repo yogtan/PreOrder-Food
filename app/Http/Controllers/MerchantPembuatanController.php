@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pembuatan;
-use App\Http\Requests\StorePembuatanRequest;
-use App\Http\Requests\UpdatePembuatanRequest;
+use App\Models\Produk;
+use Illuminate\Http\Request;
 
-class PembuatanController extends Controller
+class MerchantPembuatanController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($id)
     {
-        
+        $produk = Produk::findOrFail($id);
+
+        return view('penjual.tambahPembuatan', compact('produk'));
     }
 
     /**
@@ -27,9 +29,15 @@ class PembuatanController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePembuatanRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'tanggal_pembuatan' => 'required|date',
+            'tanggal_jadi' => 'required|date'
+        ]);
+        $validatedData['produk_id'] = $request->input('produk_id');
+        Pembuatan::create($validatedData);
+        return redirect('/penjual/Products')->with('success', 'Data Pembuatan berhasil diperbarui.');
     }
 
     /**
@@ -51,7 +59,7 @@ class PembuatanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePembuatanRequest $request, Pembuatan $pembuatan)
+    public function update(Request $request, Pembuatan $pembuatan)
     {
         //
     }

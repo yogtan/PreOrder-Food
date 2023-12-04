@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pembuatan;
-use App\Http\Requests\StorePembuatanRequest;
-use App\Http\Requests\UpdatePembuatanRequest;
+use App\Models\Order;
+use Illuminate\Http\Request;
 
-class PembuatanController extends Controller
+class MerchantOrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -27,7 +26,7 @@ class PembuatanController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePembuatanRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -35,7 +34,7 @@ class PembuatanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Pembuatan $pembuatan)
+    public function show(Order $order)
     {
         //
     }
@@ -43,7 +42,7 @@ class PembuatanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pembuatan $pembuatan)
+    public function edit(Order $order)
     {
         //
     }
@@ -51,7 +50,7 @@ class PembuatanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePembuatanRequest $request, Pembuatan $pembuatan)
+    public function update(Request $request, Order $order)
     {
         //
     }
@@ -59,7 +58,7 @@ class PembuatanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pembuatan $pembuatan)
+    public function destroy(Order $order)
     {
         //
     }

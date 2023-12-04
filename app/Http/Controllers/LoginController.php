@@ -28,6 +28,9 @@ class LoginController extends Controller
             if (auth()->check()) {
                 if (auth()->user()->role == "admin") {
                     return redirect('/dashboard');
+                }elseif(auth()->user()->role == "merchant"){
+                    return redirect('/penjual');
+
                 }
                 
                 return redirect()->intended('/home');

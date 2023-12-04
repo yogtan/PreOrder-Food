@@ -37,17 +37,25 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            // Menangani klik pada card ProductPertama
-            $('.ProductPertama .card').click(function() {
-                window.location.href = '/product';
-            });
+        // $(document).ready(function() {
+        //     // Menangani klik pada card ProductPertama
+        //     $('.Product .card').click(function() {
+        //         window.location.href = '/product';
+        //     });
     
-            // Menangani klik pada card ProductKedua
-            $('.ProductKedua .card').click(function() {
-                window.location.href = '/product';
-            });
-        });
+        //     // Menangani klik pada card ProductKedua
+        //     $('.ProductKedua .card').click(function() {
+        //         window.location.href = '/product';
+        //     });
+        // });
+        // $(document).ready(function() {
+        //     // Menangani klik pada card product
+        //     $('.card').click(function() {
+        //         // Dapatkan ID produk atau jalankan aksi yang sesuai
+        //         var productId = $(this).data('product-id');
+        //         window.location.href = '/product/' + productId;
+        //     });
+        // });
 
 
         

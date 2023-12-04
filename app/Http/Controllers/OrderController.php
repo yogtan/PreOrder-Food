@@ -3,17 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Produk;
+use App\Models\Pembuatan;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $produk = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
+                            ->join('users', 'produks.user_id', '=', 'users.id')
+                            ->select('pembuatans.*', 'produks.*', 'users.name')
+                            ->where('produks.id', '=', $id)
+                            ->first();
+
+        return view('orders.index', compact('produk'));
     }
 
     /**
@@ -29,7 +38,21 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-        //
+        $validatedData = $request->validate([
+            'bukti_pembayaran' => 'image'
+        ]);
+
+        if ($request->hasFile('bukti_pembayaran') && $request->file('bukti_pembayaran')->isValid()) {
+            $validatedData['bukti_pembayaran'] = $request->file('bukti_pembayaran')->store('post-images');
+        }
+        $validatedData['tanggal_pemesanan']=$request->input('tanggal_pemesanan');
+        $validatedData['pembuatan_id']=$request->input('pembuatan_id');
+        $validatedData['user_id']=$request->input('user_id');
+        $validatedData['total_produk']=$request->input('total_produk');
+        $validatedData['harga_pembayaran']=$request->input('harga_pembayaran');
+        $validatedData['keterangan']=$request->input('keterangan');
+        Order::create($validatedData);
+        return redirect('/history')->with('success', 'Order Success!');
     }
 
     /**
@@ -37,7 +60,11 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        $orders = Order::join('pembuatans', 'orders.pembuatan_id', '=', 'pembuatans.id')
+        ->where('orders.user_id', Auth::id())
+        ->get();
+        // dd($orders);
+        return view('history.index', compact('orders'));
     }
 
     /**

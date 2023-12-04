@@ -29,7 +29,8 @@ class MerchantRegisterController extends Controller
         // dd($validatedData);
 
         $validatedData['password'] = Hash::make($validatedData['password']);
-
+        $validatedData['role'] = "merchant";
+        
         if ($request->hasFile('foto_ktp') && $request->file('foto_ktp')->isValid()) {
             $validatedData['foto_ktp'] = $request->file('foto_ktp')->store('post-images');
         }
