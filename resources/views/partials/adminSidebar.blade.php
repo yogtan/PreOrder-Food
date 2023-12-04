@@ -13,19 +13,21 @@
             
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                <a class="nav-link" href="/Admin/">
+                <i class="fa-solid fa-circle-check"></i>
+                    <span>Approval Akun</span>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                <a class="nav-link" href="/Admin/hapusakun">
+                    <i class="fa-solid fa-user-slash"></i>
+                    <span>Hapus Penjual</span>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                <a class="nav-link" href="/Admin/hapusproduk">
+                    <i class="fa-solid fa-trash"></i>
+                    <span>Hapus Produk Penjual</span></a>
             </li>
 
             <!-- Divider -->

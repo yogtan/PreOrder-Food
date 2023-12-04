@@ -82,3 +82,7 @@ Route::get('/Admin/hapusproduk',function(){
     return view('Admin/HapusProduk');
 });
 
+Route::get("/Admin/hapusakun",function(){
+    return view("Admin/HapusAkun");
+});
+
