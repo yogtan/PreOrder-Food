@@ -2,7 +2,7 @@
 @section('penjualContent')  
 
 <div class="content">
-    <section class="container px-5 mt-5 py-2">
+    <section class="container px-5 mt-5 py-2 mx-auto">
         <h1 class="text-white">Edit Profile</h1>
         <div id="bannerPenjual" class="border mx-auto rounded-1 border bg-white d-flex shadow-1 mt-3">
             <div id="placeHolder" class="mx-auto my-auto text-center">

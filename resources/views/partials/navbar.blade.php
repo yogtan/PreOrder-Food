@@ -1,4 +1,4 @@
-<nav id="myNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav id="myNavbar" class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container-lg d-flex justify-content-between align-items-center">
         <a class="navbar-brand" href="/">
             <img style="width: 180px" src="/img/Logo_Pre-Order.svg" alt="LogoPre_Order" width="50" class="me-2">
@@ -43,6 +43,8 @@
     </div>
 </nav>
 
+
+@section("scripts")
 <script>
     window.onclick = function(event) {
         if (!event.target.matches('.btn')) {
@@ -63,3 +65,4 @@
     }
 
 </script>
+@endsection

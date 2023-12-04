@@ -23,7 +23,7 @@
 
     @include('partials.navbar')
 
-    <section class="daftar align-items-center">
+    <section class="daftar align-items-center border">
         <div class="container mt-1  mx-auto ">
             <h2 class="daftar-title text-center">Create Account Merchant</h2>
             <form action="/register-merchant" method="post" enctype="multipart/form-data">
@@ -74,6 +74,7 @@
 
         </div>
     </section>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
     </script>
@@ -93,6 +94,7 @@
             });
         });
     </script>
+    @yield("scripts")
 
 </body>
 
