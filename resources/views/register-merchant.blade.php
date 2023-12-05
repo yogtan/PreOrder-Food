@@ -15,7 +15,6 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/register.css">
-
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 
@@ -23,33 +22,33 @@
 
     @include('partials.navbar')
 
-    <section class="daftar align-items-center border">
-        <div class="container mt-1  mx-auto ">
+    <section class="daftar items-center w-md-0">
+        <div class="container mt-1  mx-auto">
             <h2 class="daftar-title text-center">Create Account Merchant</h2>
             <form action="/register-merchant" method="post" enctype="multipart/form-data">
                 @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
-                <div class="form-group pt-4">
-                    <input type="text" class="form-control" id="name" name="name"
+                <div class="form-group pt-4 w-100">
+                    <input type="text" class="form-control w-100" id="name" name="name"
                         placeholder="  Nama Lengkap" required>
                         @error('name')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                        <input type="text" class="form-control" id="telepon" name="telepon"
+                        <input type="text" class="form-control w-100" id="telepon" name="telepon"
                         placeholder="  Nomor Telepon" required>
                         @error('telepon')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                        <input type="text" class="form-control" id="ownerEmail" name="email" placeholder="email" required>
+                        <input type="text" class="form-control w-100" id="ownerEmail" name="email" placeholder="email" required>
                         @error('email')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                        <input type="password" class="form-control" id="password" name="password" placeholder="password"
+                        <input type="password" class="form-control w-100" id="password" name="password" placeholder="password"
                         required>
                         @error('password')
                             <div class="invalid-feedback">

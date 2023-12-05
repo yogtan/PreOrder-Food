@@ -10,16 +10,16 @@ body {
 /* Navbarrr */
 .navbar {
     background: white;
-    height: 90px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .daftar {
     /* margin-top: 190px; */
     display: flex;
-    height: 87.5vh;
+    height:115vh;
     background-size: cover;
-    position: relative;
+    align-items : center;
+    /* position: relative; */
 }
 
 .daftar-title {

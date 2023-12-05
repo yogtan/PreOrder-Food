@@ -15,7 +15,6 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/register.css">
-
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 
@@ -27,7 +26,7 @@
             <h2 class="daftar-title text-center">Create Account Customer</h2>
             <form action="/register" method="post">
                 @csrf
-                <div class="form-group pt-4">
+                <div class="form-group pt-4 w-100">
                     <input type="text" class="form-control" id="username" name="name" placeholder="  Nama Lengkap"
                         required>
 

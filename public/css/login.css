@@ -10,20 +10,18 @@ body {
 /* Navbarrr */
 .navbar {
     background: white;
-    height: 90px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Heroooo */
 
 .login {
-   margin-top: 190px;
+   /* margin-top: 190px; */
     display: flex;
-    min-height: 50vh;
+    height: 100vh;
     background-size: cover;
     position: relative;
-   
-    
+    align-items:center;
 }
 
 

@@ -10,7 +10,6 @@ body {
 /* Navbarrr */
 .navbar {
     background: white;
-    height: 90px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -299,4 +298,12 @@ body {
     background-color: #000000;
     /* Warna latar belakang tombol saat dihover */
     color: #FFFFFF;
+}
+
+
+/* Responsive */
+@media only screen and (min-width:758px){
+    .search-form{
+        width:500px;
+    }
 }

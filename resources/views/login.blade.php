@@ -23,29 +23,22 @@
 
     @include('partials.navbar')
 
-    <section class="login align-items-center">
-        <div class="container mt-1 mx-auto ">
-            <h2 class="login-tittle text-center">Login</h2>
+    <section class="login items-center">
+        <div class="container mt-1 mx-auto">
+            <h2 class="login-tittle text-center ">Login</h2>
             <form action="/login" method="post">
                 @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
-                <div class="form-group pt-4 ">
+                <div class="form-group pt-4 w-100">
                     <input type="text" class="form-control" id="nomortelepon" name="name"
                         placeholder="  Username" required>
-
                     <input type="password" class="form-control" id="password" name="password" placeholder="  Password"
                         required>
-
-
                     <button type="submit" class="login-button btn">Login</button>
                     <div class="text-center">
                     <p class="pt-4">Dont have an account merchant or customer? <br><a href="/register-merchant">Create Merchant</a> <a href="/register">Create Customer</a></p>
-                       
                     </div>
                 </div>
-
-
             </form>
-
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
