@@ -15,7 +15,7 @@ $menus = [];
                         <p class="fs-4">Total <span class="fw-bold">PESANAN</span></p>
                         <img src="/img/icon_document_green.svg" alt="Kart_icon" width=70>
                     </div>
-                    <h1 class="fw-bold text-red"><?= $totalProduct ?></h1>
+                    <h1 class="fw-bold text-red">{{ $totalOrders }}</h1>
                     <p class="py-2"><img src="/img/icon_arrow.svg" class="px-2"/>Jumlah produk yang tersedia</p>
                 </div>
                 <div>
@@ -27,23 +27,45 @@ $menus = [];
                             <th>Kuantitas</th>
                             <th>Total Harga</th>
                             <th>Catatan</th>
+                            <th>Status</th>
                             <th>Tindakan</th>
                         </thead>
                         <tbody class="">
+                            @foreach ($orders as $order)
                             <tr class="" >
-                                <td>1</td>
-                                <td>Jarwo</td>
+                                
+                                <td>{{ $loop->iteration  }}</td>
+                                <td>{{ $order->name }}</td>
                                 <td class="">
-                                    <p class="text-break m-auto" style="width:100px;">Gado-gado</p>
+                                    <p class="text-break m-auto" style="width:100px;">{{ $order->nama_produk }}</p>
                                 </td>
-                                <td>1</td>
-                                <td>Rp.10.000</td>
+                                <td>{{ $order->total_produk }}</td>
+                                <td>Rp {{ number_format($order->harga_pembayaran, 0, ',', '.') }}</td>
                                 <td class="">
-                                    <p class="text-break text-center d-block m-auto" style="width:100px;">Tidak Menggunakan Lontong</p>
+                                    <p class="text-break text-center d-block m-auto" style="width:100px;">{{ $order->keterangan }}</p>
                                 </td>
-                                <td><button class="rounded-pill bg-red px-3 py-1 text-white border-0">Selesai</button></td>
+                                <td>{{ $order->status }}</td>
+                                <td>
+                                    @if ($order->status == "Selesai")
+                                        <button type="submit" class="rounded-pill bg-green px-3 py-1 text-white border-0 "disabled
+                                        onclick="return confirm('Order {{ $order->name }} sudah selesai?')">
+                                        Selesai
+                                        </button>
+                                    @else
+                                        
+                                    <form action="/penjual/kelolaPesanan/{{ $order->id }}" method="post" class="d-inline">
+                                    @method('patch')
+                                    @csrf
+                                    <button type="submit" class="rounded-pill bg-red px-3 py-1 text-white border-0"
+                                        onclick="return confirm('Order {{ $order->name }} sudah selesai?')">
+                                        Selesai
+                                    </button>
+                                    </form>
+                                    @endif
+                                </td>
                             </tr>
-                            <tr class="">
+                            @endforeach
+                            {{-- <tr class="">
                                 <td>2</td>
                                 <td>Ami</td>
                                 <td class="">
@@ -55,7 +77,7 @@ $menus = [];
                                     <p style="width:100px;" class="text-break m-auto">Tanpa Menggunakan Nasi</p>
                                 </td>
                                 <td><button class="rounded-pill bg-red px-3 py-1 text-white border-0">Selesai</button></td>
-                            </tr>
+                            </tr> --}}
                         </tbody>
                     </table>
                 </div>

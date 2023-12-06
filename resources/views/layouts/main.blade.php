@@ -48,14 +48,14 @@
         //         window.location.href = '/product';
         //     });
         // });
-        // $(document).ready(function() {
-        //     // Menangani klik pada card product
-        //     $('.card').click(function() {
-        //         // Dapatkan ID produk atau jalankan aksi yang sesuai
-        //         var productId = $(this).data('product-id');
-        //         window.location.href = '/product/' + productId;
-        //     });
-        // });
+        $(document).ready(function() {
+            // Menangani klik pada card product
+            $('.card').click(function() {
+                // Dapatkan ID produk atau jalankan aksi yang sesuai
+                var productId = $(this).data('product-id');
+                window.location.href = '/product/' + productId;
+            });
+        });
 
 
         

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Merchant;
 
+use App\Http\Controllers\Controller;
 use App\Models\Pembuatan;
 use App\Models\Produk;
 use Illuminate\Http\Request;

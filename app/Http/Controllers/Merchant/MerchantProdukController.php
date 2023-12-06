@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Merchant;
 
+use App\Http\Controllers\Controller;
 use Validator;
 use App\Models\Produk;
 use App\Models\Pembuatan;
@@ -65,7 +66,7 @@ class MerchantProdukController extends Controller
                 // $validatedData['foto_produk'] = $request->file('foto_produk');
                 $image = $request->file('foto_produk');
                 // $filename = uniqid() . '.' . $image->getClientOriginalExtension();
-                Image::make($image)->resize(50, 50);
+                Image::make($image)->resize(300, 200);
                 $path = $image->store('post-images');
 
                 // Resize the image to your desired dimensions (adjust as needed)

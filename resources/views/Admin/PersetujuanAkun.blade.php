@@ -18,7 +18,7 @@
                                         <div class="col mr-2">
                                             <h1 class="h5 font-weight-bold text-success text-uppercase mb-1">
                                                 Akun Diapprove</h1>
-                                            <p class="h4 mb-0 font-weight-bold text-gray-800">18</p>
+                                            <p class="h4 mb-0 font-weight-bold text-gray-800">{{ $App }}</p>
                                         </div>
                                         <div class="col-auto">
                                         <i class="fa-solid fa-user-check fa-2xl text-success"></i>
@@ -34,7 +34,7 @@
                                         <div class="col mr-2">
                                             <h1 class="h5 font-weight-bold text-danger text-uppercase mb-1">
                                                 Akun Belum Diapprove</h1>
-                                            <div class="h4 mb-0 font-weight-bold text-gray-800">2</div>
+                                            <div class="h4 mb-0 font-weight-bold text-gray-800">{{ $notApp }}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa-solid fa-user-xmark fa-2xl text-danger"></i>
@@ -50,7 +50,7 @@
                                         <div class="col mr-2">
                                             <div class="h5 font-weight-bold text-primary text-uppercase mb-1">
                                                 Total Seluruh Akun</div>
-                                            <div class="h4 mb-0 font-weight-bold text-gray-800">20</div>
+                                            <div class="h4 mb-0 font-weight-bold text-gray-800">{{ $total }}</div>
                                         </div>
                                         <div class="col-auto">
                                         <i class="fa-solid fa-users fa-2xl text-primary"></i>

@@ -17,7 +17,7 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'name' => 'required',
+            'email' => 'required',
             'password' => 'required',
         ]);
         
@@ -26,11 +26,10 @@ class LoginController extends Controller
         
             // Check if the user is authenticated before accessing the role
             if (auth()->check()) {
-                if (auth()->user()->role == "admin") {
-                    return redirect('/dashboard');
+                if (auth()->user()->role == "Admin") {
+                    return redirect('/admin');
                 }elseif(auth()->user()->role == "merchant"){
                     return redirect('/penjual');
-
                 }
                 
                 return redirect()->intended('/home');
