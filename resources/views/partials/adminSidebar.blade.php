@@ -19,13 +19,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Admin/hapusakun">
+                <a class="nav-link" href="/Admin/hapus-akun">
                     <i class="fa-solid fa-user-slash"></i>
                     <span>Hapus Penjual</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Admin/hapusproduk">
+                <a class="nav-link" href="/Admin/hapus-produk">
                     <i class="fa-solid fa-trash"></i>
                     <span>Hapus Produk Penjual</span></a>
             </li>

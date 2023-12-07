@@ -1,11 +1,13 @@
 <?php
 
-use App\Http\Controllers\AdminApproveController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminApproveController;
+use App\Http\Controllers\AdminHapusAkunController;
+use App\Http\Controllers\AdminHapusProdukController;
 use App\Http\Controllers\Merchant\MerchantOrderController;
 use App\Http\Controllers\Merchant\MerchantProdukController;
 use App\Http\Controllers\Merchant\MerchantLaporanController;
@@ -74,18 +76,21 @@ Route::middleware(['merchant'])->group(function () {
     Route::delete('/penjual/product/{id}',[MerchantProdukController::class, 'destroy']);
 });
 
-
-
 Route::middleware(['admin'])->group(function () {
     // Routes accessible only by admins
     
     Route::get('/Admin', [AdminApproveController::class, 'index']);
-    Route::get('/Admin/hapusproduk',function(){
-        return view('Admin/HapusProduk');
-    });
+    Route::patch('/Admin/{id}', [AdminApproveController::class, 'update']);
+    Route::get('/Admin/hapus-akun', [AdminHapusAkunController::class, 'index']);
+    Route::delete('/Admin/hapus-akun/{id}',[AdminHapusAkunController::class, 'destroy']);
+    Route::get('/Admin/hapus-produk', [AdminHapusProdukController::class, 'index']);
+    Route::delete('/Admin/hapus-produk/{id}',[AdminHapusProdukController::class, 'destroy']);
+    // Route::get('/Admin/hapusproduk',function(){
+    //     return view('Admin/HapusProduk');
+    // });
     
-    Route::get("/Admin/hapusakun",function(){
-        return view("Admin/HapusAkun");
-    });
+    // Route::get("/Admin/hapusakun",function(){
+    //     return view("Admin/HapusAkun");
+    // });
 });
 

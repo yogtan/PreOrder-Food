@@ -59,9 +59,17 @@ class AdminApproveController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        //
+        $User = User::find($id);
+        if (!$User) {
+            return redirect()->back()->with('error', 'Data Akun tidak ditemukan.');
+        }
+
+        $User->status = 'Verifikasi';
+        $User->save();
+
+        return redirect('/Admin')->with('success', 'Akun Sewa Lunas!');
     }
 
     /**

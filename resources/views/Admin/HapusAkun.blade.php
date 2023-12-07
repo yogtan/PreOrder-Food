@@ -9,7 +9,17 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Hapus Akun</h1>
                     </div>
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
 
+                    @if(session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     <!-- Content Row -->
                     <div class="row">
                         <div class="col-xl-12 col-lg-7">
@@ -54,18 +64,32 @@
                                                 <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Nama Toko</th>
-                                                <th scope="col">Last</th>
+                                                <th scope="col">Penjualan</th>
                                                 <th scope="col">Handle</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td><button class="btn btn-danger">Hapus</button></td>
-                                            </tr>
+                                            @foreach ($merchants as $merchant)
                                             <tr>
+                                                <th scope="row">{{ $loop->iteration }}</th>
+                                                <td>{{ $merchant->name }}</td>
+                                                <td>{{ $merchantSales[$merchant->id] }}</td>
+                                                @if ($merchantSales[$merchant->id] == 0)
+                                                <td>
+                                                <form action="/Admin/hapus-akun/{{ $merchant->id }}" method="post">
+                                                    @csrf
+                                                    @method('Delete')
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this merchant?')">
+                                                        Hapus
+                                                    </button>
+                                                </form>
+                                                </td>
+                                                @else
+                                                <td><button class="btn btn-success" disabled>Penjual Memiliki Order</button></td>
+                                                @endif
+                                            </tr>
+                                            @endforeach
+                                            {{-- <tr>
                                                 <th scope="row">2</th>
                                                 <td>Jacob</td>
                                                 <td>Thornton</td>
@@ -76,7 +100,7 @@
                                                 <td>Larry</td>
                                                 <td>Bird</td>
                                                 <td><button class="btn btn-danger">Hapus</button></td>
-                                                </tr>
+                                                </tr> --}}
                                             </tbody>
                                         </table>
                                     </div>

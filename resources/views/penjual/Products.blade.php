@@ -49,15 +49,15 @@ $menus = [];
                                     <h5 class="card-title font-weight-bold">{{ $produk->nama_produk }}</h5>
                                     <p class="card-text">Rp {{ number_format($produk->harga, 0, ',', '.') }}</p>
                                     <div class="d-flex justify-content-center">
-                                        <form action="/penjual/product/{{ $produk->id }}" method="post">
+                                        <form action="/penjual/product/{{ $produk->produk_id }}" method="post">
                                             @csrf
                                             @method('Delete')
                                             <button type="submit" class="px-2 text-decoration-none" onclick="return confirm('Are you sure you want to delete this product?')">
                                                 <img src="/img/icon_delete.svg" alt="">
                                             </button>
                                         </form>
-                                        <a href="/penjual/product/edit" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
-                                        <a href="/penjual/product/addPembuatan/{{ $produk->id }}" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
+                                        <a href="/penjual/product/edit" class="px-2 button"><img src="/img/icon_edit.svg" alt=""></a>
+                                        <a href="/penjual/product/addPembuatan/{{ $produk->id }}" class="px-2 button"><img src="/img/calendar.svg" alt=""></a>
                                     </div>
                                 </div>
                             </div>

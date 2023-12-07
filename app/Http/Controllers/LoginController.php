@@ -27,7 +27,7 @@ class LoginController extends Controller
             // Check if the user is authenticated before accessing the role
             if (auth()->check()) {
                 if (auth()->user()->role == "Admin") {
-                    return redirect('/admin');
+                    return redirect('/Admin');
                 }elseif(auth()->user()->role == "merchant"){
                     return redirect('/penjual');
                 }

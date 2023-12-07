@@ -38,7 +38,7 @@ class MerchantPembuatanController extends Controller
         ]);
         $validatedData['produk_id'] = $request->input('produk_id');
         Pembuatan::create($validatedData);
-        return redirect('/penjual/Products')->with('success', 'Data Pembuatan berhasil diperbarui.');
+        return redirect('/penjual/product')->with('success', 'Data Pembuatan berhasil diperbarui.');
     }
 
     /**

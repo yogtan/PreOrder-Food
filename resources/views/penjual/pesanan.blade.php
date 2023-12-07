@@ -27,6 +27,7 @@ $menus = [];
                             <th>Kuantitas</th>
                             <th>Total Harga</th>
                             <th>Catatan</th>
+                            <th>Bukti</th>
                             <th>Status</th>
                             <th>Tindakan</th>
                         </thead>
@@ -43,6 +44,10 @@ $menus = [];
                                 <td>Rp {{ number_format($order->harga_pembayaran, 0, ',', '.') }}</td>
                                 <td class="">
                                     <p class="text-break text-center d-block m-auto" style="width:100px;">{{ $order->keterangan }}</p>
+                                </td>
+                                <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Lihat Bukti
+                                  </button>
                                 </td>
                                 <td>{{ $order->status }}</td>
                                 <td>
@@ -64,6 +69,24 @@ $menus = [];
                                     @endif
                                 </td>
                             </tr>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Foto KTP</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <img src="{{ asset('storage/'. $order->bukti_pembayaran) }}" class="card-img-top" alt="..." width="398" height="298">
+                                    
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
                             @endforeach
                             {{-- <tr class="">
                                 <td>2</td>

@@ -12,7 +12,15 @@ class AdminHapusAkunController extends Controller
      */
     public function index()
     {
-        //
+        $merchants = User::where('role', '=', 'merchant')->get();
+        $merchantSales = [];
+        
+        foreach ($merchants as $merchant) {
+            $totalSales = $merchant->orders->sum('total_amount');
+            $merchantSales[$merchant->id] = $totalSales;
+        }
+        // dd($merchantSales);
+        return view("Admin.HapusAkun", compact('merchants', 'merchantSales'));
     }
 
     /**
@@ -58,8 +66,14 @@ class AdminHapusAkunController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        try {
+            User::destroy($id);
+            
+            return redirect('/Admin/hapus-akun')->with('success', 'Data berhasil dihapus.');
+        } catch (\Exception $e) {
+            return redirect('/Admin/hapus-akun')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 }
