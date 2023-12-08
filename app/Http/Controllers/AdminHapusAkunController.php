@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -12,14 +13,20 @@ class AdminHapusAkunController extends Controller
      */
     public function index()
     {
-        $merchants = User::where('role', '=', 'merchant')->get();
+        $merchants = User::leftJoin('produks', 'produks.user_id', '=', 'users.id')
+        ->leftJoin('pembuatans', 'pembuatans.produk_id', '=', 'produks.id')
+        ->leftJoin('orders', 'orders.pembuatan_id', '=', 'pembuatans.id')
+        ->select('users.id', 'users.name', 'users.email', /* Add all other columns */ \DB::raw('SUM(orders.harga_pembayaran) as total_sales'))
+        ->where('users.role', '=', 'merchant')
+        ->groupBy('users.id', 'users.name', 'users.email', /* Add all other columns */)
+        ->get();
         $merchantSales = [];
         
         foreach ($merchants as $merchant) {
             $totalSales = $merchant->orders->sum('total_amount');
             $merchantSales[$merchant->id] = $totalSales;
         }
-        // dd($merchantSales);
+        // dd($merchants);
         return view("Admin.HapusAkun", compact('merchants', 'merchantSales'));
     }
 

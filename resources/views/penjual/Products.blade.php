@@ -48,6 +48,7 @@ $menus = [];
                                 <div class="card-body">
                                     <h5 class="card-title font-weight-bold">{{ $produk->nama_produk }}</h5>
                                     <p class="card-text">Rp {{ number_format($produk->harga, 0, ',', '.') }}</p>
+                                    <p class="card-text">{{ $produk->tanggal_jadi }}</p>
                                     <div class="d-flex justify-content-center">
                                         <form action="/penjual/product/{{ $produk->produk_id }}" method="post">
                                             @csrf

@@ -51,6 +51,7 @@ class ProdukController extends Controller
                             ->select('pembuatans.*', 'produks.*', 'users.name')
                             ->where('produks.id', '=', $id)
                             ->first();
+                            // dd($produk);
         $others = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
                             ->join('users', 'produks.user_id', '=', 'users.id')
                             ->where('produks.user_id', '=', $produk->user_id)
@@ -58,7 +59,6 @@ class ProdukController extends Controller
                             ->where('pembuatans.tanggal_jadi', '>=', now())
                             ->select('pembuatans.*', 'produks.*', 'users.name')
                             ->get();
-        // dd($others);
         return view('product.index', compact('produk', 'others'));
     }
 
@@ -94,7 +94,7 @@ class ProdukController extends Controller
                             ->where('users.id', '=', $id)
                             ->where('pembuatans.tanggal_jadi', '>=', now())
                             ->get();
-        // dd($produk);
+        // dd($produks);
         $name = $produks->first()->name;
         return view('outlet.index', compact('produks', 'name'));
     }

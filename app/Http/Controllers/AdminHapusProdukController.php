@@ -17,7 +17,7 @@ class AdminHapusProdukController extends Controller
         $produks = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
                             ->join('users', 'produks.user_id', '=', 'users.id')
                             // ->join('orders', 'pembuatans.id', '=', 'orders.pembuatan_id')
-                            ->select('pembuatans.*', 'produks.*', 'users.name')
+                            ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name')
                             // ->where('produks.user_id', '=', $userId)
                             // ->where('pembuatans.tanggal_jadi', '>=', now())
                             ->get();
@@ -72,11 +72,13 @@ class AdminHapusProdukController extends Controller
     {
         try {
             $order = Order::where('pembuatan_id', $id)->get();
-            // dd($order);
-            if (is_null($order)) {
+            $pembuatan = Pembuatan::find($id);
+            $produkId = $pembuatan->produk_id;
+            if ($order) {
                 return redirect('/Admin/hapus-produk')->with('error', 'Data masih memiliki order.');
             } else {
                 Pembuatan::destroy($id);
+                Pembuatan::destroy($produkId);
                 return redirect('/Admin/hapus-produk')->with('success', 'Data berhasil dihapus.');
             }
             

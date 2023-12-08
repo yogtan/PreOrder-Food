@@ -21,9 +21,8 @@
             
             <div class="row pt-5">
                 @foreach($produks as $produk)
-                <div class="col-md-3 ">
-                    {{-- <a href="/product/{{ $produk->produk_id }}" style="text-decoration: none; color: inherit;"> --}}
-                    <div class="card" style="width: 19rem; height: 27rem" data-product-id="{{ $produk->produk_id }}">
+                <div class="col-md-3  mb-4">
+                    <div class="card productMakan" style="width: 19rem; height: 27rem" data-product-id="{{ $produk->produk_id }}">
                         @if ($produk->foto_produk)
                         <img src="{{ asset('storage/'. $produk->foto_produk) }}" class="card-img-top" alt="...">
                         @else
@@ -38,6 +37,7 @@
                         </div>
                     </div>
                 </div>
+                {{-- <a href="/product/{{ $produk->produk_id }}" class="d-inline" style="text-decoration: none; color: inherit;"> --}}
                 @endforeach
             </div>
             {{-- <div class="ProductPertama row pt-5">
@@ -155,4 +155,5 @@
 
         </div>
     </section>
+    
 @endsection

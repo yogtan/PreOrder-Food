@@ -62,6 +62,7 @@ Route::middleware(['merchant'])->group(function () {
     
     Route::get("/penjual/kelolaPesanan",[MerchantOrderController::class, 'index']);
     Route::patch("/penjual/kelolaPesanan/{id}",[MerchantOrderController::class, 'update']);
+    Route::delete("/penjual/kelolaPesanan/{id}",[MerchantOrderController::class, 'destroy']);
     
     Route::get('/penjual/laporanBulanan', [MerchantLaporanController::class, 'index']);
     
@@ -74,6 +75,8 @@ Route::middleware(['merchant'])->group(function () {
     Route::get("/penjual/product/addPembuatan/{id}",[MerchantPembuatanController::class, 'index']);
     Route::post("/penjual/product/addPembuatan",[MerchantPembuatanController::class, 'store']);
     Route::delete('/penjual/product/{id}',[MerchantProdukController::class, 'destroy']);
+    Route::get('/view-photo/{id}',[MerchantOrderController::class, 'show']);
+    // Route::get('/view-photo/{id}', 'PhotoController@view')->name('view-photo');
 });
 
 Route::middleware(['admin'])->group(function () {

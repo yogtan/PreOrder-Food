@@ -73,8 +73,13 @@
                                             <tr>
                                                 <th scope="row">{{ $loop->iteration }}</th>
                                                 <td>{{ $merchant->name }}</td>
-                                                <td>{{ $merchantSales[$merchant->id] }}</td>
-                                                @if ($merchantSales[$merchant->id] == 0)
+                                                @if ($merchant->total_sales == 0)
+                                                    
+                                                <td>Rp. 0</td>
+                                                @else
+                                                <td>Rp {{ number_format($merchant->total_sales, 0, ',', '.') }}</td>
+                                                @endif
+                                                @if ($merchant->total_sales == 0)
                                                 <td>
                                                 <form action="/Admin/hapus-akun/{{ $merchant->id }}" method="post">
                                                     @csrf

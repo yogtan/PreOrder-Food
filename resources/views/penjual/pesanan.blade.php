@@ -16,7 +16,7 @@ $menus = [];
                         <img src="/img/icon_document_green.svg" alt="Kart_icon" width=70>
                     </div>
                     <h1 class="fw-bold text-red">{{ $totalOrders }}</h1>
-                    <p class="py-2"><img src="/img/icon_arrow.svg" class="px-2"/>Jumlah produk yang tersedia</p>
+                    <p class="py-2"><img src="/img/icon_arrow.svg" class="px-2"/>Jumlah pesanan</p>
                 </div>
                 <div>
                     <table class="w-100 text-center t-Pesanan">
@@ -45,9 +45,8 @@ $menus = [];
                                 <td class="">
                                     <p class="text-break text-center d-block m-auto" style="width:100px;">{{ $order->keterangan }}</p>
                                 </td>
-                                <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Lihat Bukti
-                                  </button>
+                                <td>
+                                    <a href="/view-photo/{{ $order->id }}" class="btn btn-danger">View Photo</a>
                                 </td>
                                 <td>{{ $order->status }}</td>
                                 <td>
@@ -67,26 +66,43 @@ $menus = [];
                                     </button>
                                     </form>
                                     @endif
+
+                                    @if ($order->status == "Selesai")
+                                        <button type="submit" class="rounded-pill bg-red px-3 py-1 text-white border-0" disabled
+                                            onclick="return confirm('Hapus Order {{ $order->name }}?')">
+                                            Hapus
+                                        </button>
+                                    @else
+                                        
+                                    
+                                    <form action="/penjual/kelolaPesanan/{{ $order->id }}" method="post" class="d-inline">
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit" class="rounded-pill bg-red px-3 py-1 text-white border-0"
+                                            onclick="return confirm('Hapus Order {{ $order->name }}?')">
+                                            Hapus
+                                        </button>
+                                    </form>
+                                    @endif
                                 </td>
                             </tr>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            {{-- <div class="modal fade" id="viewPhotoModal" tabindex="-1" aria-labelledby="viewPhotoModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Foto KTP</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                    <img src="{{ asset('storage/'. $order->bukti_pembayaran) }}" class="card-img-top" alt="..." width="398" height="298">
-                                    
-                                    </div>
-                                    <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="viewPhotoModalLabel">View Photo</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Display the photo here -->
+                                            <img src="{{ asset('storage/'. $order->bukti_pembayaran) }}" alt="View Photo" width="398" height="298">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
-                            </div>
+                            </div> --}}
                             @endforeach
                             {{-- <tr class="">
                                 <td>2</td>

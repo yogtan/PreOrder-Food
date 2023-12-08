@@ -43,9 +43,11 @@ class MerchantOrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Order $order)
+    public function show($id)
     {
-        //
+        $order = Order::find($id);
+        // $photo = $order->bukti_pembayaran;
+        return view('penjual.viewBukti', compact('order'));
     }
 
     /**
@@ -76,8 +78,13 @@ class MerchantOrderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Order $order)
+    public function destroy($id)
     {
-        //
+        try {
+            Order::destroy($id);
+            return redirect('/penjual/kelolaPesanan')->with('success', 'Data berhasil dihapus.');
+        } catch (\Exception $e) {
+            return redirect('/penjual/kelolaPesanan')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 }
