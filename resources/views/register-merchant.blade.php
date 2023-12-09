@@ -15,21 +15,20 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/register.css">
-    <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body>
 
     @include('partials.navbar')
 
-    <section class="daftar items-center w-md-0">
-        <div class="container mt-1  mx-auto">
+    <section class="daftar items-center row">
+        <div class="container  mt-1  mx-auto  col-sm-6 col-12">
             <h2 class="daftar-title text-center">Create Account Merchant</h2>
-            <form action="/register-merchant" method="post" enctype="multipart/form-data">
+            <form action="/register-merchant" method="post" enctype="multipart/form-data" class="mx-auto px-2">
                 @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
-                <div class="form-group pt-4 w-100">
+                <div class="form-group pt-4 w-100 ">
                     <input type="text" class="form-control w-100" id="name" name="name"
-                        placeholder="  Nama Lengkap" required>
+                        placeholder="  Nama Toko" required>
                         @error('name')
                             <div class="invalid-feedback">
                                 {{ $message }}
