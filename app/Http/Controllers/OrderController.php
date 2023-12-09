@@ -18,10 +18,10 @@ class OrderController extends Controller
     {
         $produk = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
                             ->join('users', 'produks.user_id', '=', 'users.id')
-                            ->select('pembuatans.*', 'produks.*', 'users.name')
+                            ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name')
                             ->where('produks.id', '=', $id)
                             ->first();
-
+        // dd($produk);
         return view('orders.index', compact('produk'));
     }
 

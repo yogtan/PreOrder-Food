@@ -18,7 +18,7 @@
                                         <div class="col mr-2">
                                             <h1 class="h5 font-weight-bold text-success text-uppercase mb-1">
                                                 Akun Diapprove</h1>
-                                            <p class="h4 mb-0 font-weight-bold text-gray-800">18</p>
+                                            <p class="h4 mb-0 font-weight-bold text-gray-800">{{ $App }}</p>
                                         </div>
                                         <div class="col-auto">
                                         <i class="fa-solid fa-user-check fa-2xl text-success"></i>
@@ -34,7 +34,7 @@
                                         <div class="col mr-2">
                                             <h1 class="h5 font-weight-bold text-danger text-uppercase mb-1">
                                                 Akun Belum Diapprove</h1>
-                                            <div class="h4 mb-0 font-weight-bold text-gray-800">2</div>
+                                            <div class="h4 mb-0 font-weight-bold text-gray-800">{{ $notApp }}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa-solid fa-user-xmark fa-2xl text-danger"></i>
@@ -49,8 +49,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="h5 font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Seluruh Akun</div>
-                                            <div class="h4 mb-0 font-weight-bold text-gray-800">20</div>
+                                                Total Seluruh Akun penjual</div>
+                                            <div class="h4 mb-0 font-weight-bold text-gray-800">{{ $total }}</div>
                                         </div>
                                         <div class="col-auto">
                                         <i class="fa-solid fa-users fa-2xl text-primary"></i>
@@ -60,7 +60,17 @@
                             </div>
                         </div>
                     </div>
-
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+        
+                    @if(session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     <!-- Content Row -->
                     <div class="row">
                         <div class="col-xl-12 col-lg-7">
@@ -96,45 +106,65 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="row">
+                                        @if (!$notApp)
+                                            <h1 class="ml-3">Semua Akun Sudah Terapprove</h1>
+                                        @else
+                                        
                                         <table class="table text-center">
                                             <thead>
                                                 <tr>
-                                                <th scope="col">#</th>
+                                                <th scope="col">No</th>
                                                 <th scope="col">Nama Toko</th>
-                                                <th scope="col">Jumlah Penjualan</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Foto KTP</th>
                                                 <th scope="col">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="bodyT-PA" class="">
+                                                @foreach ($merchants as $merchant)
                                                 <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>10</td>
-                                                    <td>
-                                                        <a class="btn"><i class="fa-solid fa-user-check fa-lg text-success"></i></a>
-                                                        <a class="btn"><i class="fa-solid fa-user-xmark fa-lg text-danger"></i></a>
+                                                    <th scope="row">{{ $loop->iteration }}</th>
+                                                    <td>{{ $merchant->name }}</td>
+                                                    <td>{{ $merchant->email }}</td>
+                                                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                        Lihat KTP
+                                                      </button>
                                                     </td>
-                                                    </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Jacob</td>
-                                                    <td>500</td>
-                                                    <td>
-                                                        <a class="btn"><i class="fa-solid fa-user-check fa-lg text-success"></i></a>
-                                                        <a class="btn"><i class="fa-solid fa-user-xmark fa-lg text-danger"></i></a>
-                                                    </td>
+                                                      <td>
+                                                        <form action="/Admin/{{ $merchant->id }}" method="post" class="d-inline">
+                                                            @method('patch')
+                                                            @csrf
+                                                            <button type="submit" class="rounded-pill bg-red px-3 py-1 text-white border-0"
+                                                                onclick="return confirm('Verifikasi akun {{ $merchant->name }}?')">
+                                                                <i class="fa-solid fa-user-check fa-lg text-success"></i>
+                                                            </button>
+                                                            </form>
+                                                          {{-- <a class="btn"></a> --}}
+                                                          {{-- <a class="btn"><i class="fa-solid fa-user-xmark fa-lg text-danger"></i></a> --}}
+                                                        </td>
                                                 </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Larry the Bird</td>
-                                                    <td>50</td>
-                                                    <td>
-                                                        <a class="btn"><i class="fa-solid fa-user-check fa-lg text-success"></i></a>
-                                                        <a class="btn"><i class="fa-solid fa-user-xmark fa-lg text-danger"></i></a>
-                                                    </td>
-                                                </tr>
+                                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Foto KTP</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                        <img src="{{ asset('storage/'. $merchant->foto_ktp) }}" class="card-img-top" alt="..." width="398" height="298">
+                                                        
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                @endforeach
                                             </tbody>
                                         </table>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +172,8 @@
                     </div>
 
             <!-- End of Main Content -->
-
+            <!-- Modal -->
+            
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">

@@ -127,13 +127,10 @@
 
             function toggleTransferDetails() {
                 const transferDetails = document.getElementById('transferDetails');
-                if (transferDetails.style.display === 'none') {
-                    transferDetails.style.display = 'block';
-                } else {
-                    transferDetails.style.display = 'none';
-                }
+                transferDetails.style.display = transferDetails.style.display === 'none' ? 'block' : 'none';
             }
         </script>
+
         <script>
             let quantity = 1;
             const hargaPerProduk = {{ $produk->harga }}; // Ganti dengan harga per produk yang sesuai
@@ -167,6 +164,7 @@
                     updateQuantity();
                 }
             }
+            
             function updateQuantity() {
                 document.getElementById("hiddenQuantity").value = quantity;
             }

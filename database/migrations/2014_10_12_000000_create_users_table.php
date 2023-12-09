@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('telepon')->unique();
             $table->string('role')->default("customer");
             $table->string('foto_ktp')->nullable();
+            $table->string('status')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

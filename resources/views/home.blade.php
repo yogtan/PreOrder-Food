@@ -21,24 +21,23 @@
             
             <div class="row pt-5">
                 @foreach($produks as $produk)
-                    <div class="col-md-3 Product">
-                        <a href="/product/{{ $produk->produk_id }}" style="text-decoration: none; color: inherit;">
-                        <div class="card" style="width: 19rem; height: 27rem" data-product-id="{{ $produk->produk_id }}">
-                            <!-- Assuming you have a field for the product image -->
-                            @if ($produk->foto_produk)
-                            <img src="{{ asset('storage/'. $produk->foto_produk) }}" class="card-img-top" alt="...">
-                            @else
-                            <img src="/img/Poster-Product.svg" class="card-img-top" alt="Nasi Goreng" width=298>
-                            @endif
-                            <div style="text-align:left" class="card-body">
-                                <h5 class="card-title">{{ $produk->name }}</h5>
-                                <p class="card-text"><strong>{{ $produk->nama_produk }}</strong></p>
-                                <p class="card-text">Rp {{ number_format($produk->harga, 0, ',', '.') }}</p>
-                                <hr>
-                                <p class="card-text">{{ $produk->tanggal_jadi }}</p>
-                            </div>
+                <div class="col-md-3  mb-4">
+                    <div class="card productMakan" style="width: 19rem; height: 27rem" data-product-id="{{ $produk->produk_id }}">
+                        @if ($produk->foto_produk)
+                        <img src="{{ asset('storage/'. $produk->foto_produk) }}" class="card-img-top" alt="...">
+                        @else
+                        <img src="/img/Poster-Product.svg" class="card-img-top" alt="Nasi Goreng" width=298>
+                        @endif
+                        <div style="text-align:left" class="card-body">
+                            <h5 class="card-title">{{ $produk->name }}</h5>
+                            <p class="card-text"><strong>{{ $produk->nama_produk }}</strong></p>
+                            <p class="card-text">Rp {{ number_format($produk->harga, 0, ',', '.') }}</p>
+                            <hr>
+                            <p class="card-text">{{ $produk->tanggal_jadi }}</p>
                         </div>
                     </div>
+                </div>
+                {{-- <a href="/product/{{ $produk->produk_id }}" class="d-inline" style="text-decoration: none; color: inherit;"> --}}
                 @endforeach
             </div>
             {{-- <div class="ProductPertama row pt-5">
@@ -156,4 +155,5 @@
 
         </div>
     </section>
+    
 @endsection

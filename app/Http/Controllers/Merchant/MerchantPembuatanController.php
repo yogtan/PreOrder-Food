@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Merchant;
 
+use App\Http\Controllers\Controller;
 use App\Models\Pembuatan;
 use App\Models\Produk;
 use Illuminate\Http\Request;
@@ -37,7 +38,7 @@ class MerchantPembuatanController extends Controller
         ]);
         $validatedData['produk_id'] = $request->input('produk_id');
         Pembuatan::create($validatedData);
-        return redirect('/penjual/Products')->with('success', 'Data Pembuatan berhasil diperbarui.');
+        return redirect('/penjual/product')->with('success', 'Data Pembuatan berhasil diperbarui.');
     }
 
     /**

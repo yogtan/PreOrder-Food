@@ -50,11 +50,11 @@
                 <!-- Kolom Kanan (Gambar Produk) -->
                 <div class="col-lg-6 ">
                     <div class="product-info-penjual text-right" >
-                        <a href="/outlet">Lihat Semua</a>
+                        <a href="/outlet/{{ $produk->user_id }}">Lihat Semua</a>
                     </div>
                 </div>
             </div>
-            @if ($others)
+            @if (!$others)
                 <h1 class="mt-3">No Other Products</h1>
             @else
                 

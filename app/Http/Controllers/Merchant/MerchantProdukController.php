@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Merchant;
 
+use App\Http\Controllers\Controller;
 use Validator;
 use App\Models\Produk;
+use App\Models\Order;
 use App\Models\Pembuatan;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
@@ -19,7 +21,7 @@ class MerchantProdukController extends Controller
         $userId = auth()->user()->id;
         $produks = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
                             ->join('users', 'produks.user_id', '=', 'users.id')
-                            ->select('pembuatans.*', 'produks.*', 'users.name')
+                            ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name')
                             ->where('produks.user_id', '=', $userId)
                             ->where('pembuatans.tanggal_jadi', '>=', now())
                             ->get();
@@ -65,7 +67,7 @@ class MerchantProdukController extends Controller
                 // $validatedData['foto_produk'] = $request->file('foto_produk');
                 $image = $request->file('foto_produk');
                 // $filename = uniqid() . '.' . $image->getClientOriginalExtension();
-                Image::make($image)->resize(50, 50);
+                Image::make($image)->resize(300, 200);
                 $path = $image->store('post-images');
 
                 // Resize the image to your desired dimensions (adjust as needed)
@@ -152,8 +154,16 @@ class MerchantProdukController extends Controller
     {
         // dd($id);
         try {
-            Pembuatan::where('produk_id', $id)->delete();
-            Produk::destroy($id);
+            $order = Order::where('pembuatan_id', $id)->get();
+            // dd($order);
+            if (is_null($order)) {
+                return redirect('/penjual/product')->with('error', 'Data masih memiliki order.');
+            } else {
+                // Pembuatan::destroy($id);
+                Pembuatan::where('produk_id', $id)->delete();
+                Produk::destroy($id);
+                return redirect('/penjual/product')->with('success', 'Data berhasil dihapus.');
+            }
             
             return redirect('/penjual/product')->with('success', 'Data berhasil dihapus.');
         } catch (\Exception $e) {

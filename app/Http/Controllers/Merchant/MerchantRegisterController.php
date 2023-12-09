@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Merchant;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -30,6 +31,7 @@ class MerchantRegisterController extends Controller
 
         $validatedData['password'] = Hash::make($validatedData['password']);
         $validatedData['role'] = "merchant";
+        $validatedData['status'] = "Belum Verifikasi";
         
         if ($request->hasFile('foto_ktp') && $request->file('foto_ktp')->isValid()) {
             $validatedData['foto_ktp'] = $request->file('foto_ktp')->store('post-images');

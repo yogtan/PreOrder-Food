@@ -36,32 +36,33 @@ $menus = [];
                     @if ($produks->isEmpty())
                         <p>No products available. You can add new products <a href="/penjual/tambahProduk">here</a>.</p>
                     @else
-                        <div class="row pt-5">
-                            @foreach ($produks as $produk)
+                    <div class="row pt-5">
+                        @foreach ($produks as $produk)
+                        <div class="col-md-3">
                             <div class="card p-1">
                                 @if ($produk->foto_produk)
-                                <img src="{{ asset('storage/'. $produk->foto_produk) }}" class="card-img-top" alt="...">
+                                <img src="{{ asset('storage/'. $produk->foto_produk) }}" class="card-img-top" alt="..." width="398" height="298">
                                 @else
-                                <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=298>
+                                <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=200 height="200">
                                 @endif
                                 <div class="card-body">
                                     <h5 class="card-title font-weight-bold">{{ $produk->nama_produk }}</h5>
                                     <p class="card-text">Rp {{ number_format($produk->harga, 0, ',', '.') }}</p>
+                                    <p class="card-text">{{ $produk->tanggal_jadi }}</p>
                                     <div class="d-flex justify-content-center">
-                                        <form action="/penjual/product/{{ $produk->id }}" method="post">
+                                        <form action="/penjual/product/{{ $produk->produk_id }}" method="post">
                                             @csrf
                                             @method('Delete')
                                             <button type="submit" class="px-2 text-decoration-none" onclick="return confirm('Are you sure you want to delete this product?')">
                                                 <img src="/img/icon_delete.svg" alt="">
                                             </button>
                                         </form>
-                                        <a href="/penjual/product/edit" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
-                                        <a href="/penjual/product/addPembuatan/{{ $produk->id }}" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
+                                        <a href="/penjual/product/edit" class="px-2 button"><img src="/img/icon_edit.svg" alt=""></a>
+                                        <a href="/penjual/product/addPembuatan/{{ $produk->id }}" class="px-2 button"><img src="/img/calendar.svg" alt=""></a>
                                     </div>
                                 </div>
                             </div>
-                                {{-- <div class="col-md-3">
-                                    <div class="card p-1" style="width: 19rem; height: 27rem">
+                                    {{-- <div class="card p-1" style="width: 19rem; height: 27rem">
                                         <!-- Assuming you have a field for the product image -->
                                         
                                         <div style="text-align:left" class="card-body">
@@ -74,10 +75,10 @@ $menus = [];
                                         </div>
                                     </div>
                                 </div> --}}
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     @endif
-                        {{-- <div class="card p-1">
+                      {{-- <div class="card p-1">
                             <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=298>
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">Nasi Goreng</h5>
@@ -87,8 +88,8 @@ $menus = [];
                                     <a href="/penjual/product/edit" class="px-2"><img src="/img/icon_edit.svg" alt=""></a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card p-1">
+                        </div> --}}
+                          {{-- <div class="card p-1">
                             <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=298>
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">Nasi Goreng</h5>

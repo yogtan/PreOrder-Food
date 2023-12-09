@@ -9,7 +9,17 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Hapus Produk</h1>
                     </div>
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
 
+                    @if(session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     <!-- Content Row -->
                     <div class="row">
                         <div class="col-xl-12 col-lg-7">
@@ -53,29 +63,33 @@
                                             <thead>
                                                 <tr>
                                                 <th scope="col">#</th>
+                                                <th scope="col">Nama Toko</th>
                                                 <th scope="col">Nama Produk</th>
                                                 <th scope="col">Harga</th>
+                                                <th scope="col">Tanggal Jadi</th>
+                                                {{-- <th scope="col">Harga</th> --}}
                                                 <th scope="col">Handle</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach ($produks as $produk)
                                                 <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td><button class="btn btn-danger">Hapus</button></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td><button class="btn btn-danger">Hapus</button></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td colspan="2">Larry the Bird</td>
-                                                <td><button class="btn btn-danger">Hapus</button></td>
+                                                    <th scope="row">{{ $loop->iteration }}</th>
+                                                    <td>{{ $produk->name }}</td>
+                                                    <td>{{ $produk->nama_produk }}</td>
+                                                    <td>{{ $produk->harga }}</td>
+                                                    <td>{{ $produk->tanggal_jadi }}</td>
+                                                    <td>
+                                                    <form action="/Admin/hapus-produk/{{ $produk->id }}" method="post">
+                                                        @csrf
+                                                        @method('Delete')
+                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this merchant?')">
+                                                            Hapus
+                                                        </button>
+                                                    </form>
+                                                    </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>

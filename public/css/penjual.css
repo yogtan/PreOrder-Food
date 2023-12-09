@@ -267,3 +267,8 @@ header {
 #deskripsiToko {
     resize: none;
 }
+
+#laporanTable tbody tr {
+    
+    height:50px;
+}
