@@ -75,9 +75,15 @@
                             <input type="hidden" name="user_id" value="{{ Auth()->user()->id }}">
                             <input type="hidden" name="tanggal_pemesanan" value="{{ today()->format('Y-m-d') }}">
                             <input type="hidden" name="total_produk" id="hiddenQuantity" value=1>
+<<<<<<< HEAD
                             <input type="hidden" name="harga_pembayaran" id="harga_pembayaran" value= {{ $produk->harga }}>
                             <input type="hidden" name="keterangan" id="keterangan" value="Coba">
 
+=======
+                            <input type="hidden" name="harga_pembayaran" id="harga_pembayaran" value={{ $produk->harga }}>
+                            {{-- <input type="hidden" name="keterangan" id="keterangan" value="Coba"> --}}
+                            <textarea name="keterangan" id="keterangan" cols="57" rows="5" placeholder="Keterangan Pemesanan produk" class="rounded-1 p-2 fs-5 mt-3"></textarea>
+>>>>>>> a705f6a612aa9c7079753993331395013f69ac4f
                             <p class="pesanan2 pt-3  mb-0">Upload Payment Image</p>
                             <input type="file" name="bukti_pembayaran" accept="image/*" id="payment_image"
                                 style="width: 605px; height: 30px;" />

@@ -57,7 +57,7 @@ $menus = [];
                                                 <img src="/img/icon_delete.svg" alt="">
                                             </button>
                                         </form>
-                                        <a href="/penjual/product/edit" class="px-2 button"><img src="/img/icon_edit.svg" alt=""></a>
+                                        <a href="/penjual/product/edit/{{ $produk->produk_id }}" class="px-2 button"><img src="/img/icon_edit.svg" alt=""></a>
                                         <a href="/penjual/product/addPembuatan/{{ $produk->produk_id }}" class="px-2 button"><img src="/img/calendar.svg" alt=""></a>
                                     </div>
                                 </div>

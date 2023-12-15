@@ -8,6 +8,8 @@
             <div class="p-5 text-center">
                 <p>Bukti Pembayaran</p>
                 <img src="{{ asset('storage/'. $order->bukti_pembayaran) }}" alt="View Photo" width="398" height="298">
+                <p>Keterangan Pemesanan</p>
+                <p>{{ $order->keterangan }}</p>
             </div>
         </div>
     </div>

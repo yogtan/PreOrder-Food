@@ -29,26 +29,26 @@
             <form action="/register-merchant" method="post" enctype="multipart/form-data">
                 @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
                 <div class="form-group pt-4">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="  Nama Toko" required>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="  Nama Toko" required>
                         @error('name')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                        <input type="text" class="form-control" id="telepon" name="telepon"
+                        <input type="text" class="form-control @error('telepon') is-invalid @enderror" id="telepon" name="telepon"
                         placeholder="  Nomor Telepon" required>
                         @error('telepon')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                        <input type="text" class="form-control" id="ownerEmail" name="email" placeholder="  Email" required>
+                        <input type="text" class="form-control @error('email') is-invalid @enderror" id="ownerEmail" name="email" placeholder="  Email" required>
                         @error('email')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                        <input type="password" class="form-control" id="password" name="password" placeholder="  Password"
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="  Password"
                         required>
                         @error('password')
                             <div class="invalid-feedback">
