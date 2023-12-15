@@ -38,7 +38,7 @@ $menus = [];
                             <th>Kuantitas</th>
                             <th>Total Harga</th>
                             <th>Catatan</th>
-                            <th>Bukti</th>
+                            <th>View More</th>
                             <th>Status</th>
                             <th>Tindakan</th>
                         </thead>
@@ -57,7 +57,7 @@ $menus = [];
                                     <p class="text-break text-center d-block m-auto" style="width:100px;">{{ $order->keterangan }}</p>
                                 </td>
                                 <td>
-                                    <a href="/view-photo/{{ $order->id }}" class="btn btn-danger">View Photo</a>
+                                    <a href="/view-photo/{{ $order->id }}" class="btn btn-danger">View More</a>
                                 </td>
                                 <td>{{ $order->status }}</td>
                                 <td>

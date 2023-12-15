@@ -70,6 +70,8 @@ Route::middleware(['merchant'])->group(function () {
     Route::get('/penjual/editPenjual/{id}',[ProfileMerchantController::class, 'index']);
     Route::post('/penjual/editPenjual',[ProfileMerchantController::class, 'store']);
     Route::get('/penjual/product',[MerchantProdukController::class, 'index']);
+    Route::get('/penjual/product/edit/{id}',[MerchantProdukController::class, 'edit']);
+    Route::patch('/penjual/product/edit/{id}',[MerchantProdukController::class, 'update']);
     Route::get('/penjual/tambahProduk',[MerchantProdukController::class, 'create']);
     Route::post('/penjual/tambahProduk',[MerchantProdukController::class, 'store']);
     Route::get("/penjual/product/addPembuatan/{id}",[MerchantPembuatanController::class, 'index']);

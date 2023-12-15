@@ -110,9 +110,9 @@ class MerchantProdukController extends Controller
     public function edit($id)
     {
         $produk = Produk::findOrFail($id);
-        $pembuatan = Pembuatan::where('produk_id', $id)->firstOrFail();
-
-        return view('produk.editProducts', compact('produk', 'pembuatan'));
+        // $pembuatan = Pembuatan::where('produk_id', $id)->firstOrFail();
+        // dd($produk);
+        return view('penjual.editProducts', compact('produk'));
     }
 
     /**
@@ -120,13 +120,12 @@ class MerchantProdukController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request);
         $validatedData = $request->validate([
-            'nama_produk' => 'required|min:3|max:255|unique:users',
+            'nama_produk' => 'required|min:3|max:255',
             'foto_produk' => 'image',
             'harga' => 'required',
-            'tanggal_pembuatan' => 'required|date',
-            'tanggal_jadi' => 'required|date',
-            'deskripsi' => 'required|text'
+            'deskripsi' => 'required|string'
         ]);
 
         $produk = Produk::findOrFail($id);
@@ -142,12 +141,6 @@ class MerchantProdukController extends Controller
             // $produk->foto_produk = $path;
         }
         $produk->save();
-
-        //Pembuatan
-        $pembuatan = Pembuatan::where('produk_id', $id)->firstOrFail();
-        $pembuatan->tanggal_pembuatan = $validatedData['tanggal_pembuatan'];
-        $pembuatan->tanggal_jadi = $validatedData['tanggal_jadi'];
-        $pembuatan->save();
 
         return redirect('penjual/product')->with('success', 'Data berhasil diupdate.'); // Replace 'your.route.name' with the actual route name
 

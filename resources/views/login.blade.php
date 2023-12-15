@@ -40,12 +40,20 @@
             <form action="/login" method="post">
                 @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
                 <div class="form-group pt-4 ">
-                    <input type="text" class="form-control" id="email" name="email"
+                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
                         placeholder="  Email" required>
-
-                    <input type="password" class="form-control" id="password" name="password" placeholder="  Password"
+                        @error('email')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="  Password"
                         required>
-
+                        @error('password')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
 
                     <button type="submit" class="login-button btn">Login</button>
                     <div class="text-center">
