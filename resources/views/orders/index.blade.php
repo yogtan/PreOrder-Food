@@ -65,7 +65,7 @@
 
                             <p class="pesanan2 pt-3 mb-0">Grand Total</p>
                             <div style="position: relative; width: 100%;">
-                                <input type="text" id="grandTotalInput" name="grand_total" class="form-control" style="width: 605px" value="Rp. 15.000" readonly />
+                                <input type="text" id="grandTotalInput" name="grand_total" class="form-control" style="width: 605px" value="{{ $produk->harga }}" readonly />
                                 <span class="input-group-text copy-text" onclick="copyGrandTotal()" style="position: absolute; right: -2px; top: 50%; transform: translateY(-50%); cursor: pointer;">Copy</span>
                             </div>
                             <form action="/order" method="POST" enctype="multipart/form-data">
@@ -75,7 +75,7 @@
                             <input type="hidden" name="user_id" value="{{ Auth()->user()->id }}">
                             <input type="hidden" name="tanggal_pemesanan" value="{{ today()->format('Y-m-d') }}">
                             <input type="hidden" name="total_produk" id="hiddenQuantity" value=1>
-                            <input type="hidden" name="harga_pembayaran" id="harga_pembayaran" value=1>
+                            <input type="hidden" name="harga_pembayaran" id="harga_pembayaran" value= {{ $produk->harga }}>
                             <input type="hidden" name="keterangan" id="keterangan" value="Coba">
 
                             <p class="pesanan2 pt-3  mb-0">Upload Payment Image</p>

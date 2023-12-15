@@ -57,15 +57,15 @@
                     <th class=" py-4">Total harga</th>
                 </thead>
                 <tbody class="text-center">
+                    @foreach ( $orders as $order)
                     <tr class="">
-                        @foreach ( $orders as $order)
                         <td class="py-4">{{ $loop->iteration }}</td>
                         <td class="py-4">{{ $order->name }}</td>
                         <td class="py-4">{{ $order->nama_produk }}</td>
                         <td class="py-4">{{ $order->total_produk }}</td>
                         <td class="py-4">Rp {{ number_format($order->harga_pembayaran, 0, ',', '.') }}</td>
-                        @endforeach
                     </tr>
+                    @endforeach
                     {{-- <tr class="">
                         <td class="py-4">1</td>
                         <td class="py-4">Abdi sang</td>
