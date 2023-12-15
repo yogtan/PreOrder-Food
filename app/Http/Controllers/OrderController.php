@@ -42,11 +42,7 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-<<<<<<< HEAD
-
-=======
->>>>>>> a705f6a612aa9c7079753993331395013f69ac4f
-        // dd($request);
+        // dd($request); 
         $validatedData = $request->validate([
             'bukti_pembayaran' => 'image'
         ]);
