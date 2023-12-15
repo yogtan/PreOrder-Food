@@ -24,9 +24,9 @@
 <body>
 
     @include('partials.navbar')
-    <div class="mt-5 pt-2">
+    <!-- <div class="mt-2 mx-3"> -->
         @yield('container')
-    </div>
+    <!-- </div> -->
     @include('partials.footer')
 
 

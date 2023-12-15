@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('container')
-    <section class=" px-3">
-        <div class="hero align-items-center text-center container-sm mx-auto mt-5 ">
+    <section class="mt-3 mx-4">
+        <div class="hero align-items-center text-center container-sm mx-auto">
             <div class="container pt-5 text-white">
                 <h1 class="hero-title">Pre-<span class="hero-title2">Order</span></h1>
                 <h3 class="pt-3">Pre-Order Your Fav Food Here!</h3>

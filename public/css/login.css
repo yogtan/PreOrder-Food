@@ -18,7 +18,7 @@ body {
 .login {
    /* margin-top: 190px; */
     display: flex;
-    height: 100vh;
+    height: 90.5vh;
     background-size: cover;
     position: relative;
     align-items:center;
@@ -33,8 +33,8 @@ body {
 
 
 .form-group{
-    width: 600px;
-    margin: 0 auto;
+    /* width: 600px; */
+    /* margin: 0 auto; */
     /* background-color: black; */
 }
 .form-group input {
@@ -59,3 +59,4 @@ body {
     background-color: #000000;
     color: #FFFFFF;
 }
+

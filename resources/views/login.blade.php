@@ -20,43 +20,46 @@
 <body>
 
     @include('partials.navbar')
-    <section class="login items-center">
-        <div class="container mt-1 mx-auto">
-            @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
+    <section class="login align-items-center border border-danger row">
+        <div class="container-md  col-md-6 col-12 border border-danger justify-content-center d-flex">
+            <div class="w-100">
 
-            @if(session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
-                </div>
-            @endif
-            <h2 class="login-tittle text-center ">Login</h2>
-            <form action="/login" method="post">
-                @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
-                <div class="form-group pt-4 w-100">
-                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
-                        placeholder="  Email" required>
-                        @error('email')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="  Password"
-                        required>
-                        @error('password')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                    <button type="submit" class="login-button btn">Login</button>
-                    <div class="text-center">
-                        <p class="pt-4">Dont have an account merchant or customer? <br><a href="/register-merchant">Create Merchant</a> <a href="/register">Create Customer</a></p>
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
                     </div>
-                </div>
-            </form>
+                @endif
+    
+                @if(session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                <h2 class="login-tittle text-center border">Login</h2>
+                <form action="/login" method="post" class=" border-success border ms-auto me-auto">
+                    @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
+                    <div class="form-group pt-4 w-100 border border-primary ">
+                        <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
+                            placeholder="  Email" required>
+                            @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="  Password"
+                            required>
+                            @error('password')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        <button type="submit" class="login-button btn">Login</button>
+                        <div class="text-center">
+                            <p class="pt-4">Dont have an account merchant or customer? <br><a href="/register-merchant">Create Merchant</a> <a href="/register">Create Customer</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

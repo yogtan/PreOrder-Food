@@ -21,13 +21,13 @@
 
     @include('partials.navbar')
 
-    <section class="daftar items-center row">
-        <div class="container  mt-1  mx-auto  col-sm-6 col-12">
+    <section class="daftar border border-primary container  mt-1  mx-auto h-100 flex align-items-center">
+        <div class=" border">
             <h2 class="daftar-title text-center">Create Account Merchant</h2>
             <form action="/register-merchant" method="post" enctype="multipart/form-data" class="mx-auto px-2">
                 @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
                 <div class="form-group pt-4">
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="  Nama Toko" required>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Nama Toko" required>
                         @error('name')
                             <div class="invalid-feedback">
                                 {{ $message }}
