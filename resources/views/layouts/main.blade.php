@@ -16,7 +16,6 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/product.css">
-    <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/outlet.css">
     <link rel="stylesheet" href="../css/orders.css">
     <link rel="stylesheet" href="../css/users.css">
@@ -26,7 +25,9 @@
 <body>
 
     @include('partials.navbar')
-    @yield('container')
+    <!-- <div class="mt-2 mx-3"> -->
+        @yield('container')
+    <!-- </div> -->
     @include('partials.footer')
 
 
