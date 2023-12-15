@@ -1,15 +1,16 @@
 @extends('layouts.main')
 
 @section('container')
-    <section class="hero align-items-center text-center">
-        <div class="container pt-5 text-white">
-            <h1 class="hero-title">Pre-<span class="hero-title2">Order</span></h1>
-            <h3 class="pt-3">Pre-Order Your Fav Food Here!</h3>
-            <p>Order your favorite meals here, on our web. Ass smooth as <br> in the app. Some fast delivery. Countless
-                restos to try.</p>
+    <section class=" px-3">
+        <div class="hero align-items-center text-center container-sm mx-auto mt-5 ">
+            <div class="container pt-5 text-white">
+                <h1 class="hero-title">Pre-<span class="hero-title2">Order</span></h1>
+                <h3 class="pt-3">Pre-Order Your Fav Food Here!</h3>
+                <p>Order your favorite meals here, on our web. Ass smooth as <br> in the app. Some fast delivery. Countless
+                    restos to try.</p>
+            </div>
         </div>
     </section>
-
 
     <section class="product justify-content-center">
         <div class="container pt-5">

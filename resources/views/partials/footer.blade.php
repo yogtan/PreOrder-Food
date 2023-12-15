@@ -24,10 +24,20 @@
                     <p>Kirimkan pesan beserta bukti di wa kami</p>
                     <button class="whatsapp-button">Whatsapp</button>
                 </div>
-                <div class="text-txt pt-5">
-                    Privacy Policy <span>Terms of Service</span> Follow Us
-                    <img style="margin-left: 20px;" width="25px" src="img/icon_instagram.svg" alt="Instagram"
-                        class="social-icon">
+                <div class="text-txt text-center mt-5  row ">
+                    <div class="col-sm-6 ">
+                        <a href="" class="text-decoration-none text-dark">Privacy Policy</a>
+                    </div>
+                    <div class="col-sm-6 ">
+                        <a href="" class="text-dark text-decoration-none">Follow Us</a>
+                    </div>
+                </div>
+                <div class="row text-center text-txt">
+                    <div class="col-sm-12">
+                        <a href="" class="text-dark text-decoration-none">
+                            Terms of Service
+                        </a>
+                    </div>
                 </div>
 
                 <div class="pt-4">© 2023 Pre-Order | Pre-Order is a trademark of PT Proyek TI Sanatha Dharma. Registered in Intellectual Property of Proyek TI Class.</div>
