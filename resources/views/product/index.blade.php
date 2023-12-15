@@ -25,9 +25,10 @@
 
                         {{-- <div class="info-preorder">Pre Order H-1</div> --}}
                         <div class="info-pesan">
-                            <div class="info-kirim">Tanggal Pengiriman {{ $produk->tanggal_jadi }}</div>
+                            <div class="info-kirim">
+                                Tanggal Pengiriman <input type="text" id="tanggalPengiriman" name="tanggal_pengiriman"class="border-0" value="{{ $produk->tanggal_jadi }}" readonly>
+                            </div>
                             <button class="btn btn-dark btn-panjang" id="btnPesan">Pesan</button>
-
                         </div>
                     </div>
                 </div>
@@ -95,6 +96,7 @@
                 
         </div>
         @endif
+        
         <script>
             document.getElementById('btnPesan').addEventListener('click', function() {
                 // Mengarahkan ke folder "orders" dan file "index"
@@ -102,7 +104,8 @@
                 window.location.href = '/order/' + productId;
                 // window.location.href = '/orders';
             });
-            </script>
+        </script>
             
     </section>
+    
 @endsection

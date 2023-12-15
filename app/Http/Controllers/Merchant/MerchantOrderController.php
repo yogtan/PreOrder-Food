@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Merchant;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\Pembuatan;
 use Illuminate\Http\Request;
 
 class MerchantOrderController extends Controller
@@ -46,8 +47,13 @@ class MerchantOrderController extends Controller
     public function show($id)
     {
         $order = Order::find($id);
+        $pembuatan = Pembuatan::join('orders', 'orders.pembuatan_id', '=', 'pembuatans.id')
+        ->where('orders.id', '=', $order->id)
+        ->select('orders.*','pembuatans.tanggal_jadi', 'pembuatans.tanggal_pembuatan')
+        ->get();
+        // dd($pembuatan);
         // $photo = $order->bukti_pembayaran;
-        return view('penjual.viewBukti', compact('order'));
+        return view('penjual.viewBukti', compact('order', 'pembuatan'));
     }
 
     /**
@@ -72,7 +78,7 @@ class MerchantOrderController extends Controller
         $order->status = 'Selesai';
         $order->save();
 
-        return redirect('/penjual/kelolaPesanan')->with('success', 'Pembayaran Sewa Lunas!');
+        return redirect('/penjual/kelolaPesanan')->with('success', 'Pembayaran Makanan Lunas!');
     }
 
     /**
