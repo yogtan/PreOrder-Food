@@ -19,12 +19,18 @@ class MerchantProdukController extends Controller
     public function index()
     {
         $userId = auth()->user()->id;
+        // $produks = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
+        //                     ->join('users', 'produks.user_id', '=', 'users.id')
+        //                     ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name')
+        //                     ->where('produks.user_id', '=', $userId)
+        //                     ->where('pembuatans.tanggal_jadi', '>=', now())
+        //                     ->get();
         $produks = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
-                            ->join('users', 'produks.user_id', '=', 'users.id')
-                            ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name')
-                            ->where('produks.user_id', '=', $userId)
-                            ->where('pembuatans.tanggal_jadi', '>=', now())
-                            ->get();
+        ->join('users', 'produks.user_id', '=', 'users.id')
+        ->where('pembuatans.tanggal_jadi', '!=', now())
+        ->where('users.id', '=', auth()->user()->id)
+        ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name' ,'users.id as id_user')
+        ->get();
         // $produks = Produk::where('user_id', $userId)->get();
         $totalProducts = $produks->count();
         // dd($produks);
@@ -104,9 +110,9 @@ class MerchantProdukController extends Controller
     public function edit($id)
     {
         $produk = Produk::findOrFail($id);
-        $pembuatan = Pembuatan::where('produk_id', $id)->firstOrFail();
-
-        return view('produk.editProducts', compact('produk', 'pembuatan'));
+        // $pembuatan = Pembuatan::where('produk_id', $id)->firstOrFail();
+        // dd($produk);
+        return view('penjual.editProducts', compact('produk'));
     }
 
     /**
@@ -114,13 +120,12 @@ class MerchantProdukController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request);
         $validatedData = $request->validate([
-            'nama_produk' => 'required|min:3|max:255|unique:users',
+            'nama_produk' => 'required|min:3|max:255',
             'foto_produk' => 'image',
             'harga' => 'required',
-            'tanggal_pembuatan' => 'required|date',
-            'tanggal_jadi' => 'required|date',
-            'deskripsi' => 'required|text'
+            'deskripsi' => 'required|string'
         ]);
 
         $produk = Produk::findOrFail($id);
@@ -137,12 +142,6 @@ class MerchantProdukController extends Controller
         }
         $produk->save();
 
-        //Pembuatan
-        $pembuatan = Pembuatan::where('produk_id', $id)->firstOrFail();
-        $pembuatan->tanggal_pembuatan = $validatedData['tanggal_pembuatan'];
-        $pembuatan->tanggal_jadi = $validatedData['tanggal_jadi'];
-        $pembuatan->save();
-
         return redirect('penjual/product')->with('success', 'Data berhasil diupdate.'); // Replace 'your.route.name' with the actual route name
 
     }
@@ -153,15 +152,25 @@ class MerchantProdukController extends Controller
     public function destroy($id)
     {
         // dd($id);
+        $order = Order::where('pembuatan_id', '=', $id)
+        ->get();
+        $produk = Produk::join('pembuatans', 'pembuatans.produk_id', '=', 'produks.id')
+        ->join('users', 'produks.user_id', '=', 'users.id')
+        ->where('users.id', '=', auth()->user()->id)
+        ->get();
+        $produkcount = $produk->count();
+        $pembuatan = Pembuatan::find($id);
+        // dd($produk);
         try {
-            $order = Order::where('pembuatan_id', $id)->get();
-            // dd($order);
-            if (is_null($order)) {
+            if (!$order->isEmpty()) {
                 return redirect('/penjual/product')->with('error', 'Data masih memiliki order.');
-            } else {
-                // Pembuatan::destroy($id);
-                Pembuatan::where('produk_id', $id)->delete();
-                Produk::destroy($id);
+            } elseif( $order->isEmpty() && $produkcount > 1) {
+                $pembuatan->delete();
+                return redirect('/penjual/product')->with('success', 'Data berhasil dihapus.');
+            }else{
+                // dd($produkcount);
+                $pembuatan->delete();
+                $pembuatan->produk->delete();
                 return redirect('/penjual/product')->with('success', 'Data berhasil dihapus.');
             }
             

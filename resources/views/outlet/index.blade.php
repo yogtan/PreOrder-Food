@@ -2,11 +2,15 @@
 @section('container')
     <section class="heroutlet">
         <div class="container pt-5">
-
+            @if ($header)
+            <img src="{{ asset('storage/'. $header) }}" class="card-img-top" alt="header" width="1300px" height="480px">
+            @else
+            {{-- <img src="/img/Poster-Product.svg" class="card-img-top" alt="Nasi Goreng" width=298> --}}
             <img src="/img/Poster-Outlet.png" alt="Outlet" width="1300px" height="480px">
+            @endif
 
             <h3 class="nama-outlet pt-5">{{ $name }}</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam minus, porro eligendi dignissimos voluptate nobis, reprehenderit tempora cumque saepe quo qui, illo corporis est blanditiis facilis error non nam vero!</p>
+            <p>{{ $deskripsi }}</p>
         </div>
     </section>
 

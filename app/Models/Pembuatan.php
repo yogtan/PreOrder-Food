@@ -11,6 +11,11 @@ class Pembuatan extends Model
     protected $guarded = ['id'];
     public function produk()
     {
-        return $this->belongsTo(Order::class, 'produk_id');
+        return $this->belongsTo(Produk::class, 'produk_id');
     }
+    public function order()
+    {
+        return $this->hasMany(Order::class, 'pembuatan_id');
+    }
+    
 }

@@ -21,16 +21,38 @@
 
     @include('partials.navbar')
 
-    <section class="login items-center">
-        <div class="container mt-1 mx-auto">
-            <h2 class="login-tittle text-center ">Login</h2>
+    <section class="login align-items-center">
+        <div class="container mt-1 mx-auto ">
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+            <h2 class="login-tittle text-center">Login</h2>
             <form action="/login" method="post">
                 @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
-                <div class="form-group pt-4 w-100">
-                    <input type="text" class="form-control" id="nomortelepon" name="email"
-                        placeholder="  Username" required>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="  Password"
+                <div class="form-group pt-4 ">
+                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
+                        placeholder="  Email" required>
+                        @error('email')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="  Password"
                         required>
+                        @error('password')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+
                     <button type="submit" class="login-button btn">Login</button>
                     <div class="text-center">
                     <p class="pt-4">Dont have an account merchant or customer? <br><a href="/register-merchant">Create Merchant</a> <a href="/register">Create Customer</a></p>

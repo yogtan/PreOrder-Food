@@ -5,15 +5,16 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\AdminApproveController;
-use App\Http\Controllers\AdminHapusAkunController;
-use App\Http\Controllers\AdminHapusProdukController;
+use App\Http\Controllers\Admin\AdminApproveController;
+use App\Http\Controllers\Admin\AdminHapusAkunController;
+use App\Http\Controllers\Admin\AdminHapusProdukController;
 use App\Http\Controllers\Merchant\MerchantOrderController;
 use App\Http\Controllers\Merchant\MerchantProdukController;
 use App\Http\Controllers\Merchant\MerchantLaporanController;
 use App\Http\Controllers\Merchant\MerchantRegisterController;
 use App\Http\Controllers\Merchant\MerchantDashboardController;
 use App\Http\Controllers\Merchant\MerchantPembuatanController;
+use App\Http\Controllers\Merchant\ProfileMerchantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,10 +67,11 @@ Route::middleware(['merchant'])->group(function () {
     
     Route::get('/penjual/laporanBulanan', [MerchantLaporanController::class, 'index']);
     
-    Route::get('/penjual/editProfile',function(){
-        return view("/penjual/editPenjual");
-    });
+    Route::get('/penjual/editPenjual/{id}',[ProfileMerchantController::class, 'index']);
+    Route::post('/penjual/editPenjual',[ProfileMerchantController::class, 'store']);
     Route::get('/penjual/product',[MerchantProdukController::class, 'index']);
+    Route::get('/penjual/product/edit/{id}',[MerchantProdukController::class, 'edit']);
+    Route::patch('/penjual/product/edit/{id}',[MerchantProdukController::class, 'update']);
     Route::get('/penjual/tambahProduk',[MerchantProdukController::class, 'create']);
     Route::post('/penjual/tambahProduk',[MerchantProdukController::class, 'store']);
     Route::get("/penjual/product/addPembuatan/{id}",[MerchantPembuatanController::class, 'index']);

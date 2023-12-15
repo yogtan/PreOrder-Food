@@ -3,6 +3,7 @@
 
 <div class="content">
     <section class="container px-5 mt-5 py-2">
+        
         <h1 class="text-white fw-bold mb-3">Laporan Bulanan</h1>
         <div id="GrafikDLL" class="d-flex justify-content-between">
             <div class="bg-white p-5 h-full rounded-1 shadow-1" id="chartContainer">
@@ -50,16 +51,16 @@
                     <th class="py-4">Total harga</th>
                 </thead>
                 <tbody class="text-center">
+                    @foreach ( $orderThisMonth as $order)
                     <tr class="">
-                        @foreach ( $orderThisMonth as $order)
                             
                         <td class="py-4">{{ $loop->iteration }}</td>
                         <td class="py-4">{{ $order->name }}</td>
                         <td class="py-4">{{ $order->nama_produk }}</td>
-                        <td class="py-4">{{ $order->totla_produk }}</td>
+                        <td class="py-4">{{ $order->total_produk }}</td>
                         <td class="py-4">Rp {{ number_format($order->harga_pembayaran, 0, ',', '.') }}</td>
-                        @endforeach
                     </tr>
+                    @endforeach
                     {{-- <tr class="">
                         <td class="py-4">1</td>
                         <td class="py-4">Abdi sang</td>

@@ -150,7 +150,7 @@
             </div> --}}
 
             <div class="btn-showmore  pt-5">
-                <a class="btn" href="/readmore">Show More</a>
+                {{-- <a class="btn" href="/readmore">Show More</a> --}}
             </div>
 
         </div>

@@ -9,6 +9,17 @@ $menus = [];
     <div class="container px-5 mt-5 py-2 ">
         <h1 class="text-white fw-bold">Kelola Pesanan</h1>
         <div class="rounded-2 bg-white w-100 h-100 mt-4 shadow-1 relative">
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
             <div class="p-5">
                 <div>
                     <div class="d-flex justify-content-between items-top">
@@ -27,7 +38,7 @@ $menus = [];
                             <th>Kuantitas</th>
                             <th>Total Harga</th>
                             <th>Catatan</th>
-                            <th>Bukti</th>
+                            <th>View More</th>
                             <th>Status</th>
                             <th>Tindakan</th>
                         </thead>
@@ -46,7 +57,7 @@ $menus = [];
                                     <p class="text-break text-center d-block m-auto" style="width:100px;">{{ $order->keterangan }}</p>
                                 </td>
                                 <td>
-                                    <a href="/view-photo/{{ $order->id }}" class="btn btn-danger">View Photo</a>
+                                    <a href="/view-photo/{{ $order->id }}" class="btn btn-danger">View More</a>
                                 </td>
                                 <td>{{ $order->status }}</td>
                                 <td>

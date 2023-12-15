@@ -25,11 +25,11 @@
       <h3 class="h-100 ms-3 ">Laporan Bulanan</h3>
     </div>
   </a>
-  {{-- <a class="nav-link fs-1 text-center d-flex items-center justify-content-center " href="/penjual/editProfile">
+  <a class="nav-link fs-1 text-center d-flex items-center justify-content-center " href="/penjual/editPenjual/{{ auth()->user()->id }}">
     <div class="grid">
       <img src="/img/edit.svg" class="h-100 " alt="" width=40 class="me-3"/>
       <h3 class="h-100 ms-3 ">Edit Profile</h3>
     </div>
-  </a> --}}
+  </a>
 </nav>
 

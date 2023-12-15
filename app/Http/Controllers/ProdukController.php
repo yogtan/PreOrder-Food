@@ -18,7 +18,7 @@ class ProdukController extends Controller
     {
         $produks = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
                             ->join('users', 'produks.user_id', '=', 'users.id')
-                            ->select('pembuatans.*', 'produks.*', 'users.name')
+                            ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name')
                             ->where('pembuatans.tanggal_jadi', '>=', now())
                             ->get();
         // dd($produks);
@@ -48,7 +48,7 @@ class ProdukController extends Controller
     {
         $produk = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
                             ->join('users', 'produks.user_id', '=', 'users.id')
-                            ->select('pembuatans.*', 'produks.*', 'users.name')
+                            ->select('pembuatans.*', 'produks.nama_produk','produks.user_id','produks.foto_produk','produks.harga', 'users.name')
                             ->where('produks.id', '=', $id)
                             ->first();
                             // dd($produk);
@@ -57,7 +57,7 @@ class ProdukController extends Controller
                             ->where('produks.user_id', '=', $produk->user_id)
                             ->where('produks.id', '!=', $id)
                             ->where('pembuatans.tanggal_jadi', '>=', now())
-                            ->select('pembuatans.*', 'produks.*', 'users.name')
+                            ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name')
                             ->get();
         return view('product.index', compact('produk', 'others'));
     }
@@ -90,12 +90,15 @@ class ProdukController extends Controller
     {
         $produks = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
                             ->join('users', 'produks.user_id', '=', 'users.id')
-                            ->select('pembuatans.*', 'produks.*', 'users.name')
+                            ->join('profile_merchants', 'profile_merchants.user_id', '=', 'users.id')
+                            ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name', 'profile_merchants.header', 'profile_merchants.deskripsi')
                             ->where('users.id', '=', $id)
                             ->where('pembuatans.tanggal_jadi', '>=', now())
                             ->get();
         // dd($produks);
         $name = $produks->first()->name;
-        return view('outlet.index', compact('produks', 'name'));
+        $header = $produks->first()->header;
+        $deskripsi = $produks->first()->deskripsi;
+        return view('outlet.index', compact('produks', 'name', 'header', 'deskripsi'));
     }
 }
