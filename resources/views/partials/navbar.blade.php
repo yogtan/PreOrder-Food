@@ -1,5 +1,5 @@
 <nav id="myNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
+    <div class="container-md d-flex justify-content-between align-items-center">
         <a class="navbar-brand" href="/">
             <img src="/img/Logo_Pre-Order.svg" alt="LogoPre_Order" width="100" height="50" class="me-2">
         </a>
@@ -38,37 +38,7 @@
                     <a href="/register-merchant" onclick="selectOption('Merchant')">Merchant</a>
                     <a href="/register" onclick="selectOption('Customer')">Customer</a>
                 </div>
-            </form>
-            @auth
-            <div class="history his-link">
-                <a href="history" class="his-link">Purchase History</a>
-            </div>
-            <div class="btn-group">
-                <button type="button" class="btn">Welcome, {{ auth()->user()->name }}</button>
-                <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="visually-hidden">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/home">Action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li>
-                    <form action="/logout" method="post">
-                    @csrf
-                    <button type="submit" class="dropdown-item">Log Out</button>
-                </form>
-                </li>
-                </ul>
-            </div>
-            @else
-                <div class="btn-container d-flex justify-content-center">
-                    <button onclick="toggleDropdown()" class="btn">Masuk/Daftar</button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="/login">Login</a>
-                        <a href="/register-merchant" onclick="selectOption('Merchant')">Merchant</a>
-                        <a href="/register" onclick="selectOption('Customer')">Customer</a>
-                    </div>
-                </div>
-                @endauth
+            @endauth
             </div>
         </div>
 </nav>
