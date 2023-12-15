@@ -1,5 +1,5 @@
 <nav id="myNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
         <a class="navbar-brand" href="/">
             <img src="/img/Logo_Pre-Order.svg" alt="LogoPre_Order" width="100" height="50" class="me-2">
         </a>
