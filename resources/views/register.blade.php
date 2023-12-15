@@ -28,18 +28,32 @@
             <form action="/register" method="post">
                 @csrf
                 <div class="form-group pt-4">
-                    <input type="text" class="form-control" id="username" name="name" placeholder="  Nama Lengkap"
-                        required>
-
-                    <input type="text" class="form-control" id="email" name="email" placeholder="  Email"
-                        required>
-
-                    <input type="text" class="form-control" id="phone_number" name="telepon"
+                    <input type="text" class="form-control" id="name" name="name" placeholder="  Nama" required>
+                        @error('name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        <input type="text" class="form-control" id="telepon" name="telepon"
                         placeholder="  Nomor Telepon" required>
-
-                    <input type="password" class="form-control" id="password" name="password" placeholder="  Password"
+                        @error('telepon')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        <input type="text" class="form-control" id="ownerEmail" name="email" placeholder="  Email" required>
+                        @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        <input type="password" class="form-control" id="password" name="password" placeholder="  Password"
                         required>
-
+                        @error('password')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     <button type="submit" class="daftar-button btn">Create Account</button>
 
                     <p class="text-center pt-4">Already have an account customer? <a href="/login">Login here</a></p>

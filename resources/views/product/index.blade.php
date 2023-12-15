@@ -5,6 +5,17 @@
             <div class="row">
                 <!-- Kolom Kiri (Nama Produk dan Pesan) -->
                 <div class="col-lg-6">
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if(session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     <div class="product-info" data-product-id="{{ $produk->produk_id }}">
                         <h5 class="info-profile">{{ $produk->name }}</h5>
                         <h2>{{ $produk->nama_produk }}</h2>

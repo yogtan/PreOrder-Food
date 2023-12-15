@@ -29,8 +29,7 @@
             <form action="/register-merchant" method="post" enctype="multipart/form-data">
                 @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
                 <div class="form-group pt-4">
-                    <input type="text" class="form-control" id="name" name="name"
-                        placeholder="  Nama Toko" required>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="  Nama Toko" required>
                         @error('name')
                             <div class="invalid-feedback">
                                 {{ $message }}

@@ -48,18 +48,16 @@
                     <div class="card">
                         <div class="card-body">
                             <p class="pesanan">Rincian Pembayaran</p>
-                            <label class="pesanan2" for="bank">Choose a Bank</label>
-                            <select name="bank" id="bank" size="1" style="width: 605px; height: 30px;">
-                                <option value="bank1">BRI - Bank Rakyat Indonesia</option>
-                                <option value="bank2">DANA</option>
-                            </select>
+                            <label class="pesanan2" for="bank">Bank Penjual</label>
+                            <input type="text" name="bank_name" class="form-control" style="width: 605px;"
+                                    value="{{ $produk->nama_bank }}" readonly />
 
 
 
                             <p class="pesanan2 pt-4 mb-0">Transfer to</p>
                             <div style="position: relative; width: 100%;">
                                 <input type="text" name="transfer_amount" class="form-control" style="width: 605px;"
-                                    value="45689340500" readonly />
+                                    value="{{ $produk->rekening }}" readonly />
                                 <span class="input-group-text copy-text" onclick="copyText()"
                                     style="position: absolute; right: -2px; top: 50%; transform: translateY(-50%); cursor: pointer;">Copy</span>
                             </div>

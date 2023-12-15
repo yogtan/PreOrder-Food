@@ -25,6 +25,17 @@
 
     <section class="login align-items-center">
         <div class="container mt-1 mx-auto ">
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
             <h2 class="login-tittle text-center">Login</h2>
             <form action="/login" method="post">
                 @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->

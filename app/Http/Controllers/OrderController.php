@@ -18,10 +18,14 @@ class OrderController extends Controller
     {
         $produk = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
                             ->join('users', 'produks.user_id', '=', 'users.id')
-                            ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name')
+                            ->join('profile_merchants', 'profile_merchants.user_id', '=', 'users.id')
+                            ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name', 'profile_merchants.nama_bank', 'profile_merchants.rekening')
                             ->where('produks.id', '=', $id)
                             ->first();
         // dd($produk);
+        if (is_null($produk)) {
+            return redirect()->back()->with('error', 'Penjual Masih Belum Memiliki Rekening.');
+        }
         return view('orders.index', compact('produk'));
     }
 

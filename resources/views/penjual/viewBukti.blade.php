@@ -7,7 +7,7 @@
         <div class="rounded-2 bg-white w-100 h-100 mt-4 shadow-1 relative">
             <div class="p-5 text-center">
                 <p>Bukti Pembayaran</p>
-                <img src="{{ asset('storage/'. $order->bukti_pembayaran) }}" alt="View Photo" >
+                <img src="{{ asset('storage/'. $order->bukti_pembayaran) }}" alt="View Photo" width="398" height="298">
             </div>
         </div>
     </div>

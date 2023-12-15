@@ -30,6 +30,7 @@
         <div id="content-wrapper" class="d-flex flex-column">   
                 @include('partials.adminNavbar')
                 @yield("content")
+                @include('partials.footerAdmin')
         </div>
 
     </div>

@@ -42,4 +42,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class, 'user_id');
     }
+    public function profilemerchants()
+    {
+        return $this->hasMany(ProfileMerchant::class, 'user_id');
+    }
 }
