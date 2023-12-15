@@ -66,6 +66,7 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         $orders = Order::join('pembuatans', 'orders.pembuatan_id', '=', 'pembuatans.id')
+        ->join('produks', 'produks.id', '=', 'pembuatans.produk_id')
         ->where('orders.user_id', Auth::id())
         ->get();
         // dd($orders);

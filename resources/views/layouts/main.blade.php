@@ -9,6 +9,7 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -35,7 +36,21 @@
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("#tanggalPengiriman", {
+            mode: "range",
+            minDate: "today",
+            dateFormat: "Y-m-d",
+            allowInput: false,
+            click: false,
+            disable: [
+                function(date) {
+                    return (date < new Date() || date > new Date("{{ $produk->tanggal_jadi }}"));
+                }
+            ]
+        });
+    </script>
     <script>
         // $(document).ready(function() {
         //     // Menangani klik pada card ProductPertama
