@@ -3,16 +3,6 @@
         <a class="navbar-brand" href="/">
             <img src="/img/Logo_Pre-Order.svg" alt="LogoPre_Order" width="100" height="50" class="me-2">
         </a>
-<<<<<<< HEAD
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <img src="/img/bars-solid.svg" class="navbar-top-icon"></img>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="search-form form-inline my-2 my-lg-0 mx-auto">
-                <div class="search-container w-100">
-                    <img src="/img/icon_search.svg" alt="Search Icon" class="search-icon" width="25" height="25">
-                    <input class="form-control w-100 ps-5 " type="search" placeholder="Pre-order makanan apa ya hari ini?" aria-label="Search">
-=======
         <form class="search-form form-inline my-2 my-lg-0 mx-auto">
             <div class="search-container">
                 <img src="/img/icon_search.svg" alt="Search Icon" class="search-icon">
@@ -47,7 +37,6 @@
                     <a href="/login">Login</a>
                     <a href="/register-merchant" onclick="selectOption('Merchant')">Merchant</a>
                     <a href="/register" onclick="selectOption('Customer')">Customer</a>
->>>>>>> a705f6a612aa9c7079753993331395013f69ac4f
                 </div>
             </form>
             @auth
