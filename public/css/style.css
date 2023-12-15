@@ -17,14 +17,14 @@ body {
 
 /* Gaya hero dengan sudut melengkung */
 .hero {
-    margin:5vh 20px 5vh 20px;
+    /* margin:5vh 20px 5vh 20px; */
     display: flex;
     background-position: center;
-    min-height: 70vh;
+    min-height: 60vh;
     background-image: url(../img/Hero_Pre-Order3.png);
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    /* position: relative; */
     border-radius: 2% 2% 2% 2%;
 
 }
