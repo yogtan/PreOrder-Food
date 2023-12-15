@@ -25,7 +25,7 @@ class MerchantRegisterController extends Controller
             'password' => 'required|min:3',
             'email' => 'required|email|unique:users',
             'telepon' => 'required|max:12|unique:users',
-            'foto_ktp' => 'image'
+            'foto_ktp' => 'image|required'
         ]);
         // dd($validatedData);
 

@@ -16,15 +16,30 @@
                         <img id="imageProduct"src="/img/icon_UploadIMG.svg" alt="" class="" >
                         <div id="placeholder" class="">
                             <p>klik untuk memasukkan Gambar</p>
-                            <input type="file" id="file" name="foto_produk" class="border rounded-1 start-0 top-0" accept="image/*" value="{{ old('foto_produk') }}">    
+                            <input type="file" id="file" name="foto_produk" class="border rounded-1 start-0 top-0 @error('foto_produk') is-invalid @enderror" accept="image/*" value="{{ old('foto_produk') }}">
+                            @error('foto_produk')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror  
                         </div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center items-center my-3">
                     <div class="me-2">
                         <div class="d-flex justify-content-between">
-                            <input type="text" name="nama_produk" id="nama_produk" placeholder="Nama produk" class="rounded-1 ps-2 fs-5 d-block mb-3 me-2" style="width:50%; height:40px;"value="{{ $produk->nama_produk }}">
-                            <input type="text" name="harga" id="harga" placeholder="harga" class="rounded-1 ps-2 fs-5 d-block mb-3 ms-2" style="width:50%; height:40px;" value="{{ $produk->harga }}">
+                            <input type="text" name="nama_produk" id="nama_produk" placeholder="Nama produk" class="rounded-1 ps-2 fs-5 d-block mb-3 me-2 @error('nama_produk') is-invalid @enderror" style="width:50%; height:40px;"value="{{ $produk->nama_produk }}">
+                            @error('nama_produk')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror  
+                            <input type="text" name="harga" id="harga" placeholder="harga" class="rounded-1 ps-2 fs-5 d-block mb-3 ms-2 @error('harga') is-invalid @enderror" style="width:50%; height:40px;" value="{{ $produk->harga }}">
+                            @error('harga')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror  
 
                         </div>
                         {{-- <div class="d-flex justify-content-between">
@@ -38,7 +53,12 @@
                             </div>
                             
                         </div> --}}
-                        <textarea name="deskripsi" id="deskripsiToko" cols="70" rows="5" placeholder="deskripsi produk" class="rounded-1 p-2 fs-5"value="{{ old('deskripsi') }}"></textarea>
+                        <textarea name="deskripsi" id="deskripsiToko" cols="70" rows="5" placeholder="deskripsi produk" class="rounded-1 p-2 fs-5 @error('deskripsi') is-invalid @enderror" value="{{ old('deskripsi') }}"></textarea>
+                        @error('deskripsi')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror  
                     </div>
                 </div>
             </div>

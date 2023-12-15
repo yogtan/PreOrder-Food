@@ -52,7 +52,7 @@ class MerchantProdukController extends Controller
     {
         $validatedData = $request->validate([
             'nama_produk' => 'required|string|max:255',
-            'foto_produk' => 'image',
+            'foto_produk' => 'image|required',
             'harga' => 'required',
             'tanggal_pembuatan' => 'required|date',
             'tanggal_jadi' => 'required|date',
@@ -123,7 +123,7 @@ class MerchantProdukController extends Controller
         // dd($request);
         $validatedData = $request->validate([
             'nama_produk' => 'required|min:3|max:255',
-            'foto_produk' => 'image',
+            'foto_produk' => 'image|required',
             'harga' => 'required',
             'deskripsi' => 'required|string'
         ]);

@@ -7,6 +7,7 @@ use App\Models\ProfileMerchant;
 use App\Models\User;
 use App\Http\Requests\StoreProfileMerchantRequest;
 use App\Http\Requests\UpdateProfileMerchantRequest;
+use Illuminate\Validation\ValidationException;
 
 class ProfileMerchantController extends Controller
 {
@@ -31,29 +32,41 @@ class ProfileMerchantController extends Controller
      */
     public function store(StoreProfileMerchantRequest $request)
     {
-        
+    try {
         $validatedData = $request->validate([
-            'header' => 'image',
+            'header' => 'image|required',
             'nama_bank' => 'required|string|max:255',
             'rekening' => 'required',
-            'deskripsi' => 'required|string'
+            'deskripsi' => 'required|string|required'
         ]);
-        $validatedData['user_id']=$request->input('user_id');
+
+        $validatedData['user_id'] = $request->input('user_id');
+
         if ($request->hasFile('header') && $request->file('header')->isValid()) {
             $validatedData['header'] = $request->file('header')->store('post-images');
         }
+
         $profile = ProfileMerchant::where('user_id', $validatedData['user_id'])->first();
+
         if (!$profile) {
             $profile = new ProfileMerchant;
             $profile->user_id = $validatedData['user_id'];
         }
+
         $profile->header = $validatedData['header'];
         $profile->nama_bank = $validatedData['nama_bank'];
         $profile->rekening = $validatedData['rekening'];
         $profile->deskripsi = $validatedData['deskripsi'];
         $profile->save();
-        // ProfileMerchant::create($validatedData);
+
         return redirect('/penjual')->with('success', 'Edit data Success!');
+    } catch (ValidationException $e) {
+        // Handle validation errors
+        return redirect()->back()->withErrors($e->errors())->withInput();
+    } catch (\Exception $e) {
+        // Handle other exceptions
+        return redirect()->back()->with('error', 'An error occurred during data editing.');
+    }
     }
 
     /**

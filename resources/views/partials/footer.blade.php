@@ -2,7 +2,7 @@
     <div class="container pt-4">
         <div class="row pt-5">
             <div class="col-md-6">
-                <img style="width: 180px" src="img/Logo_Pre-Order.svg" alt="LogoPre_Order" width="50" class="me-2">
+                <img style="width: 180px" src="/img/Logo_Pre-Order.svg" alt="LogoPre_Order" width="50" class="me-2">
                 <br><br>
                 <hr>
 
@@ -26,14 +26,14 @@
                 </div>
                 <div class="text-txt pt-5">
                     Privacy Policy <span>Terms of Service</span> Follow Us
-                    <img style="margin-left: 20px;" width="25px" src="img/icon_instagram.svg" alt="Instagram"
+                    <img style="margin-left: 20px;" width="25px" src="/img/icon_instagram.svg" alt="Instagram"
                         class="social-icon">
                 </div>
 
                 <div class="pt-4">© 2023 Pre-Order | Pre-Order is a trademark of PT Proyek TI Sanatha Dharma. Registered in Intellectual Property of Proyek TI Class.</div>
             </div>
             <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <img style="background-color: black" src="img/Pre-Order-footer.png" class="img-fluid" alt="..."
+                <img style="background-color: black" src="/img/Pre-Order-footer.png" class="img-fluid" alt="..."
                     width="600px">
             </div>
 

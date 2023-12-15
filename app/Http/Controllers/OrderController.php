@@ -8,6 +8,7 @@ use App\Models\Pembuatan;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class OrderController extends Controller
 {
@@ -43,21 +44,33 @@ class OrderController extends Controller
     public function store(StoreOrderRequest $request)
     {
         // dd($request); 
-        $validatedData = $request->validate([
-            'bukti_pembayaran' => 'image'
-        ]);
-
-        if ($request->hasFile('bukti_pembayaran') && $request->file('bukti_pembayaran')->isValid()) {
-            $validatedData['bukti_pembayaran'] = $request->file('bukti_pembayaran')->store('post-images');
+        try {
+            $validatedData = $request->validate([
+                'bukti_pembayaran' => 'image|required',
+                // Add other validation rules for your fields
+            ]);
+        
+            if ($request->hasFile('bukti_pembayaran') && $request->file('bukti_pembayaran')->isValid()) {
+                $validatedData['bukti_pembayaran'] = $request->file('bukti_pembayaran')->store('post-images');
+            }
+        
+            $validatedData['tanggal_pemesanan'] = $request->input('tanggal_pemesanan');
+            $validatedData['pembuatan_id'] = $request->input('pembuatan_id');
+            $validatedData['user_id'] = $request->input('user_id');
+            $validatedData['total_produk'] = $request->input('total_produk');
+            $validatedData['harga_pembayaran'] = $request->input('harga_pembayaran');
+            $validatedData['keterangan'] = $request->input('keterangan');
+        
+            Order::create($validatedData);
+        
+            return redirect('/history')->with('success', 'Order Success!');
+        } catch (ValidationException $e) {
+            // Handle validation errors
+            return redirect()->back()->withErrors($e->errors())->withInput();
+        } catch (\Exception $e) {
+            // Handle other exceptions
+            return redirect()->back()->with('error', 'An error occurred during order processing.');
         }
-        $validatedData['tanggal_pemesanan']=$request->input('tanggal_pemesanan');
-        $validatedData['pembuatan_id']=$request->input('pembuatan_id');
-        $validatedData['user_id']=$request->input('user_id');
-        $validatedData['total_produk']=$request->input('total_produk');
-        $validatedData['harga_pembayaran']=$request->input('harga_pembayaran');
-        $validatedData['keterangan']=$request->input('keterangan');
-        Order::create($validatedData);
-        return redirect('/history')->with('success', 'Order Success!');
     }
 
     /**

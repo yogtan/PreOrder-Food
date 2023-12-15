@@ -5,10 +5,20 @@
         <div class="container pt-2 mt-5">
 
             <div class="row justify-content-center">
+                @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
 
+                    @if(session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                 <div class="col-md-6">
                     <div class="order-makanan">
-                        <h3>{{ $produk->name }}</h3>
+                        <h3>{{ $produk->nama_produk }}</h3>
                     </div>
                     <div class="pt-3"></div>
                     <div class="card">
@@ -80,7 +90,12 @@
                             <textarea name="keterangan" id="keterangan" cols="57" rows="5" placeholder="Keterangan Pemesanan produk" class="rounded-1 p-2 fs-5 mt-3"></textarea>
                             <p class="pesanan2 pt-3  mb-0">Upload Payment Image</p>
                             <input type="file" name="bukti_pembayaran" accept="image/*" id="payment_image"
-                                style="width: 605px; height: 30px;" />
+                                style="width: 605px; height: 30px;" class=" @error('bukti_pembayaran') is-invalid @enderror"/>
+                            @error('bukti_pembayaran')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="text-center pt-3">
                                 <button id="uploadTransactionButton" type="submit" class="uploadbtn">Order Now!</button>
                             </div>

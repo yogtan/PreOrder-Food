@@ -66,16 +66,14 @@
                     </div>
                 </div>
             </div>
-            @if (!$others)
+            @if ($others->isEmpty())
                 <h1 class="mt-3">No Other Products</h1>
             @else
-                
-            
             <div class="ProductPertama row pt-5">
                 @foreach($others as $produk)
                     <div class="col-md-3 Product">
-                        <a href="/product/{{ $produk->produk_id }}" style="text-decoration: none; color: inherit;">
-                        <div class="card" style="width: 19rem; height: 27rem" data-product-id="{{ $produk->produk_id }}">
+                        {{-- <a href="/product/{{ $produk->produk_id }}" style="text-decoration: none; color: inherit;"> --}}
+                        <div class="card productMakan" style="width: 19rem; height: 27rem" data-product-id="{{ $produk->id }}">
                             <!-- Assuming you have a field for the product image -->
                             @if ($produk->foto_produk)
                             <img src="{{ asset('storage/'. $produk->foto_produk) }}" class="card-img-top" alt="...">
@@ -91,10 +89,10 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
-
-                
-        </div>
+                    
+                    
+                    @endforeach
+                </div>
         @endif
         
         <script>

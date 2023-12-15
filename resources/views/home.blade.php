@@ -22,7 +22,7 @@
             <div class="row pt-5">
                 @foreach($produks as $produk)
                 <div class="col-md-3  mb-4">
-                    <div class="card productMakan" style="width: 19rem; height: 27rem" data-product-id="{{ $produk->produk_id }}">
+                    <div class="card productMakan" style="width: 19rem; height: 27rem" data-product-id="{{ $produk->id }}">
                         @if ($produk->foto_produk)
                         <img src="{{ asset('storage/'. $produk->foto_produk) }}" class="card-img-top" alt="...">
                         @else

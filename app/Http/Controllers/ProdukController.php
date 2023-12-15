@@ -49,13 +49,13 @@ class ProdukController extends Controller
         $produk = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
                             ->join('users', 'produks.user_id', '=', 'users.id')
                             ->select('pembuatans.*', 'produks.nama_produk','produks.user_id','produks.foto_produk','produks.harga', 'users.name')
-                            ->where('produks.id', '=', $id)
+                            ->where('pembuatans.id', '=', $id)
                             ->first();
                             // dd($produk);
         $others = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
                             ->join('users', 'produks.user_id', '=', 'users.id')
                             ->where('produks.user_id', '=', $produk->user_id)
-                            ->where('produks.id', '!=', $id)
+                            ->where('pembuatans.id', '!=', $produk->id)
                             ->where('pembuatans.tanggal_jadi', '>=', now())
                             ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name')
                             ->get();

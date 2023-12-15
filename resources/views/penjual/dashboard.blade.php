@@ -4,6 +4,17 @@
 <div class="content">
     <div class="container px-5 mt-5">
         <h1 class="text-white">Dashboard</h1>
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
         <div class="cards mt-5 ">
             <div class="card mx-auto p-3 shadow-1" style="width: 30rem; height:20rem;">
                 <div class="card-body">
