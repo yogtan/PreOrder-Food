@@ -38,7 +38,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
+    {{-- <script>
         flatpickr("#tanggalPengiriman", {
             mode: "range",
             minDate: "today",
@@ -51,7 +51,7 @@
                 }
             ]
         });
-    </script>
+    </script> --}}
     <script>
         // $(document).ready(function() {
         //     // Menangani klik pada card ProductPertama
