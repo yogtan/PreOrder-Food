@@ -38,6 +38,20 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    {{-- <script>
+        flatpickr("#tanggalPengiriman", {
+            mode: "range",
+            minDate: "today",
+            dateFormat: "Y-m-d",
+            allowInput: false,
+            click: false,
+            disable: [
+                function(date) {
+                    return (date < new Date() || date > new Date("{{ $produk->tanggal_jadi }}"));
+                }
+            ]
+        });
+    </script> --}}
     <script>
         // $(document).ready(function() {
         //     // Menangani klik pada card ProductPertama

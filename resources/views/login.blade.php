@@ -20,8 +20,8 @@
 <body>
 
     @include('partials.navbar')
-    <section class="login align-items-center border border-danger row">
-        <div class="container-md  col-md-6 col-12 border border-danger justify-content-center d-flex">
+    <section class="login align-items-center">
+        <div class="container-md mx-auto col-md-6 col-12 justify-content-center">
             <div class="w-100">
 
                 @if(session('success'))
@@ -35,10 +35,10 @@
                         {{ session('error') }}
                     </div>
                 @endif
-                <h2 class="login-tittle text-center border">Login</h2>
-                <form action="/login" method="post" class=" border-success border ms-auto me-auto">
+                <h2 class="login-tittle text-center">Login</h2>
+                <form action="/login" method="post" class="ms-auto me-auto">
                     @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
-                    <div class="form-group pt-4 w-100 border border-primary ">
+                    <div class="form-group pt-4 w-100">
                         <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
                             placeholder="  Email" required>
                             @error('email')

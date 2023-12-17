@@ -21,7 +21,7 @@
 
     @include('partials.navbar')
     <section class="daftar align-items-center">
-        <div class="container mt-2 mx-auto">
+        <div class="container mt-2 mx-auto col-md-6 col-12">
             <h2 class="daftar-title text-center">Create Account Customer</h2>
             <form action="/register" method="post">
                 @csrf
