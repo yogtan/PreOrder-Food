@@ -3,6 +3,7 @@
     <section class="heroproduct">
         <div class="container pt-5">
             <div class="row">
+
                 <!-- Kolom Kiri (Nama Produk dan Pesan) -->
                 <div class="col-lg-6">
                     @if(session('success'))
