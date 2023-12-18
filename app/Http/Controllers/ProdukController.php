@@ -48,11 +48,7 @@ class ProdukController extends Controller
     {
         $produk = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
                             ->join('users', 'produks.user_id', '=', 'users.id')
-<<<<<<< HEAD
                             ->select('pembuatans.*', 'produks.deskripsi','produks.nama_produk','produks.user_id','produks.foto_produk','produks.harga', 'users.name')
-=======
-                            ->select('pembuatans.*', 'produks.deskripsi', 'produks.nama_produk','produks.user_id','produks.foto_produk','produks.harga', 'users.name')
->>>>>>> 3865d7c69f156c704d1fd68565e15b937dd65f93
                             ->where('pembuatans.id', '=', $id)
                             ->first();
                             // dd($produk);
