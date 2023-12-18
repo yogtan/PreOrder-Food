@@ -3,8 +3,8 @@
 
 <div class="content">
     <div class="row">
-        <div class="col-md-5"></div>
-        <div class="col">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
             <section class="">
                 <h1 class="text-white fw-bold mb-3">Laporan Bulanan</h1>
                 <div id="GrafikDLL" class="d-flex justify-content-between">
