@@ -134,6 +134,25 @@
                                         </div>
                                     </div>
                                 </div>
+            <!-- Card baru untuk "How to transfer" -->
+            <div class="row justify-content-center pt-5">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="pesanan">How to transfer</p>
+                            <div id="transferDetails" style="display: none;">
+                                
+                                <p>1. Klik jumlah makanan yang ingin dipesan</p>
+                                <p>2. Transfer ke Rekening penjual</p>
+                                <p>3. Upload bukti transfer</p>
+                                <p>4. Tambahkan keterangan pesanan (opsional)</p>
+                                <p>5. Klik Tombol Pesan</p>
+                            </div>
+                            <button class="btn btn-link" onclick="toggleTransferDetails()">Show Transfer Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
                             </div>
 

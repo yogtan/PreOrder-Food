@@ -48,7 +48,7 @@ class ProdukController extends Controller
     {
         $produk = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
                             ->join('users', 'produks.user_id', '=', 'users.id')
-                            ->select('pembuatans.*', 'produks.deskripsi', 'produks.nama_produk','produks.user_id','produks.foto_produk','produks.harga', 'users.name')
+                            ->select('pembuatans.*', 'produks.deskripsi','produks.nama_produk','produks.user_id','produks.foto_produk','produks.harga', 'users.name')
                             ->where('pembuatans.id', '=', $id)
                             ->first();
                             // dd($produk);
