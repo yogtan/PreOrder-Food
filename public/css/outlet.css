@@ -14,7 +14,7 @@ body {
 
 
 .heroutlet {
-    margin-top: 60px;
+    /* margin-top: 60px; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     background-position: center;
@@ -37,4 +37,27 @@ section.heroutlet img {
 
 .text-txt span {
     margin: 0px 50px;
+}
+
+.outletni{
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+
+@media (max-width: 992px) {
+   
+    .heroutlet {
+        margin-top: -40px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        background-position: center;
+        min-height: 65vh;
+      
+        position: relative;
+    }
+    .outletni{
+        max-height: 300px;
+    }
+    
 }
