@@ -8,9 +8,9 @@ $menus = [];
 <div class="content">
     <div class="container px-md-5 mt-5 py-2 ">
         <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col">
-                <h1 class="text-secondary fw-bold">Kelola Pesanan</h1>
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <h1 class=" fw-bold">Kelola Pesanan</h1>
                 <div class="rounded-2 bg-white w-100 h-100 mt-2 shadow-1 relative">
                     @if(session('success'))
                         <div class="alert alert-success">
@@ -24,26 +24,28 @@ $menus = [];
                         </div>
                     @endif
                     <div class="p-5">
-                        <div>
-                            <div class="d-flex justify-content-between items-top">
+                        <div class="row align-items-center">
+                            <div class="col-6 col-md-10">
                                 <p class="fs-4">Total <span class="fw-bold">PESANAN</span></p>
-                                <img src="/img/icon_document_green.svg" alt="Kart_icon" width=70>
+                                <h1 class="fw-bold ">{{ $totalOrders }}</h1>
                             </div>
-                            <h1 class="fw-bold text-red">{{ $totalOrders }}</h1>
+                            <div class="col-6 col-md-2 d-flex justify-content-end">
+                                <img src="/img/icon_document_green.svg" alt="Kart_icon" class="w-50">
+                            </div>
                             <p class="py-2"><img src="/img/icon_arrow.svg" class="px-2"/>Jumlah pesanan</p>
                         </div>
-                        <div>
+                        <div class="overflow-x-auto">
                             <table class="w-100 text-center t-Pesanan">
-                                <thead class="bg-red text-white">
-                                    <th>No</th>
-                                    <th>Nama Pembeli</th>
-                                    <th>Pesanan</th>
-                                    <th>Kuantitas</th>
-                                    <th>Total Harga</th>
-                                    <th>Catatan</th>
-                                    <th>View More</th>
-                                    <th>Status</th>
-                                    <th>Tindakan</th>
+                                <thead class="bg-red text-white px-6">
+                                    <th class="px-3">No</th>
+                                    <th class="px-3">Nama Pembeli</th>
+                                    <th class="px-3">Pesanan</th>
+                                    <th class="px-3">Kuantitas</th>
+                                    <th class="px-3">Total Harga</th>
+                                    <th class="px-3">Catatan</th>
+                                    <th class="px-3">View More</th>
+                                    <th class="px-3">Status</th>
+                                    <th class="px-3">Tindakan</th>
                                 </thead>
                                 <tbody class="">
                                     @foreach ($orders as $order)
