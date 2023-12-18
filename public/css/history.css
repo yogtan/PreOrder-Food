@@ -9,11 +9,15 @@ body {
 
 
 .herohistory {
-    margin-top: 200px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
+    margin-top: 100px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    /* display: block; */
     background-position: center;
     min-height: 150vh;
   
     position: relative;
+}
+
+.tavle{
+    margin-left: 205px;
 }
