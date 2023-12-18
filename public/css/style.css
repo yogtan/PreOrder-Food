@@ -330,29 +330,107 @@ body {
 
 /* card */
 
-.card{
-    width: 100%; 
+.card {
+    width: 100%;
     /* margin-left: 50px; */
     /* width: 280px; */
-    
+
     max-width: 400px;
     /* background-color: red; */
-    border-radius: 15px;
-    transition: box-shadow 0.3s ease-in-out; /* Efek transisi untuk in dan out */
-    box-shadow: none; /* Bayangan awal */
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease-in-out;
+    /* Efek transisi untuk in dan out */
+    box-shadow: none;
+    /* Bayangan awal */
     /* height:20rem; */
 }
 
-.card:hover{
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06); /* Bayangan saat hover */
-    transition: box-shadow 0.3s ease-in-out; /* Efek transisi saat hover */
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+    /* Bayangan saat hover */
+    transition: box-shadow 0.3s ease-in-out;
+    /* Efek transisi saat hover */
 }
 
-.card-title{
-    font-size: 20px;
+.card-title {
+    font-size: 15px;
+    font-weight: 300;
+
+}
+
+.card-text {
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Menambahkan elipsis (...) jika teks terlalu panjang */
+    white-space: nowrap;
+    /* white-space: n; */
+    /* Mencegah teks untuk mematahkan baris */
+}
+
+.card-text2 {
+    /* padding-top: -4px; */
+    margin-top: -12px;
+    /* padding-bottom: 15px; */
+    font-size: 12px;
+
+}
+
+
+
+
+/* Media queries untuk tampilan portrait (lebar layar < 768px) */
+@media (max-width: 993px) {
+    .menus .row [class*="col-"] {
+        flex: 0 0 50%; /* Menampilkan 2 kartu per baris */
+        max-width: 50%;
+    }
+
+    .imagecard {
+        max-width: 150px;
+        border-radius: 12px;
+        max-height: 150px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card {
+        flex-direction: row;
+        overflow: hidden; 
+    }
+}
+
+@media (max-width: 768px) {
+    .menus .row [class*="col-"] {
+        flex: 0 0 100%; /* Menampilkan 1 kartu per baris */
+        max-width: 100%;
+    }
+
+    .card {
+        position: relative; 
+        flex-direction: row;
+        overflow: hidden; 
+        max-width: 600px;
+    }
     
+    .imagecard {
+        max-width: 150px;
+        border-radius: 12px;
+        max-height: 150px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card .card-img-top {
+        max-height: 150px;
+        overflow: hidden;
+    }
 }
 
-
-
-
+.deskripsi{
+    /* background-color: red; */
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    object-fit: contain;
+}

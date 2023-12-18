@@ -25,17 +25,19 @@
                         <div class="my-3 justify-content-center col-sm-6 col-md-3 col-lg-3 ">
                             <div class="card p-2 productMakan  justify-content-center"data-product-id="{{ $produk->id }}">
                                 @if ($produk->foto_produk)
-                                    <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top"
-                                        alt="..." width="100" height="220" style="border-radius: 15px;">
+                                    <div class="imagecard">
+                                        <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top"
+                                            alt="..." width="100" height="220" style="border-radius: 12px;">
+                                    </div>
                                 @else
                                     <img src="/img/Poster-Product.svg" class="card-img-top" alt="Nasi Goreng" width=298>
                                 @endif
-                                <div style="text-align:left" class="card-body">
+                                <div style="text-align:left" class="deskripsi card-body">
                                     <h5 class="card-title">{{ $produk->name }}</h5>
-                                    <p class="card-text"><strong>{{ $produk->nama_produk }}</strong></p>
-                                    <p class="card-text">Rp {{ number_format($produk->harga, 0, ',', '.') }}</p>
-                                    <hr>
-                                    <p class="card-text">{{ $produk->tanggal_jadi }}</p>
+                                    <p class="card-text">{{ $produk->nama_produk }}</p>
+                                    <p class="card-text2">Rp {{ number_format($produk->harga, 0, ',', '.') }}</p>
+                                    {{-- <hr>
+                                    <p class="card-text">{{ $produk->tanggal_jadi }}</p> --}}
                                 </div>
                             </div>
                         </div>
