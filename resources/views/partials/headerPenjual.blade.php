@@ -1,4 +1,4 @@
-      <header class="shadow-1">
+      <header class="shadow-1 p-4 p-md-4">
         <div class="px-4 my-auto justify-content-end d-none d-md-flex w-100 ">
           <div class="btn-group  h-auto">
             <h2 class="my-auto me-3 d-inline text-white  d-block ">{{ auth()->user()->name }}</h2>

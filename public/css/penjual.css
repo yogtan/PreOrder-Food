@@ -2,7 +2,6 @@
 /* Header & sidebars */
 header {
     position: relative;
-    padding: 1rem;
     background-color: #00bf63;
     z-index: 98;
 }
