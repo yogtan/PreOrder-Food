@@ -53,7 +53,8 @@ body {
 }
 
 .deskrip{
-    padding: 20px 0px;
+    
+    margin-bottom: 40px;
     font-weight: 100;
 }
 
@@ -299,4 +300,38 @@ body {
         align-items: end;
         text-align: end;
     }
+}
+@media (max-width: 600px) {
+    .product-info{
+        text-align: left;
+    }
+
+    .btn-panjang{
+        background-color: black;
+        color: white;
+        padding: 10px 50px; /* Sesuaikan padding sesuai kebutuhan */
+        
+    }
+
+    .imagecard {
+        max-width: 150px;
+        border-radius: 12px;
+        max-height: 150px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card {
+        flex-direction: row;
+        overflow: hidden; 
+    }
+}
+
+.info-profile{
+    font-size: 18px;
+}
+
+.nama-produk{
+    margin-top: -25px;
+    font-weight: 400;
 }

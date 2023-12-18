@@ -4,6 +4,16 @@
         <div class="container pt-5">
             <div class="row">
 
+                <!-- Kolom Kanan (Gambar Produk) -->
+                <div class="col-lg-6 col-md-3 col-lg-3 text-center border border-danger">
+                    @if ($produk->foto_produk)
+                        <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top" alt="..." width="400px" height="300px">
+                    @else
+                        {{-- <img src="/img/Poster-Product.svg" class="card-img-top" alt="Nasi Goreng" width=298> --}}
+                        <img src="/img/Poster-Product.svg" alt="Gambar Produk" class="product-image img-fluid" width="400px">
+                    @endif
+                </div>
+
                 <!-- Kolom Kiri (Nama Produk dan Pesan) -->
                 <div class="col-lg-6">
                     @if (session('success'))
@@ -19,32 +29,24 @@
                     @endif
                     <div class="product-info" data-product-id="{{ $produk->produk_id }}">
                         <h5 class="info-profile">{{ $produk->name }}</h5>
-                        <h2>{{ $produk->nama_produk }}</h2>
+                        <h2 class="nama-produk">{{ $produk->nama_produk }}</h2>
                         <h4>Rp {{ number_format($produk->harga, 0, ',', '.') }}</h4>
-                        <p class="deskrip">{{ $produk->deskripsi }}</p>
                         <hr>
+                        <p class="deskrip">{{ $produk->deskripsi }}</p>
 
                         {{-- <div class="info-preorder">Pre Order H-1</div> --}}
-                        <div class="info-pesan">
+                        <div class="info-pesan border   ">
                             <div class="info-kirim">
                                 Tanggal Pengiriman <input type="text" id="tanggalPengiriman"
                                     name="tanggal_pengiriman"class="border-0" value="{{ $produk->tanggal_jadi }}" readonly>
                             </div>
-                            <button class="btn btn-dark btn-panjang" id="btnPesan">Pesan</button>
+                            <button class="btn btn-dark btn-panjang btn-pesan" id="btnPesan">Pesan</button>
                         </div>
                     </div>
                 </div>
 
 
-                <!-- Kolom Kanan (Gambar Produk) -->
-                <div class="col-lg-6 text-center border border-danger">
-                    @if ($produk->foto_produk)
-                        <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top" alt="...">
-                    @else
-                        {{-- <img src="/img/Poster-Product.svg" class="card-img-top" alt="Nasi Goreng" width=298> --}}
-                        <img src="/img/Poster-Product.svg" alt="Gambar Produk" class="product-image" width="400px">
-                    @endif
-                </div>
+                
             </div>
         </div>
     </section>
