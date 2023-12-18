@@ -193,7 +193,7 @@ nav {
 }
 
 #ketPendapatan {
-    width: 55vh;
+    /* width: 55vh; */
 }
 
 .color-green {
@@ -247,8 +247,8 @@ nav {
 }
 
 .totalPenjualan {
-    width: 40vh;
-    margin-right: 3vh;
+    /* width: 40vh; */
+    /* margin-right: 3vh; */
 }
 
 #bannerPenjual {

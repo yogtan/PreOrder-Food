@@ -1,49 +1,52 @@
 @extends('layouts.penjual')
 @section('penjualContent')  
 
-<div class="content">
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-8">
-            <section class="">
-                <h1 class="text-white fw-bold mb-3">Laporan Bulanan</h1>
-                <div id="GrafikDLL" class="d-flex justify-content-between">
-                    <div class="bg-white p-5 h-full rounded-1 shadow-1" id="chartContainer">
-                        <canvas id="lineChart"></canvas>
+<div class="content d-flex justify-content-center">
+    <div class="row container ">
+        <div class="col-md-4 col"></div>
+        <div class="col-md-8 col">
+            <div class="mt-5 ">
+                <h1 class="fw-bold mb-3">Laporan Bulanan</h1>
+                <div id="" class="row gap-2">
+                    <div id="GrafikDLL" class="col">
+                        <div class="bg-white p-5 h-100 rounded-1 shadow-1 w-100 shadow-1" id="chartContainer">
+                            <canvas id="lineChart"></canvas>
+                        </div>
                     </div>
-                    <div id="ketPendapatan" class="bg-white w-15 d-flex items-center p-5 rounded-1 justify-content-center shadow-1">
-                        <div class="my-auto">
-                            <div>
-                                <p class="subTitle-2">total Pendapatan Bulan ini</p>
-                                <h1 class="color-green fw-700">Rp {{ number_format($thisMonthEarn, 0, ',', '.') }}</h1>
-                                <p class="subTitle-1">jumlah total penjual bulan ini</p>
-                            </div>
-                            <hr>
-                            <div>
-                                <p class="subTitle-2">total Pendapatan Bulan lalu</p>
-                                <h1 class="color-red fw-700">Rp {{ number_format($lastMonthEarn, 0, ',', '.') }}</h1>
-                                <p class="subTitle-1">jumlah total penjual bulan lalu</p>
+                    <div class="col">
+                        <div id="ketPendapatan" class="bg-white w-15 d-flex items-center p-5 rounded-1 justify-content-center shadow-1">
+                            <div class="my-auto">
+                                <div>
+                                    <p class="subTitle-2">total Pendapatan Bulan ini</p>
+                                    <h1 class="color-green fw-700">Rp {{ number_format($thisMonthEarn, 0, ',', '.') }}</h1>
+                                    <p class="subTitle-1">jumlah total penjual bulan ini</p>
+                                </div>
+                                <hr>
+                                <div>
+                                    <p class="subTitle-2">total Pendapatan Bulan lalu</p>
+                                    <h1 class="color-red fw-700">Rp {{ number_format($lastMonthEarn, 0, ',', '.') }}</h1>
+                                    <p class="subTitle-1">jumlah total penjual bulan lalu</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="container px-5 mt-2 py-2 d-flex justify-content-between">
-                <div class="">
-                    <div class="bg-white totalPenjualan mb-2 shadow-1 p-4 rounded-1 text-center">
-                        <p>total penjualan bulan ini</p>
-                        <h1 class="color-green fw-700">{{ $totalOrdersThisMonth }}</h1>
-                        <p>jumlah total penjualan bulan ini</p>
-                    </div>
-                    <div class="bg-white totalPenjualan shadow-1 p-4 rounded-1 text-center">
-                        <p>total penjualan bulan lalu</p>
-                        <h1 class="color-red fw-700">{{ $totalOrdersLastMonth }}</h1>
-                        <p>jumlah total penjualan bulan lalu</p>
-        
-                    </div>
+            </div>
+            <div class="row mt-2 gap-2">
+                <div class="col-12 col-md-6 ">
+                        <div class="bg-white totalPenjualan mb-2 shadow-1 p-4 rounded-1 text-center">
+                            <p>total penjualan bulan ini</p>
+                            <h1 class="color-green fw-700">{{ $totalOrdersThisMonth }}</h1>
+                            <p>jumlah total penjualan bulan ini</p>
+                        </div>
+                        <div class="bg-white totalPenjualan shadow-1 p-4 rounded-1 text-center">
+                            <p>total penjualan bulan lalu</p>
+                            <h1 class="color-red fw-700">{{ $totalOrdersLastMonth }}</h1>
+                            <p>jumlah total penjualan bulan lalu</p>
+            
+                        </div>
                 </div>
-                <div class="tabelLaporan bg-white shadow-1 rounded-1 overflow-auto">
-                    
+                <div class="col col-md-6 bg-white shadow-1 rounded-1 overflow-auto container p-md-3 border">
                     <table id="laporanTable" class="border w-100 rounded-1">
                         <thead class="border text-center bg-hijau text-white fw-bold position-sticky">
                             <th class="py-4">No</th>
@@ -66,8 +69,9 @@
                         </tbody>
                     </table>
                 </div>
-            </section>
+            </div>
         </div>
+        
     </div>
 </div>
 
