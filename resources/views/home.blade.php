@@ -19,8 +19,8 @@
                 <p>Discover our collection of popular food in
                     Sanata Dharma</p>
             </div>
-            <div class="menus">
-                <div class="row pt-5">
+            <div class="menus border border-danger">
+                <div class="row pt-5 border border-danger">
                     @foreach ($produks as $produk)
                         <div class="my-3 justify-content-center col-sm-6 col-md-3 col-lg-3 ">
                             <div class="card p-2 productMakan  justify-content-center"data-product-id="{{ $produk->id }}">

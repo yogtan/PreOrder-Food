@@ -434,3 +434,12 @@ body {
     text-overflow: ellipsis;
     object-fit: contain;
 }
+
+.box1{
+    flex: 1;
+}
+
+.box2{
+    flex: 1;
+    align-content: end;
+}

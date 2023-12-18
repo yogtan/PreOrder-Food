@@ -6,13 +6,13 @@
 
                 <!-- Kolom Kiri (Nama Produk dan Pesan) -->
                 <div class="col-lg-6">
-                    @if(session('success'))
+                    @if (session('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
                         </div>
                     @endif
 
-                    @if(session('error'))
+                    @if (session('error'))
                         <div class="alert alert-danger">
                             {{ session('error') }}
                         </div>
@@ -27,7 +27,8 @@
                         {{-- <div class="info-preorder">Pre Order H-1</div> --}}
                         <div class="info-pesan">
                             <div class="info-kirim">
-                                Tanggal Pengiriman <input type="text" id="tanggalPengiriman" name="tanggal_pengiriman"class="border-0" value="{{ $produk->tanggal_jadi }}" readonly>
+                                Tanggal Pengiriman <input type="text" id="tanggalPengiriman"
+                                    name="tanggal_pengiriman"class="border-0" value="{{ $produk->tanggal_jadi }}" readonly>
                             </div>
                             <button class="btn btn-dark btn-panjang" id="btnPesan">Pesan</button>
                         </div>
@@ -36,12 +37,12 @@
 
 
                 <!-- Kolom Kanan (Gambar Produk) -->
-                <div class="col-lg-6 text-center">
+                <div class="col-lg-6 text-center border border-danger">
                     @if ($produk->foto_produk)
-                    <img src="{{ asset('storage/'. $produk->foto_produk) }}" class="card-img-top" alt="...">
+                        <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top" alt="...">
                     @else
-                    {{-- <img src="/img/Poster-Product.svg" class="card-img-top" alt="Nasi Goreng" width=298> --}}
-                    <img src="/img/Poster-Product.svg" alt="Gambar Produk" class="product-image" width="400px">
+                        {{-- <img src="/img/Poster-Product.svg" class="card-img-top" alt="Nasi Goreng" width=298> --}}
+                        <img src="/img/Poster-Product.svg" alt="Gambar Produk" class="product-image" width="400px">
                     @endif
                 </div>
             </div>
@@ -52,59 +53,61 @@
 
     <section class="product-penjual ">
         <div class="container pt-5">
-            <div class="row">
+            <div class="row border    ">
                 <!-- Kolom Kiri (Nama Produk dan Pesan) -->
-                <div class="col-lg-6">
+                <div class="box1 col-lg-4 ">
                     <div class="product-info-produk">
-                        <h5>Lihat produk lain toko ini</h5>
+                        <h5>Produk lain toko ini</h5>
                     </div>
                 </div>
 
                 <!-- Kolom Kanan (Gambar Produk) -->
-                <div class="col-lg-6 ">
-                    <div class="product-info-penjual text-right" >
+                <div class="box2 col-lg-8 text-lg-end ">
+                    
                         <a href="/outlet/{{ $produk->user_id }}">Lihat Semua</a>
-                    </div>
+                    
                 </div>
             </div>
             @if ($others->isEmpty())
                 <h1 class="mt-3">No Other Products</h1>
             @else
-            <div class="ProductPertama row pt-5">
-                @foreach($others as $produk)
-                    <div class="col-md-3 Product">
-                        {{-- <a href="/product/{{ $produk->produk_id }}" style="text-decoration: none; color: inherit;"> --}}
-                        <div class="card productMakan" style="width: 19rem; height: 27rem" data-product-id="{{ $produk->id }}">
-                            <!-- Assuming you have a field for the product image -->
-                            @if ($produk->foto_produk)
-                            <img src="{{ asset('storage/'. $produk->foto_produk) }}" class="card-img-top" alt="...">
-                            @else
-                            <img src="/img/Poster-Product.svg" class="card-img-top" alt="Nasi Goreng" width=298>
-                            @endif
-                            <div style="text-align:left" class="card-body">
-                                <h5 class="card-title">{{ $produk->name }}</h5>
-                                <p class="card-text"><strong>{{ $produk->nama_produk }}</strong></p>
-                                <p class="card-text">Rp {{ number_format($produk->harga, 0, ',', '.') }}</p>
-                                <hr>
-                                <p class="card-text">{{ $produk->tanggal_jadi }}</p>
+            <div class="menus ">
+                <div class="row pt-5 ">
+                    @foreach ($others as $produk)
+                        <div class="my-3 justify-content-center col-sm-6 col-md-3 col-lg-3 ">
+                            <div class="card p-2 productMakan  justify-content-center"data-product-id="{{ $produk->id }}">
+                                @if ($produk->foto_produk)
+                                    <div class="imagecard">
+                                        <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top"
+                                            alt="..." width="100" height="220" style="border-radius: 12px;">
+                                    </div>
+                                @else
+                                    <img src="/img/Poster-Product.svg" class="card-img-top" alt="Nasi Goreng" width=298>
+                                @endif
+                                <div style="text-align:left" class="deskripsi card-body">
+                                    <h5 class="card-title">{{ $produk->name }}</h5>
+                                    <p class="card-text">{{ $produk->nama_produk }}</p>
+                                    <p class="card-text2">Rp {{ number_format($produk->harga, 0, ',', '.') }}</p>
+                                    {{-- <hr>
+                                    <p class="card-text">{{ $produk->tanggal_jadi }}</p> --}}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    
+                        {{-- <a href="/product/{{ $produk->produk_id }}" class="d-inline" style="text-decoration: none; color: inherit;"> --}}
                     @endforeach
                 </div>
-        @endif
-        
-        <script>
-            document.getElementById('btnPesan').addEventListener('click', function() {
-                // Mengarahkan ke folder "orders" dan file "index"
-                var productId = document.querySelector('.product-info').getAttribute('data-product-id');
-                window.location.href = '/order/' + productId;
-                // window.location.href = '/orders';
-            });
-        </script>
-            
+            </div>
+            @endif
+
+            <script>
+                document.getElementById('btnPesan').addEventListener('click', function() {
+                    // Mengarahkan ke folder "orders" dan file "index"
+                    var productId = document.querySelector('.product-info').getAttribute('data-product-id');
+                    window.location.href = '/order/' + productId;
+                    // window.location.href = '/orders';
+                });
+            </script>
+
     </section>
-    
+
 @endsection
