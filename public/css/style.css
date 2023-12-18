@@ -419,11 +419,13 @@ body {
         max-height: 150px;
         overflow: hidden;
         position: relative;
+        object-fit: cover;
     }
 
     .card .card-img-top {
         max-height: 150px;
         overflow: hidden;
+        object-fit: cover;
     }
 }
 
@@ -435,11 +437,3 @@ body {
     object-fit: contain;
 }
 
-.box1{
-    flex: 1;
-}
-
-.box2{
-    flex: 1;
-    align-content: end;
-}

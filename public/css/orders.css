@@ -9,38 +9,39 @@ body {
 
 
 .herorders {
-    margin-top: 105px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     display: flex;
     background-position: center;
     min-height: 150vh;
-  
+    
     position: relative;
 }
 
 
-.pesanan{
+.pesanan {
     font-weight: 600;
     font-size: 20px;
 }
-.pesanan2{
+
+.pesanan2 {
     font-weight: 500;
     /* font-size: 20px; */
 }
 
-.produk{
+.produk {
     font-weight: 600;
 }
 
-.harga{
+.harga {
     margin-bottom: 70;
     font-size: 14px;
 }
 
-.uploadbtn{
+.uploadbtn {
     width: 100%;
     background-color: black;
-    padding: 5px ;
+    padding: 5px;
     /* background-color: #4caf50; */
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     color: white;
@@ -54,4 +55,41 @@ body {
 
 .input-container .form-control {
     flex: 1;
+}
+
+.card {
+    width: 100%;
+    max-width: 800px;
+}
+
+.custom-card {
+    width: 100%;
+    /* background-color: red; */
+}
+
+.custom-card-img {
+    width: 400px;
+    border-radius: 20px;
+}
+
+
+
+@media (max-width: 455px) {
+
+    .card {
+        position: relative;
+        flex-direction: row;
+        overflow: hidden;
+        max-width: 600px;
+    }
+    .custom-card-img {
+        width: 200px;
+        border-radius: 20px;
+    }
+
+}
+@media (max-width: 600px) {
+
+
+
 }

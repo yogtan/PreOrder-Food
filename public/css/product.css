@@ -13,7 +13,7 @@ body {
 }
 
 .heroproduct {
-    margin-top: 105px;
+    /* margin-top: 50px; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     background-position: center;
@@ -52,7 +52,8 @@ body {
 }
 
 .deskrip {
-    padding: 20px 0px;
+    /* font-size: 12px; */
+    margin-bottom: 40px;
     font-weight: 100;
 }
 
@@ -287,4 +288,57 @@ body {
         align-items: end;
         text-align: end;
     }
+}
+@media (max-width: 992px) {
+    .product-info {
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .btn-panjang {
+        background-color: black;
+        color: white;
+        padding: 10px 50px; /* Sesuaikan padding sesuai kebutuhan */
+    }
+
+    .imagecard {
+        max-width: 150px;
+        border-radius: 12px;
+        max-height: 130px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card {
+        flex-direction: row;
+        overflow: hidden;
+    }
+    .heroproduct {
+        margin-top: -100px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        background-position: center;
+        min-height: 87vh;
+
+        position: relative;
+    }
+    .deskrip {
+        font-size: 12px;
+        margin-bottom: 40px;
+        font-weight: 100;
+    }
+}
+
+.info-profile {
+    font-size: 18px;
+}
+
+.nama-produk {
+    font-size: 25px;
+    margin-top: -25px;
+    font-weight: 400;
+}
+
+.harga {
+    font-size: 15xp;
 }
