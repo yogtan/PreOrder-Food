@@ -10,7 +10,7 @@
             @csrf
             
             <div id="profilePicture" class=" my-2">
-                <div id="bannerProduk" class="border mx-auto rounded-1 border bg-white d-flex shadow-1 w-100 h-100 p-2">
+                <div id="bannerProduk" class="border mx-auto rounded-1 border bg-white shadow-1 w-100 h-100 p-2">
                     <div  class="mx-auto my-auto text-center">
                         <!-- <img id="imageBanner" src="" alt="" class="d-none"> -->
                         <img id="imageProduct"src="/img/icon_UploadIMG.svg" alt="" class="" >
@@ -42,7 +42,7 @@
                             @enderror  
 
                         </div>
-                        {{-- <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between">
                             <div class="w-50 pe-2">
                                 <label for="tanggalOpenPreOrder" class=" w-100">Tanggal Open Pre-Order</label>
                                 <input type="date" name="tanggalOpenPreOrder" placeholder="" class="rounded-1 ps-2 fs-5 mb-3" style="width:100%; height:40px;">
@@ -52,7 +52,7 @@
                                 <input type="date" name="tanggalOpenPreOrder" placeholder="" class="rounded-1 ps-2 fs-5 mb-3" style="width:100%; height:40px;">
                             </div>
                             
-                        </div> --}}
+                        </div>
                         <textarea name="deskripsi" id="deskripsiToko" cols="70" rows="5" placeholder="deskripsi produk" class="rounded-1 p-2 fs-5 @error('deskripsi') is-invalid @enderror" value="{{ old('deskripsi') }}"></textarea>
                         @error('deskripsi')
                         <div class="invalid-feedback">

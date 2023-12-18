@@ -1,10 +1,10 @@
 @extends('layouts.penjual')
 
 @section('penjualContent')
-<div class="content overflow-hidden pe-xl-3">
+<div class="content overflow-hidden pe-xl-3 p-2">
     <div class="row">
-        <div class="col-md-5 col-lg-4 col-xl-3 col-xxl-2 border"></div>
-        <div class="col justify-content-center border">
+        <div class="col-md-5 col-lg-4 col-xl-3 col-xxl-2 "></div>
+        <div class="col justify-content-center ">
             <div class="px-2 mt-5 d-sm-block ">
                 <div class="row">
                     <div class="col ">
@@ -22,7 +22,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="row gap-3 border">
+                <div class="row gap-3 ">
                     <div class="col col-sm-12 col-xl justify-content-end d-flex">
                         <div class="card mx-auto p-3 shadow-1 h-100" >
                             <div class="card-body">
@@ -86,7 +86,34 @@
                             <div class="row justify-content-center align-items-center">
                                 <div class="col-12 col-sm-12 overflow-x-auto ">
                                     <!-- table for mobile -->
-                                    <table class="border h-auto table-w-default mx-auto">
+                                    <table class="border h-auto  d-table d-md-none w-100 ">
+                                        <thead class="border text-center bg-hijau text-white fw-bold">
+                                            <th class=" py-sm-4 py-2 px-2">No</th>
+                                            <th class=" py-sm-4 py-2 px-2">Nama Pembeli</th>
+                                            <th class=" py-sm-4 py-2 px-2">Nama Produk</th>
+                                            <th class=" py-sm-4 py-2 px-2">Kuantitas</th>
+                                            <th class=" py-sm-4 py-2 px-2">Total Harga</th>
+                                        </thead>
+                                        <tbody class="text-center">
+                                        @foreach ( $orders as $order)
+                                            <tr class="">
+                                                <td class="py-4">{{ $loop->iteration }}</td>
+                                                <td class="py-4">{{ $order->name }}</td>
+                                                <td class="py-4">{{ $order->nama_produk }}</td>
+                                                <td class="py-4">{{ $order->total_produk }}</td>
+                                                <td class="py-4">Rp {{ number_format($order->harga_pembayaran, 0, ',', '.') }}</td>
+                                            </tr>
+                                        @endforeach
+                                       {{-- <tr class="">
+                                                <td class="py-4">1</td>
+                                                <td class="py-4">Abdi sang</td>
+                                                <td class="py-4">Risoles</td>
+                                                <td class="py-4">1</td>
+                                                <td class="py-4">Rp.10.000</td>
+                                            </tr> --}}
+                                        </tbody>
+                                    </table>
+                                    <table class=" h-auto w-100 d-none d-md-table border">
                                         <thead class="border text-center bg-hijau text-white fw-bold">
                                             <th class=" py-sm-4 py-2 px-2">No</th>
                                             <th class=" py-sm-4 py-2 px-2">Nama Pembeli</th>

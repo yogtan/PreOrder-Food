@@ -1,57 +1,57 @@
 
-<nav class="bg-white border h-100 position-fixed p-xl-4 p-md-2 d-none d-md-block">
-  <a class="nav-link fs-2 fw-bold border-bottom  text-center my-xl-3 border" href="">
-    <img src="/img/Logo_Pre-Order.svg" alt="Logo PreOrder" class="border">
+<nav class="bg-white h-100 position-fixed p-xl-4 p-md-2 d-none d-md-block shadow-1">
+  <a class="nav-link fs-2 fw-bold border-bottom d-flex justify-content-center my-xl-3 py-4" href="">
+    <img src="/img/Logo_Pre-Order.svg" alt="Logo PreOrder" class="">
   </a>
-  <div class="row border border-primary">
-    <div class="col border border-danger">
-      <a class="nav-link fs-1 fs-md-4 text-center" href="/penjual/">
-        <div class="row border border-primary align-items-center">
-          <div class="col-4 border">
+  <div class="row ">
+    <div class="col ">
+      <a class="nav-link fs-1 fs-md-4 py-2" href="/penjual/">
+        <div class="row align-items-center">
+          <div class="col-4 d-flex justify-content-end">
             <img src="/img/icon_Monitor.svg" class="" alt="" width=40 class=""/>
           </div>
-          <div class="col-8 border">
-            <h3 class="">Dasboard</h3>
+          <div class="col-8">
+            <h5 class="">Dasboard</h5>
           </div>
         </div>
       </a>
-      <a class="nav-link fs-1 text-center" href="/penjual/product">
+      <a class="nav-link fs-1 py-2" href="/penjual/product">
         <div class="row align-items-center justify-content-center">
-          <div class="col-4 border">
+          <div class="col-4 d-flex justify-content-end">
             <img src="/img/icon_kart.svg" alt="" width=40 />
           </div>
-          <div class="col-8">
-            <h3 class="">Product</h3>
+          <div class="col-8 ">
+            <h5 class="">Product</h5>
           </div>
         </div>
       </a>
-      <a class="nav-link fs-1 text-center" href="/penjual/kelolaPesanan">
+      <a class="nav-link fs-1 py-2" href="/penjual/kelolaPesanan">
         <div class="row align-items-center justify-content-center">
-          <div class="col-4 border">
+          <div class="col-4 d-flex justify-content-end ">
             <img src="/img/icon_pesanan.svg" alt="" width=40 />      
           </div>
-          <div class="col-8 border">
-            <h3 class="">Pesanan</h3>
+          <div class="col-8 ">
+            <h5 class="">Pesanan</h5>
           </div>
         </div>
       </a>
-      <a class="nav-link text-center " href="/penjual/laporanBulanan">
+      <a class="nav-link  py-2" href="/penjual/laporanBulanan">
         <div class="row align-items-center ">
-          <div class="col-4 border ">
-            <img src="/img/icon_money.svg" class="border" alt="" width=40 class="my-auto"/>
+          <div class="col-4  d-flex justify-content-end">
+            <img src="/img/icon_money.svg" class="" alt="" width=40 class="my-auto"/>
           </div>
-          <div class="col-8 border">
-            <h3 class="border">Laporan Bulanan</h3>
+          <div class="col-8 ">
+            <h5 class="">Laporan Bulanan</h5>
           </div>
         </div>
       </a>
-      <a class="nav-link text-center " href="/penjual/editPenjual/{{ auth()->user()->id }}">
+      <a class="nav-link  py-2" href="/penjual/editPenjual/{{ auth()->user()->id }}">
         <div class="row align-items-center">
-          <div class="col border align-items-center d-flex justify-content-center">
+          <div class="col text-center align-items-center d-flex justify-content-end">
             <img src="/img/edit.svg" alt="" width=40 class=""/>
           </div>
           <div class="col-8">
-            <h3 class="h-100">Edit Profile</h3>
+            <h5 class="h-100">Edit Profile</h5>
           </div>
         </div>
       </a>
