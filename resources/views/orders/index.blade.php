@@ -113,7 +113,11 @@
                             <p class="pesanan">How to transfer</p>
                             <div id="transferDetails" style="display: none;">
                                 
-                                <p>Contohhhh ajaaa</p>
+                                <p>1. Klik jumlah makanan yang ingin dipesan</p>
+                                <p>2. Transfer ke Rekening penjual</p>
+                                <p>3. Upload bukti transfer</p>
+                                <p>4. Tambahkan keterangan pesanan (opsional)</p>
+                                <p>5. Klik Tombol Pesan</p>
                             </div>
                             <button class="btn btn-link" onclick="toggleTransferDetails()">Show Transfer Details</button>
                         </div>
