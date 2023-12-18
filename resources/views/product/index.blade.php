@@ -5,7 +5,7 @@
             <div class="row">
 
                 <!-- Kolom Kanan (Gambar Produk) -->
-                <div class="col-lg-6 col-md-3 col-lg-3 text-center border border-danger">
+                <div class="col-lg-6 col-md-3 col-lg-3 text-center">
                     @if ($produk->foto_produk)
                         <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top" alt="..." width="400px" height="300px">
                     @else
@@ -35,14 +35,10 @@
                         <p class="deskrip">{{ $produk->deskripsi }}</p>
 
                         {{-- <div class="info-preorder">Pre Order H-1</div> --}}
-                        <div class="info-pesan border   ">
+                        <div class="info-pesan  ">
                             <div class="info-kirim">
-<<<<<<< HEAD
-                                Tanggal Pengiriman {{ $produk->tanggal_jadi }}
-=======
                                 Tanggal Pengiriman <input type="text" id="tanggalPengiriman"
                                     name="tanggal_pengiriman"class="border-0" value="{{ $produk->tanggal_jadi }}" readonly>
->>>>>>> 133ef115a743e1e782d07717aa4f1169ba63156d
                             </div>
                             <button class="btn btn-dark btn-panjang btn-pesan" id="btnPesan">Pesan</button>
                         </div>
@@ -59,7 +55,7 @@
 
     <section class="product-penjual ">
         <div class="container pt-5">
-            <div class="row border    ">
+            <div class="row">
                 <!-- Kolom Kiri (Nama Produk dan Pesan) -->
                 <div class="box1 col-lg-4 ">
                     <div class="product-info-produk">
