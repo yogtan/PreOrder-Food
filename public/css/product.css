@@ -89,3 +89,214 @@ body {
     width: 700px; /* Atur lebar gambar menjadi 400px */
     height: 400px; /* Atur panjang gambar menjadi otomatis (tetap panjang) */
 }
+
+
+
+.menus {
+    /* margin-left: ; */
+    /* margin-left: 55px; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* background-color: rebeccapurple; */
+}
+
+/* card */
+
+.card {
+    width: 100%;
+    /* margin-left: 50px; */
+    /* width: 280px; */
+
+    max-width: 400px;
+    /* background-color: red; */
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease-in-out;
+    /* Efek transisi untuk in dan out */
+    box-shadow: none;
+    /* Bayangan awal */
+    /* height:20rem; */
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+    /* Bayangan saat hover */
+    transition: box-shadow 0.3s ease-in-out;
+    /* Efek transisi saat hover */
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 300;
+
+}
+
+.card-text {
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Menambahkan elipsis (...) jika teks terlalu panjang */
+    white-space: nowrap;
+    /* white-space: n; */
+    /* Mencegah teks untuk mematahkan baris */
+}
+
+.card-text2 {
+    /* padding-top: -4px; */
+    margin-top: -12px;
+    /* padding-bottom: 15px; */
+    font-size: 12px;
+
+}
+
+/* Responsive */
+@media only screen and (min-width:758px) {
+    .search-form {
+        width: 500px;
+    }
+}
+
+
+
+
+
+.menus {
+    /* margin-left: ; */
+    /* margin-left: 55px; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* background-color: rebeccapurple; */
+}
+
+/* card */
+
+.card {
+    width: 100%;
+    /* margin-left: 50px; */
+    /* width: 280px; */
+
+    max-width: 400px;
+    /* background-color: red; */
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease-in-out;
+    /* Efek transisi untuk in dan out */
+    box-shadow: none;
+    /* Bayangan awal */
+    /* height:20rem; */
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+    /* Bayangan saat hover */
+    transition: box-shadow 0.3s ease-in-out;
+    /* Efek transisi saat hover */
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 300;
+
+}
+
+.card-text {
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Menambahkan elipsis (...) jika teks terlalu panjang */
+    white-space: nowrap;
+    /* white-space: n; */
+    /* Mencegah teks untuk mematahkan baris */
+}
+
+.card-text2 {
+    /* padding-top: -4px; */
+    margin-top: -12px;
+    /* padding-bottom: 15px; */
+    font-size: 12px;
+
+}
+
+
+
+
+/* Media queries untuk tampilan portrait (lebar layar < 768px) */
+@media (max-width: 993px) {
+    .menus .row [class*="col-"] {
+        flex: 0 0 50%; /* Menampilkan 2 kartu per baris */
+        max-width: 50%;
+    }
+
+    .imagecard {
+        max-width: 150px;
+        border-radius: 12px;
+        max-height: 150px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card {
+        flex-direction: row;
+        overflow: hidden; 
+    }
+}
+
+@media (max-width: 768px) {
+    .menus .row [class*="col-"] {
+        flex: 0 0 100%; /* Menampilkan 1 kartu per baris */
+        max-width: 100%;
+    }
+
+    .card {
+        position: relative; 
+        flex-direction: row;
+        overflow: hidden; 
+        max-width: 600px;
+    }
+    
+    .imagecard {
+        max-width: 150px;
+        border-radius: 12px;
+        max-height: 150px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card .card-img-top {
+        max-height: 150px;
+        overflow: hidden;
+    }
+}
+
+.deskripsi{
+    /* background-color: red; */
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    object-fit: contain;
+}
+
+/* Untuk layar dengan lebar kurang dari atau sama dengan 991.98px */
+@media (max-width: 991.98px) {
+    .col-lg-6 {
+        flex-basis: 100%;
+        max-width: 100%;
+        text-align: center; /* Mengatur teks menjadi tengah */
+        margin-bottom: 10px; /* Menambahkan ruang antara kedua elemen */
+    }
+}
+
+.box1{
+    flex: 1;
+}
+
+.box2{
+    flex: 1;
+    align-content: end;
+}
+
+@media (max-width: 991.98px) {
+    .box2 {
+        /* background-color: red; */
+        align-items: end;
+        text-align: end;
+    }
+}

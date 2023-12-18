@@ -91,7 +91,7 @@ body {
     margin-top: 150px;
     margin-left: 9px;
     min-width: 149px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -159,7 +159,8 @@ body {
 }
 
 .his-link {
-    display: inline-block; /* Menjadikan tautan sebagai blok inline */
+    display: inline-block;
+    /* Menjadikan tautan sebagai blok inline */
     position: relative;
     text-decoration: none;
     color: #000;
@@ -168,18 +169,26 @@ body {
 /* Jika ingin memberikan efek hover pada tautan */
 
 .his-link::before {
-    content: ''; /* Menambahkan konten untuk pseudo-element */
-    position: absolute; /* Mengatur posisi absolut untuk pseudo-element */
+    content: '';
+    /* Menambahkan konten untuk pseudo-element */
+    position: absolute;
+    /* Mengatur posisi absolut untuk pseudo-element */
     bottom: -2px;
-    left: 0; /* Mulai dari posisi kiri */
-    width: 0; /* Awalnya lebarnya 0 */
-    height: 2px; /* Ketebalan garis */
-    background-color: #000; /* Warna garis bawah */
-    transition: width 0.3s ease; /* Animasi lebar garis */
+    left: 0;
+    /* Mulai dari posisi kiri */
+    width: 0;
+    /* Awalnya lebarnya 0 */
+    height: 2px;
+    /* Ketebalan garis */
+    background-color: #000;
+    /* Warna garis bawah */
+    transition: width 0.3s ease;
+    /* Animasi lebar garis */
 }
 
 .his-link:hover::before {
-    width: 82%; /* Mengubah lebar garis saat dihover menjadi 100% */
+    width: 82%;
+    /* Mengubah lebar garis saat dihover menjadi 100% */
 }
 
 
@@ -302,8 +311,135 @@ body {
 
 
 /* Responsive */
-@media only screen and (min-width:758px){
-    .search-form{
-        width:500px;
+@media only screen and (min-width:758px) {
+    .search-form {
+        width: 500px;
     }
+}
+
+
+
+
+.menus {
+    /* margin-left: ; */
+    /* margin-left: 55px; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* background-color: rebeccapurple; */
+}
+
+/* card */
+
+.card {
+    width: 100%;
+    /* margin-left: 50px; */
+    /* width: 280px; */
+
+    max-width: 400px;
+    /* background-color: red; */
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease-in-out;
+    /* Efek transisi untuk in dan out */
+    box-shadow: none;
+    /* Bayangan awal */
+    /* height:20rem; */
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+    /* Bayangan saat hover */
+    transition: box-shadow 0.3s ease-in-out;
+    /* Efek transisi saat hover */
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 300;
+
+}
+
+.card-text {
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Menambahkan elipsis (...) jika teks terlalu panjang */
+    white-space: nowrap;
+    /* white-space: n; */
+    /* Mencegah teks untuk mematahkan baris */
+}
+
+.card-text2 {
+    /* padding-top: -4px; */
+    margin-top: -12px;
+    /* padding-bottom: 15px; */
+    font-size: 12px;
+
+}
+
+
+
+
+/* Media queries untuk tampilan portrait (lebar layar < 768px) */
+@media (max-width: 993px) {
+    .menus .row [class*="col-"] {
+        flex: 0 0 50%; /* Menampilkan 2 kartu per baris */
+        max-width: 50%;
+    }
+
+    .imagecard {
+        max-width: 150px;
+        border-radius: 12px;
+        max-height: 150px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card {
+        flex-direction: row;
+        overflow: hidden; 
+    }
+}
+
+@media (max-width: 768px) {
+    .menus .row [class*="col-"] {
+        flex: 0 0 100%; /* Menampilkan 1 kartu per baris */
+        max-width: 100%;
+    }
+
+    .card {
+        position: relative; 
+        flex-direction: row;
+        overflow: hidden; 
+        max-width: 600px;
+    }
+    
+    .imagecard {
+        max-width: 150px;
+        border-radius: 12px;
+        max-height: 150px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card .card-img-top {
+        max-height: 150px;
+        overflow: hidden;
+    }
+}
+
+.deskripsi{
+    /* background-color: red; */
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    object-fit: contain;
+}
+
+.box1{
+    flex: 1;
+}
+
+.box2{
+    flex: 1;
+    align-content: end;
 }

@@ -1,13 +1,9 @@
 @extends('layouts.penjual')
 @section('penjualContent')
-<?php
-$totalProduct = 6;
-$menus = [];
-?>
 
 <div class="content">
-    <div class="container px-5 mt-5 py-2">
-        <h1 class="text-white fw-bold">Kelola Produk</h1>
+    <div class="container px-5 py-1 mt-5 px-md-5 py-md-2">
+        <h1 class="text-secondary fw-bold">Kelola Produk</h1>
         <div class="rounded-2 bg-white w-100 h-100 mt-4 shadow-1 relative">
             @if(session('success'))
                 <div class="alert alert-success">
@@ -29,8 +25,10 @@ $menus = [];
                     <h1 class="fw-bold">{{ $totalProducts }}</h1>
                     <p class="py-2"><img src="/img/icon_arrow.svg" class="px-2"/>Jumlah produk yang tersedia</p>
                 </div>
-                <div class="w-100 d-flex justify-content-end py-3">
-                    <a href="/penjual/tambahProduk" class="py-2 px-4 rounded-1 bg-green border-0 text-white ms-auto me-0 bTambah text-decoration-none">Tambah</a>
+                <div class="w-100 d-flex  py-3">
+                    <a href="/penjual/tambahProduk" class="py-2 px-4 rounded-1 bg-green text-white  bTambah text-decoration-none">
+                        Tambah
+                    </a>
                 </div>
                 <div class="menus">
                     @if ($produks->isEmpty())

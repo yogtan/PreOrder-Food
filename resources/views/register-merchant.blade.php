@@ -21,8 +21,8 @@
 
     @include('partials.navbar')
 
-    <section class="daftar border border-primary container  mt-1  mx-auto h-100 flex align-items-center">
-        <div class=" border">
+    <section class="daftar align-items-center">
+        <div class="container  mx-auto col-md-6 col-12">
             <h2 class="daftar-title text-center">Create Account Merchant</h2>
             <form action="/register-merchant" method="post" enctype="multipart/form-data" class="mx-auto px-2">
                 @csrf <!-- Token CSRF untuk melindungi form dari serangan CSRF -->
