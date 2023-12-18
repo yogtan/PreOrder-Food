@@ -26,7 +26,7 @@
                         {{-- <div class="info-preorder">Pre Order H-1</div> --}}
                         <div class="info-pesan">
                             <div class="info-kirim">
-                                Tanggal Pengiriman <input type="text" id="tanggalPengiriman" name="tanggal_pengiriman"class="border-0" value="{{ $produk->tanggal_jadi }}" readonly>
+                                Tanggal Pengiriman {{ $produk->tanggal_jadi }}
                             </div>
                             <button class="btn btn-dark btn-panjang" id="btnPesan">Pesan</button>
                         </div>
