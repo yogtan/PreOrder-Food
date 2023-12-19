@@ -3,7 +3,7 @@
 @section('penjualContent')
 <div class="content overflow-hidden pe-xl-3 p-2">
     <div class="row">
-        <div class="col-md-5 col-lg-4 col-xl-3 col-xxl-2 "></div>
+        <div class="col-md-5 col-lg-4 col-xl-3 col-xxl-3 "></div>
         <div class="col justify-content-center ">
             <div class="px-2 mt-5 d-sm-block ">
                 <div class="row">

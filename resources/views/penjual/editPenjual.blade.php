@@ -1,21 +1,21 @@
 @extends('layouts.penjual')
 @section('penjualContent')  
 
-<div class="content pt-5 overflow-hidden px-2">
-    <section class=" py-2 px-2 px-md-0">
+<div class="content mt-md-5 h-100 px-2 ">
+    <div class=" py-2 px-2 px-md-0">
         <div class="row ">
-            <div class="col col-md-3 col-xxl-2 "></div>
-            <div class="col px-md-5 px-2">
-                <div id="editPenjual" class=" px-2 rounded-1 shadow-1 mx-auto mt-2 p-2 p-md-5 w-100 overflow-hidden">
+            <div class="col-12 col-md-3 col-xxl-2 "></div>
+            <div class="col-12 col-md-9 col-xxl-10 px-md-5 px-2">
+                <div id="editPenjual" class=" px-2 rounded-1 shadow-1 mx-auto mt-2 p-3 p-md-5 w-100 h-100 ">
                     <h1 class="">Edit Penjual</h1>
                     <form action="/penjual/editPenjual" method="post" enctype="multipart/form-data">
                             @csrf
-                        <div id="profilePicture" class=" my-2 w-100 ">
-                            <div id="fotoProduk" class=" mx-auto rounded-1  bg-white d-flex shadow-1 w-100 h-100 p-2">
+                        <div id="" class=" my-2 w-100 ">
+                            <div id="bannerPenjual" class=" mx-auto rounded-1  bg-white d-flex shadow-1 w-100 h-100 p-2">
                                 <div class="mx-auto my-auto py-5 text-center overflow-hidden d-block">
-                                    <div class="row justify-content-center">
+                                    <div  class="row justify-content-center">
                                         <div class="col-5">
-                                            <img id="fotoProduk2"src="/img/icon_UploadIMG.svg" alt="" class="w-100 d-block mx-auto" >
+                                            <img id="imageBanner"src="/img/icon_UploadIMG.svg" alt="" class="w-100 d-block mx-auto" >
                                         </div>
                                     </div>
                                     <p>klik untuk memasukkan Gambar</p>
@@ -60,7 +60,7 @@
                 </div> 
             </div>
         </div>
-    </section>
+    </div>
 </div>
 @endsection
 

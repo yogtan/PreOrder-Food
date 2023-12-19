@@ -2,11 +2,11 @@
     @section('penjualContent')
 
     <div class="content">
-        <div class="container  py-1 mt-5 px-md-5 py-md-2">
+        <div class="  py-1 mt-md-5  mt-3 px-md-5 py-md-2">
             <div class="row justify-content-center px-2">
                 <div class="col-md-3"></div>
                 <div class="col">
-                    <h1 class="text-secondary fw-bold">Kelola Produk</h1>
+                    <h1 class="fw-bold">Kelola Produk</h1>
                     <div class="rounded-2 bg-white w-100 h-100 mt-4 shadow-1 relative">
                         @if(session('success'))
                             <div class="alert alert-success">
@@ -43,14 +43,14 @@
                                 @if ($produks->isEmpty())
                                     <p>No products available. You can add new products <a href="/penjual/tambahProduk">here</a>.</p>
                                 @else
-                                <div class="row mt-5     h-auto gap-2 justify-content-center align-items-center">
+                                <div class="row mt-5 gap-1 justify-content-center align-items-center">
                                     @foreach ($produks as $produk)
-                                    <div class="col-12 col-md-4 overflow-hidden">
-                                        <div class="card p-2 w-100 shadow-1">
-                                            <div class="row overflow-hidden">
-                                                <div class="col-6 col-md-12 d-flex justify-content-center align-items-center">
+                                    <div class="col-12 col-md-4  py-2 px-2 bg-white shadow-1 ">
+                                        <div class=" d-flex justify-content-center">
+                                            <div class="row  w-100">
+                                                <div class="col-6 col-md-12 ">
                                                     @if ($produk->foto_produk)
-                                                    <img src="{{ asset('storage/'. $produk->foto_produk) }}" class="cardImageProduct mx-auto border rounded" alt="..." >
+                                                    <img src="{{ asset('storage/'. $produk->foto_produk) }}" class="cardImageProduct border rounded w-100" alt="..." >
                                                     @else
                                                     <img src="/img/Pre-Order 1.png" class="card-img-top" alt="Nasi Goreng" width=200 height="200">
                                                     @endif
