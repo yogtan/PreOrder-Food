@@ -28,7 +28,7 @@
                             {{ session('error') }}
                         </div>
                     @endif
-                    <div class="product-info col-lg-8" data-product-id="{{ $produk->produk_id }}">
+                    <div class="product-info col-lg-8" data-product-id="{{ $produk->id }}">
                         <h5 class="nama-toko">{{ $produk->name }}</h5>
                         <h2 class="nama-produk">{{ $produk->nama_produk }}</h2>
                         <h4 class="harga-produk" >Rp {{ number_format($produk->harga, 0, ',', '.') }}</h4>
@@ -36,12 +36,12 @@
                         <p class="deskrip">{{ $produk->deskripsi }}</p>
 
                         {{-- <div class="info-preorder">Pre Order H-1</div> --}}
-                        <div class="info-pesan ">
+                        <div class="info-pesan w-100">
                             <div class="info-kirim ">
                                 Tanggal Pengiriman <input type="text" id="tanggalPengiriman"
                                     name="tanggal_pengiriman"class="border-0" value="{{ $produk->tanggal_jadi }}" readonly>
                             </div>
-                            <button class="btn btn-dark w-100 btn-pesan" id="btnPesan">Pesan</button>
+                            <button class="btn col btn-dark w-100 btn-pesan" id="btnPesan" >Pesan</button>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                             <div class="card p-2 productMakan  justify-content-center"data-product-id="{{ $produk->id }}">
                                 @if ($produk->foto_produk)
                                     <div class="imagecard">
-                                        <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top"
+                                        <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top w-100"
                                             alt="..." width="100" height="220" style="border-radius: 12px;">
                                     </div>
                                 @else
