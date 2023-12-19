@@ -4,7 +4,7 @@
             <img src="/img/Logo_Pre-Order.svg" alt="LogoPre_Order" width="100" height="50" class="me-2">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <img src="/img/bars-solid.svg" class="navbar-top-icon"></img>
+            <img src="/img/bars-solid.svg" class="navbar-top-icon">
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="search-form form-inline my-2 my-lg-0 mx-auto">
@@ -17,13 +17,18 @@
             <div class="history his-link">
                 <a href="history" class="his-link">Purchase History</a>
             </div>
-            <div class="btn-group">
+            <div class="btn-group position-relative">
                 <button type="button" class="btn">Welcome, {{ auth()->user()->name }}</button>
                 <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                 <span class="visually-hidden">Toggle Dropdown</span>
                 </button>
-                <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/home">Action</a></li>
+                <ul class="dropdown-menu end-0 z-3">
+                <li><a class="dropdown-item" href="/">Home</a></li>
+                @if(auth()->user()->role == "merchant")
+                <li><a class="dropdown-item" href="/penjual">Home Penjual</a></li>
+                @elseif(auth()->user()->role == "Admin")
+                <li><a class="dropdown-item" href="/Admin">Home Admin</a></li>
+                @endif
                 <li><hr class="dropdown-divider"></li>
                 <li>
                     <form action="/logout" method="post">

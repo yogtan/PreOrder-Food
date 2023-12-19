@@ -1,14 +1,14 @@
 @extends('layouts/main')
 @section('container')
-    <section class="heroproduct">
-        <div class="container tes pt-5 mt-5">
-            <div class="pt-4"></div>
-            <div class="row">
+    <section class="heroproduct d-flex justify-content-center align-items-center">
+        <div class="container tes w-100 h-100">
+            {{-- <div class="pt-4"></div> --}}
+            <div class="row my-md-auto">
 
                 <!-- Kolom Kanan (Gambar Produk) -->
-                <div class="col-lg-4 col-md-3 col-lg-3 text-center">
+                <div class="col-lg-4 col-12 col-md-12  text-center">
                     @if ($produk->foto_produk)
-                        <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top" alt="..." width="300" height="300px" style="border-radius: 10px">
+                        <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top object-fit-cover" alt="..." width="300" height="300px" style="border-radius: 10px">
                     @else
                         {{-- <img src="/img/Poster-Product.svg" class="card-img-top" alt="Nasi Goreng" width=298> --}}
                         <img src="/img/Poster-Product.svg" alt="Gambar Produk" class="product-image img-fluid" width="400px">
@@ -28,26 +28,23 @@
                             {{ session('error') }}
                         </div>
                     @endif
-                    <div class="product-info" data-product-id="{{ $produk->id }}">
-                        <h5 class="info-profile">{{ $produk->name }}</h5>
+                    <div class="product-info col-lg-8 mt-lg-0 mt-4" data-product-id="{{ $produk->id }}">
+                        <h5 class="nama-toko">{{ $produk->name }}</h5>
                         <h2 class="nama-produk">{{ $produk->nama_produk }}</h2>
-                        <h4 class="harga" >Rp {{ number_format($produk->harga, 0, ',', '.') }}</h4>
+                        <h4 class="harga-produk" >Rp {{ number_format($produk->harga, 0, ',', '.') }}</h4>
                         <hr>
                         <p class="deskrip">{{ $produk->deskripsi }}</p>
 
                         {{-- <div class="info-preorder">Pre Order H-1</div> --}}
-                        <div class="info-pesan  ">
-                            <div class="info-kirim">
+                        <div class="info-pesan w-100">
+                            <div class="info-kirim ">
                                 Tanggal Pengiriman <input type="text" id="tanggalPengiriman"
                                     name="tanggal_pengiriman"class="border-0" value="{{ $produk->tanggal_jadi }}" readonly>
                             </div>
-                            <button class="btn btn-dark btn-panjang btn-pesan" id="btnPesan">Pesan</button>
+                            <button class="btn col btn-dark w-100 btn-pesan" id="btnPesan" >Pesan</button>
                         </div>
                     </div>
                 </div>
-
-
-                
             </div>
         </div>
     </section>
@@ -72,7 +69,7 @@
                 </div>
             </div>
             @if ($others->isEmpty())
-                <h1 class="mt-3">No Other Products</h1>
+                <h1 class="text-center">No Other Products</h1>
             @else
             <div class="menus ">
                 <div class="row pt-5 ">
@@ -81,7 +78,7 @@
                             <div class="card p-2 productMakan  justify-content-center"data-product-id="{{ $produk->id }}">
                                 @if ($produk->foto_produk)
                                     <div class="imagecard">
-                                        <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top"
+                                        <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top w-100"
                                             alt="..." width="100" height="220" style="border-radius: 12px;">
                                     </div>
                                 @else

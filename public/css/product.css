@@ -8,18 +8,15 @@ body {
 }
 
 .info-profile {
-    font-weight: 100; /* Atur ketebalan teks pada elemen h3 menjadi 400 (normal/regular) */
+    font-weight: 100;
+    /* Atur ketebalan teks pada elemen h3 menjadi 400 (normal/regular) */
     margin-bottom: 30px;
 }
 
 .heroproduct {
-    /* margin-top: 50px; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
     background-position: center;
     min-height: 70vh;
-
-    position: relative;
 }
 
 .product-penjual {
@@ -67,7 +64,8 @@ body {
 .btn-panjang {
     background-color: black;
     color: white;
-    padding: 10px 100px; /* Sesuaikan padding sesuai kebutuhan */
+    padding: 10px 0px;
+    /* Sesuaikan padding sesuai kebutuhan */
 }
 
 .info-preorder {
@@ -77,6 +75,7 @@ body {
     display: flex;
     font-weight: 500;
 }
+
 .info-kirim {
     font-weight: 100;
 }
@@ -84,8 +83,10 @@ body {
 .product-image {
     position: relative;
     display: flex;
-    width: 700px; /* Atur lebar gambar menjadi 400px */
-    height: 400px; /* Atur panjang gambar menjadi otomatis (tetap panjang) */
+    width: 700px;
+    /* Atur lebar gambar menjadi 400px */
+    height: 400px;
+    /* Atur panjang gambar menjadi otomatis (tetap panjang) */
 }
 
 .menus {
@@ -102,8 +103,8 @@ body {
     width: 100%;
     /* margin-left: 50px; */
     /* width: 280px; */
-    min-width: 100px;
-    max-width: 300px;
+
+    max-width: 400px;
     /* background-color: red; */
     border-radius: 12px;
     transition: box-shadow 0.3s ease-in-out;
@@ -210,7 +211,8 @@ body {
 /* Media queries untuk tampilan portrait (lebar layar < 768px) */
 @media (max-width: 993px) {
     .menus .row [class*='col-'] {
-        flex: 0 0 50%; /* Menampilkan 2 kartu per baris */
+        flex: 0 0 50%;
+        /* Menampilkan 2 kartu per baris */
         max-width: 50%;
     }
 
@@ -230,7 +232,8 @@ body {
 
 @media (max-width: 768px) {
     .menus .row [class*='col-'] {
-        flex: 0 0 100%; /* Menampilkan 1 kartu per baris */
+        flex: 0 0 100%;
+        /* Menampilkan 1 kartu per baris */
         max-width: 100%;
     }
 
@@ -253,6 +256,10 @@ body {
         max-height: 150px;
         overflow: hidden;
     }
+
+    .product-info-produk h5 {
+        font-size: 12pt;
+    }
 }
 
 .deskripsi {
@@ -268,8 +275,10 @@ body {
     .col-lg-6 {
         flex-basis: 100%;
         max-width: 100%;
-        text-align: center; /* Mengatur teks menjadi tengah */
-        margin-bottom: 10px; /* Menambahkan ruang antara kedua elemen */
+        text-align: center;
+        /* Mengatur teks menjadi tengah */
+        margin-bottom: 10px;
+        /* Menambahkan ruang antara kedua elemen */
     }
 }
 
@@ -289,44 +298,18 @@ body {
         text-align: end;
     }
 }
-@media (max-width: 992px) {
-    .product-info {
-        text-align: left;
-        margin-top: 20px;
-    }
 
-    .btn-panjang {
-        background-color: black;
-        color: white;
-        padding: 10px 50px; /* Sesuaikan padding sesuai kebutuhan */
-    }
+.info-profile {
+    font-size: 18px;
+}
 
-    .imagecard {
-        max-width: 150px;
-        border-radius: 12px;
-        max-height: 130px;
-        overflow: hidden;
-        position: relative;
-    }
+.nama-produk {
+    font-size: 25px;
+    font-weight: 500;
+}
 
-    .card {
-        flex-direction: row;
-        overflow: hidden;
-    }
-    .heroproduct {
-        margin-top: -100px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        display: flex;
-        background-position: center;
-        min-height: 87vh;
-
-        position: relative;
-    }
-    .deskrip {
-        font-size: 12px;
-        margin-bottom: 40px;
-        font-weight: 100;
-    }
+.harga-produk {
+    font-size: 20px;
 }
 
 .info-profile {
@@ -335,10 +318,46 @@ body {
 
 .nama-produk {
     font-size: 25px;
-    margin-top: -25px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
-.harga {
-    font-size: 15xp;
+.harga-produk {
+    font-size: 20px;
+}
+
+.nama-toko {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 983px) {
+    .product-info {
+        /* position: relative; */
+        /* Atur posisi relatif untuk container */
+    }
+
+    .info-pesan {
+        border: red;
+        position: fixed;
+        /* Ubah posisi menjadi fixed */
+        bottom: 0;
+        /* Tempatkan di bagian bawah layar */
+        left: 0;
+        /* Tempatkan di bagian kiri layar */
+        width: 100%;
+        /* Lebar penuh */
+        background-color: #fff;
+        /* Warna latar belakang sesuai kebutuhan */
+        padding: 16px;
+        /* Atur padding sesuai kebutuhan */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* Efek bayangan jika diinginkan */
+        z-index: 999;
+        /* Tetapkan z-index agar elemen tampil di atas konten lain */
+    }
+
+    .info-kirim {
+        font-size: 12px;
+        overflow: hidden;
+    }
 }

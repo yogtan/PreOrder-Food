@@ -70,7 +70,7 @@ class AdminApproveController extends Controller
         $User->status = 'Verifikasi';
         $User->save();
 
-        return redirect('/Admin')->with('success', 'Akun Sewa Lunas!');
+        return redirect('/Admin')->with('success', 'Terapprove !');
     }
 
     /**

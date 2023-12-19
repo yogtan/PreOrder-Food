@@ -23,7 +23,12 @@
     @if (auth()->user()->status == "Belum Verifikasi")
     <div class="content">
         <div class="container px-5 mt-5">
-            <h1 class="text-white">Akun Anda Belum di Verifikasi</h1>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col">
+                    <h1 class="">Akun Anda Belum di Verifikasi</h1>
+                </div>
+            </div>
         </div>
     </div>
     @else

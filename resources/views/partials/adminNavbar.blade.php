@@ -164,17 +164,10 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="/Admin">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Approval Akun
-                                </a>
-                                <a class="dropdown-item" href="/Admin/hapus-akun">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Hapus Penjual
-                                </a>
-                                <a class="dropdown-item" href="/Admin/hapus-produk">
+                                
+                                <a class="dropdown-item" href="/">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Hapus Produk
+                                    Home
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <form action="/logout" method="post">
