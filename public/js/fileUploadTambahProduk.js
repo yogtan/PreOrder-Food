@@ -1,13 +1,14 @@
 const fileImage = document.querySelector('#fotoProduk')
 const file = document.querySelector('#fileFotoProduk')
 const imageBanner = document.querySelector('#fotoProduk2')
-const placeholder = document.querySelector('#fotoSementara')
+const placeholder = document.querySelector('#placeholder')
 
 fileImage.addEventListener('click', function () {
     file.click()
 })
 
 file.addEventListener('change', function () {
+    placeholder.classList.add('d-none')
     const image = this.files[0]
     // console.log(image)
     const reader = new FileReader()

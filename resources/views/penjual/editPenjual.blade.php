@@ -18,8 +18,10 @@
                                             <img id="imageBanner"src="/img/icon_UploadIMG.svg" alt="" class="w-100 d-block mx-auto" >
                                         </div>
                                     </div>
-                                    <p>klik untuk memasukkan Gambar</p>
-                                    <input type="file" id="file" name="header" class="border rounded-1 start-0 top-0 d-none @error('header') is-invalid @enderror" accept="image/*">
+                                    <div id="placeholder" class="">
+                                        <p>klik untuk memasukkan Gambar</p>
+                                        <input type="file" id="file" name="header" class="border rounded-1 start-0 top-0 d-none @error('header') is-invalid @enderror" accept="image/*">
+                                    </div>
                                     @error('header')
                                     <div class="invalid-feedback">
                                         {{ $message }}

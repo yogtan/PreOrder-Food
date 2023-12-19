@@ -7,7 +7,7 @@
               <span class="visually-hidden">Toggle Dropdown</span>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/penjual">home</a></li>
+              <li><a class="dropdown-item" href="/">Home</a></li>
               <li><hr class="dropdown-divider"></li>
               <li>
                 <form action="/logout" method="post">
@@ -28,7 +28,7 @@
               </form>
             </li>
             </ul> --}}
-            <img src="/img/icon_Profile white.svg" alt="Img Profile" class="d-none d-sm-block">
+            <img src="/img/icon_Profile white.svg" alt="Img Profile" class="d-none d-sm-block ms-3">
         </div>
 
         <!-- for Mobile -->

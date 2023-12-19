@@ -18,8 +18,10 @@
                                             <img id="fotoProduk2"src="/img/icon_UploadIMG.svg" alt="" class="w-100 d-block mx-auto" >
                                         </div>
                                     </div>
-                                    <p>klik untuk memasukkan Gambar</p>
-                                    <input type="file" id="fileFotoProduk" name="foto_produk" class="border d-none rounded-1 start-0 top-0 w-100  @error('foto_produk') is-invalid @enderror" accept="image/*">
+                                    <div id="placeholder" class="">
+                                        <p>klik untuk memasukkan Gambar</p>
+                                        <input type="file" id="fileFotoProduk" name="foto_produk" class="border d-none rounded-1 start-0 top-0 w-100  @error('foto_produk') is-invalid @enderror" accept="image/*">
+                                    </div>
                                     @error('foto_produk')
                                     <div class="invalid-feedback">
                                         {{ $message }}

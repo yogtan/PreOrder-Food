@@ -13,15 +13,10 @@ body {
     margin-bottom: 30px;
 }
 
-
 .heroproduct {
-    /* margin-top: 50px; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* display: flex; */
     background-position: center;
     min-height: 70vh;
-
-    position: relative;
 }
 
 .product-penjual {
@@ -64,7 +59,6 @@ body {
     justify-content: space-between;
     align-items: center;
     position: relative;
-
 }
 
 .btn-panjang {
@@ -83,7 +77,6 @@ body {
 }
 
 .info-kirim {
-
     font-weight: 100;
 }
 
@@ -96,8 +89,6 @@ body {
     /* Atur panjang gambar menjadi otomatis (tetap panjang) */
 }
 
-
-
 .menus {
     /* margin-left: ; */
     /* margin-left: 55px; */
@@ -124,7 +115,9 @@ body {
 }
 
 .card:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.12),
+        0 4px 8px rgba(0, 0, 0, 0.06);
     /* Bayangan saat hover */
     transition: box-shadow 0.3s ease-in-out;
     /* Efek transisi saat hover */
@@ -133,7 +126,6 @@ body {
 .card-title {
     font-size: 15px;
     font-weight: 300;
-
 }
 
 .card-text {
@@ -151,20 +143,15 @@ body {
     margin-top: -12px;
     /* padding-bottom: 15px; */
     font-size: 12px;
-
 }
 
 /* Responsive */
-@media only screen and (min-width:758px) {
+@media only screen and (min-width: 758px) {
     .search-form {
         width: 500px;
     }
 }
 
-
-
-
-
 .menus {
     /* margin-left: ; */
     /* margin-left: 55px; */
@@ -191,7 +178,9 @@ body {
 }
 
 .card:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.12),
+        0 4px 8px rgba(0, 0, 0, 0.06);
     /* Bayangan saat hover */
     transition: box-shadow 0.3s ease-in-out;
     /* Efek transisi saat hover */
@@ -200,7 +189,6 @@ body {
 .card-title {
     font-size: 15px;
     font-weight: 300;
-
 }
 
 .card-text {
@@ -218,15 +206,11 @@ body {
     margin-top: -12px;
     /* padding-bottom: 15px; */
     font-size: 12px;
-
 }
-
-
-
 
 /* Media queries untuk tampilan portrait (lebar layar < 768px) */
 @media (max-width: 993px) {
-    .menus .row [class*="col-"] {
+    .menus .row [class*='col-'] {
         flex: 0 0 50%;
         /* Menampilkan 2 kartu per baris */
         max-width: 50%;
@@ -247,7 +231,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .menus .row [class*="col-"] {
+    .menus .row [class*='col-'] {
         flex: 0 0 100%;
         /* Menampilkan 1 kartu per baris */
         max-width: 100%;
@@ -273,6 +257,9 @@ body {
         overflow: hidden;
     }
 
+    .product-info-produk h5 {
+        font-size: 12pt;
+    }
 }
 
 .deskripsi {
@@ -312,15 +299,12 @@ body {
     }
 }
 
-
-
 .info-profile {
     font-size: 18px;
 }
 
 .nama-produk {
     font-size: 25px;
-    margin-top: -25gpx;
     font-weight: 500;
 }
 
@@ -328,15 +312,12 @@ body {
     font-size: 20px;
 }
 
-
-
 .info-profile {
     font-size: 18px;
 }
 
 .nama-produk {
     font-size: 25px;
-    margin-top: -25px;
     font-weight: 500;
 }
 
@@ -346,19 +327,16 @@ body {
 
 .nama-toko {
     font-size: 18px;
-    margin-bottom: 30px;
     font-weight: 300;
-
 }
 
 @media screen and (max-width: 983px) {
     .product-info {
-        position: relative;
+        /* position: relative; */
         /* Atur posisi relatif untuk container */
     }
 
     .info-pesan {
-        
         border: red;
         position: fixed;
         /* Ubah posisi menjadi fixed */
@@ -378,9 +356,8 @@ body {
         /* Tetapkan z-index agar elemen tampil di atas konten lain */
     }
 
-    .info-kirim{
+    .info-kirim {
         font-size: 12px;
         overflow: hidden;
-        
     }
 }

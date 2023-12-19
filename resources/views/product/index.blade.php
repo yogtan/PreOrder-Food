@@ -1,14 +1,14 @@
 @extends('layouts/main')
 @section('container')
-    <section class="heroproduct">
-        <div class="container tes pt-5 mt-5">
+    <section class="heroproduct d-flex justify-content-center align-items-center">
+        <div class="container tes w-100 h-100">
             {{-- <div class="pt-4"></div> --}}
-            <div class="row">
+            <div class="row my-md-auto">
 
                 <!-- Kolom Kanan (Gambar Produk) -->
-                <div class="col-lg-4 col-md-3 col-lg-3 text-center">
+                <div class="col-lg-4 col-12 col-md-12  text-center">
                     @if ($produk->foto_produk)
-                        <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top" alt="..." width="300" height="300px" style="border-radius: 10px">
+                        <img src="{{ asset('storage/' . $produk->foto_produk) }}" class="card-img-top object-fit-cover" alt="..." width="300" height="300px" style="border-radius: 10px">
                     @else
                         {{-- <img src="/img/Poster-Product.svg" class="card-img-top" alt="Nasi Goreng" width=298> --}}
                         <img src="/img/Poster-Product.svg" alt="Gambar Produk" class="product-image img-fluid" width="400px">
@@ -28,7 +28,7 @@
                             {{ session('error') }}
                         </div>
                     @endif
-                    <div class="product-info col-lg-8" data-product-id="{{ $produk->id }}">
+                    <div class="product-info col-lg-8 mt-lg-0 mt-4" data-product-id="{{ $produk->id }}">
                         <h5 class="nama-toko">{{ $produk->name }}</h5>
                         <h2 class="nama-produk">{{ $produk->nama_produk }}</h2>
                         <h4 class="harga-produk" >Rp {{ number_format($produk->harga, 0, ',', '.') }}</h4>
@@ -45,9 +45,6 @@
                         </div>
                     </div>
                 </div>
-
-
-                
             </div>
         </div>
     </section>
@@ -72,7 +69,7 @@
                 </div>
             </div>
             @if ($others->isEmpty())
-                <h1 class="mt-3">No Other Products</h1>
+                <h1 class="text-center">No Other Products</h1>
             @else
             <div class="menus ">
                 <div class="row pt-5 ">
