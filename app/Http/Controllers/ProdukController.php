@@ -19,7 +19,7 @@ class ProdukController extends Controller
         $produks = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
                             ->join('users', 'produks.user_id', '=', 'users.id')
                             ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name')
-                            ->where('pembuatans.tanggal_jadi', '>=', now())
+                            ->where('pembuatans.tanggal_jadi', '>', now())
                             ->get();
         // dd($produks);
         return view('home', compact('produks'));

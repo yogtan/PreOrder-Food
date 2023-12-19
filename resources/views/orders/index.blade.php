@@ -104,10 +104,10 @@
                                             style=" w-100 height: 30px;"
                                             class=" @error('bukti_pembayaran') is-invalid @enderror" />
                                         @error('bukti_pembayaran')
-        <div class="invalid-feedback">
+                                        <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
-    @enderror
+                                        @enderror
                                         <div class="text-center pt-3">
                                             <button id="uploadTransactionButton" type="submit" class="uploadbtn">Order
                                                 Now!</button>
@@ -117,23 +117,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Card baru untuk " How to transfer" -->
-                                <div class="row justify-content-center pt-5 mb-5">
-                                    <div class="col-md-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p class="pesanan">How to transfer</p>
-                                                <div id="transferDetails" style="display: none;">
-
-                                                    <p>Contohhhh ajaaa</p>
-                                                </div>
-                                                <button class="btn btn-link" onclick="toggleTransferDetails()">Show
-                                                    Transfer Details</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
             <!-- Card baru untuk "How to transfer" -->
             <div class="row justify-content-center pt-5">
                 <div class="col-md-6">
