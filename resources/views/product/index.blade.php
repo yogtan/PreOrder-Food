@@ -28,7 +28,7 @@
                             {{ session('error') }}
                         </div>
                     @endif
-                    <div class="product-info" data-product-id="{{ $produk->produk_id }}">
+                    <div class="product-info" data-product-id="{{ $produk->id }}">
                         <h5 class="info-profile">{{ $produk->name }}</h5>
                         <h2 class="nama-produk">{{ $produk->nama_produk }}</h2>
                         <h4 class="harga" >Rp {{ number_format($produk->harga, 0, ',', '.') }}</h4>

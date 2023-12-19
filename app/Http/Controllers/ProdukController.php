@@ -89,16 +89,32 @@ class ProdukController extends Controller
     public function find($id)
     {
         $produks = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
-                            ->join('users', 'produks.user_id', '=', 'users.id')
-                            ->join('profile_merchants', 'profile_merchants.user_id', '=', 'users.id')
-                            ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name', 'profile_merchants.header', 'profile_merchants.deskripsi')
-                            ->where('users.id', '=', $id)
-                            ->where('pembuatans.tanggal_jadi', '>=', now())
-                            ->get();
-        // dd($produks);
-        $name = $produks->first()->name;
-        $header = $produks->first()->header;
-        $deskripsi = $produks->first()->deskripsi;
-        return view('outlet.index', compact('produks', 'name', 'header', 'deskripsi'));
+            ->join('users', 'produks.user_id', '=', 'users.id')
+            ->join('profile_merchants', 'profile_merchants.user_id', '=', 'users.id')
+            ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name', 'profile_merchants.header', 'profile_merchants.deskripsi')
+            ->where('users.id', '=', $id)
+            ->where('pembuatans.tanggal_jadi', '>=', now())
+            ->get();
+        
+            $header = null; // Initialize with default value
+            $name = null;   // Initialize with default value
+            $deskripsi = null; // Initialize with default value
+        if (!$produks->isEmpty()){
+            dd($produks);
+            $name = $produks->first()->name;
+            $header = $produks->first()->header;
+            $deskripsi = $produks->first()->deskripsi;
+            return view('outlet.index', compact('produks', 'name', 'header', 'deskripsi'));
+        } else {
+            $produks = Pembuatan::join('produks', 'pembuatans.produk_id', '=', 'produks.id')
+            ->join('users', 'produks.user_id', '=', 'users.id')
+            // ->join('profile_merchants', 'profile_merchants.user_id', '=', 'users.id')
+            ->select('pembuatans.*', 'produks.nama_produk','produks.foto_produk','produks.harga', 'users.name')
+            ->where('users.id', '=', $id)
+            ->where('pembuatans.tanggal_jadi', '>=', now())
+            ->get();
+            $name = $produks->first()->name;
+            return view('outlet.index', compact('produks', 'name', 'header', 'deskripsi'));
+        }
     }
 }

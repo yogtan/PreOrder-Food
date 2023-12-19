@@ -2,15 +2,17 @@
 @section('container')
     <section class="heroutlet">
         <div class="container pt-5">
-            @if ($header)
+            @if ($header !== null && !$header->isEmpty())
                 <img src="{{ asset('storage/' . $header) }}" class="card-img-top outletni" alt="header" width="1300px" height="480px">
             @else
-                {{-- <img src="/img/Poster-Product.svg" class="card-img-top" alt="Nasi Goreng" width=298> --}}
                 <img src="/img/Poster-Outlet.png" alt="Outlet" width="1300px" height="480px">
             @endif
 
             <h3 class="nama-outlet pt-5">{{ $name }}</h3>
-            <p>{{ $deskripsi }}</p>
+            
+            @if ($deskripsi !== null && !$deskripsi->isEmpty())
+                <p>{{ $deskripsi }}</p>
+            @endif
         </div>
     </section>
 

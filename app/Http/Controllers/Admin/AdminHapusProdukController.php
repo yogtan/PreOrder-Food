@@ -76,11 +76,12 @@ class AdminHapusProdukController extends Controller
             $order = Order::where('pembuatan_id', $id)->get();
             $pembuatan = Pembuatan::find($id);
             $produkId = $pembuatan->produk_id;
-            if ($order) {
+            // dd($order);
+            if (!$order->isEmpty()) {
                 return redirect('/Admin/hapus-produk')->with('error', 'Data masih memiliki order.');
             } else {
                 Pembuatan::destroy($id);
-                Pembuatan::destroy($produkId);
+                Produk::destroy($produkId);
                 return redirect('/Admin/hapus-produk')->with('success', 'Data berhasil dihapus.');
             }
             
