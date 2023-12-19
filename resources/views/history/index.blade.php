@@ -10,6 +10,7 @@
             <table class="table table-bordered mt-4 " style="width: 1000px">
                 <thead class="table-dark">
                     <tr>
+                        <th scope="col">Nama Produk</th>
                         <th scope="col">Total Produk</th>
                         <th scope="col">Harga Produk</th>
                         <th scope="col">Status</th>
@@ -20,6 +21,7 @@
                     @foreach ($orders as $orders)
                         <tr>
 
+                            <td>{{ $orders->nama_produk }}</td>
                             <td>{{ $orders->total_produk }}</td>
                             <td>{{ $orders->harga_pembayaran }}</td>
                             <td>{{ $orders->status }}</td>

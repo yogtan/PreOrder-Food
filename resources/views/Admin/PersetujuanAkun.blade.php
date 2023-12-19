@@ -72,45 +72,17 @@
                         </div>
                     @endif
                     <!-- Content Row -->
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                {{-- <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Overview</h6>
-                                    <form class="d-none d-sm-inline-block my-2 my-md-0 mw-100 w-50 ">
-                                        <div class="input-group ">
-                                            <input type="text" class="form-control bg-white small shadow" placeholder="Cari Nama Toko"
-                                                aria-label="Search" aria-describedby="basic-addon2">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" type="button">
-                                                    <i class="fas fa-search fa-sm"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fa-solid fa-sort fa-xl"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Sort :</div>
-                                            <a class="dropdown-item" href="#">Ascending</a>
-                                            <a class="dropdown-item" href="#">Descending</a>
-                                        </div>
-                                    </div>
-                                </div> --}}
+                    <div class="row  justify-content-center">
+                        <div class="col-xl-12 col-lg-10 col-md-9 ">
+                            <div class="card shadow mb-4 overflow-x-auto">
                                 <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="row">
+                                <div class="card-body ">
+                                    <div class="row  w-100 ">
                                         @if (!$notApp)
                                             <h1 class="ml-3">Semua Akun Sudah Terapprove</h1>
                                         @else
                                         
-                                        <table class="table text-center">
+                                        <table class="table text-center mx-auto" style="width:2000px;">
                                             <thead>
                                                 <tr>
                                                 <th scope="col">No</th>

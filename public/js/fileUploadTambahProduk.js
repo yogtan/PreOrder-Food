@@ -1,7 +1,7 @@
-const fileImage = document.querySelector('#bannerPenjual')
-const file = document.querySelector('#file')
-const imageBanner = document.querySelector('#imageBanner')
-const placeHolder = document.querySelector('#placeHolder')
+const fileImage = document.querySelector('#fotoProduk')
+const file = document.querySelector('#fileFotoProduk')
+const imageBanner = document.querySelector('#fotoProduk2')
+const placeholder = document.querySelector('#fotoSementara')
 
 fileImage.addEventListener('click', function () {
     file.click()
@@ -11,9 +11,8 @@ file.addEventListener('change', function () {
     const image = this.files[0]
     // console.log(image)
     const reader = new FileReader()
+    console.log('coba')
     reader.onload = () => {
-        console.log('execute')
-        console.log(imageBanner)
         const imgUrl = reader.result
         imageBanner.src = imgUrl
         imageBanner.style.width = '100%'

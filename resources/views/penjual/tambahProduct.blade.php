@@ -3,23 +3,23 @@
 
 <div class="content pt-5 overflow-hidden">
     <section class=" py-2 px-2 px-md-0">
-        <div class="row border border-primary">
-            <div class="col-md-3 border"></div>
-            <div class="col border border-danger px-2 px-md-5">
-                <div id="editPenjual" class="rounded-1 shadow-1 mx-auto mt-2 p-2 p-md-5 w-100 overflow-hidden">
+        <div class="row ">
+            <div class="col-md-3"></div>
+            <div class="col px-2 px-md-5">
+                <div id="editPenjual" class=" px-2 rounded-1 shadow-1 mx-auto mt-2 p-2 p-md-5 w-100 overflow-hidden">
                     <h1 class="">Tambah Produk</h1>
                     <form action="" method="POST" enctype="multipart/form-data">
                             @csrf
-                        <div id="profilePicture" class=" my-2 w-100 border border-danger">
-                            <div id="bannerProduk" class="border mx-auto rounded-1 border bg-white d-flex shadow-1 w-100 h-100 p-2">
-                                <div  class="mx-auto my-auto text-center overflow-hidden d-block">
+                        <div id="profilePicture" class=" my-2 w-100 ">
+                            <div id="fotoProduk" class=" mx-auto rounded-1  bg-white d-flex shadow-1 w-100 h-100 p-2">
+                                <div class="mx-auto my-auto py-5 text-center overflow-hidden d-block">
                                     <div class="row justify-content-center">
                                         <div class="col-5">
-                                            <img id="imageProduct"src="/img/icon_UploadIMG.svg" alt="" class="w-100 d-block mx-auto" >
+                                            <img id="fotoProduk2"src="/img/icon_UploadIMG.svg" alt="" class="w-100 d-block mx-auto" >
                                         </div>
                                     </div>
                                     <p>klik untuk memasukkan Gambar</p>
-                                    <input type="file" id="file" name="foto_produk" class="border rounded-1 start-0 top-0 w-100 @error('foto_produk') is-invalid @enderror" accept="image/*">
+                                    <input type="file" id="fileFotoProduk" name="foto_produk" class="border d-none rounded-1 start-0 top-0 w-100  @error('foto_produk') is-invalid @enderror" accept="image/*">
                                     @error('foto_produk')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -29,9 +29,9 @@
                             </div>
                         </div>
                         <div class="">
-                            <div class="border-danger border">
+                            <div class="">
                                 <div class="row">
-                                    <div class="col border">
+                                    <div class="col ">
                                         <input type="text" name="nama_produk" id="nama_produk" placeholder="Nama produk" class="rounded-1 ps-2 fs-5 d-block mb-3 w-100 @error('nama_produk') is-invalid @enderror" style="height:40px;">
                                         @error('nama_produk')
                                         <div class="invalid-feedback">
@@ -75,21 +75,17 @@
                                     @enderror
                                 </div>
                             </div>
+                            <button type="submit" class="btn btn-success mx-auto d-flex fs-4">Tambah</button>
                         </div>
-                        <button type="submit" class="btn btn-success mx-auto d-flex fs-4">Tambah</button>
                     </form>
                 </div> 
             </div>
         </div>
     </section>
 </div>
-
-
-
-
 @stop
 
 
 @section("scripts")
-<script src="/js/fileUploadEditProduct.js"></script>
+<script src="/js/fileUploadTambahProduk.js"></script>
 @stop
