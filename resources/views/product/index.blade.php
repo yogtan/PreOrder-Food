@@ -2,7 +2,7 @@
 @section('container')
     <section class="heroproduct">
         <div class="container tes pt-5 mt-5">
-            <div class="pt-4"></div>
+            {{-- <div class="pt-4"></div> --}}
             <div class="row">
 
                 <!-- Kolom Kanan (Gambar Produk) -->
@@ -28,20 +28,20 @@
                             {{ session('error') }}
                         </div>
                     @endif
-                    <div class="product-info" data-product-id="{{ $produk->produk_id }}">
-                        <h5 class="info-profile">{{ $produk->name }}</h5>
+                    <div class="product-info col-lg-8" data-product-id="{{ $produk->produk_id }}">
+                        <h5 class="nama-toko">{{ $produk->name }}</h5>
                         <h2 class="nama-produk">{{ $produk->nama_produk }}</h2>
-                        <h4 class="harga" >Rp {{ number_format($produk->harga, 0, ',', '.') }}</h4>
+                        <h4 class="harga-produk" >Rp {{ number_format($produk->harga, 0, ',', '.') }}</h4>
                         <hr>
                         <p class="deskrip">{{ $produk->deskripsi }}</p>
 
                         {{-- <div class="info-preorder">Pre Order H-1</div> --}}
-                        <div class="info-pesan  ">
-                            <div class="info-kirim">
+                        <div class="info-pesan ">
+                            <div class="info-kirim ">
                                 Tanggal Pengiriman <input type="text" id="tanggalPengiriman"
                                     name="tanggal_pengiriman"class="border-0" value="{{ $produk->tanggal_jadi }}" readonly>
                             </div>
-                            <button class="btn btn-dark btn-panjang btn-pesan" id="btnPesan">Pesan</button>
+                            <button class="btn btn-dark w-100 btn-pesan" id="btnPesan">Pesan</button>
                         </div>
                     </div>
                 </div>

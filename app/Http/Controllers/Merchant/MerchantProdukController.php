@@ -9,7 +9,7 @@ use App\Models\Order;
 use App\Models\Pembuatan;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
-use Intervention\Image\Facades\Image;
+// use Intervention\Image\Facades\Image;
 
 class MerchantProdukController extends Controller
 {
@@ -73,7 +73,7 @@ class MerchantProdukController extends Controller
                 // $validatedData['foto_produk'] = $request->file('foto_produk');
                 $image = $request->file('foto_produk');
                 // $filename = uniqid() . '.' . $image->getClientOriginalExtension();
-                Image::make($image)->resize(300, 200);
+                // Image::make($image)->resize(300, 200);
                 $path = $image->store('post-images');
 
                 // Resize the image to your desired dimensions (adjust as needed)
