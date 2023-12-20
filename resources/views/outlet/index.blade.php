@@ -2,17 +2,19 @@
 @section('container')
     <section class="heroutlet">
         <div class="container pt-5">
-            @if ($header !== null && !$header->isEmpty())
-                <img src="{{ asset('storage/' . $header) }}" class="card-img-top outletni" alt="header" width="1300px" height="480px">
-            @else
-                <img src="/img/Poster-Outlet.png" alt="Outlet" width="1300px" height="480px">
-            @endif
-
+            <div class="w-100 d-flex justify-content-center align-items-center object-fit-contain">
+                @if ($header !== null && !$header->isEmpty())
+                    <img src="{{ asset('storage/' . $header) }}" class="card-img-top outletni" alt="header" width="1300px" height="480px">
+                @else
+                    <img src="/img/Poster-Outlet.png" class="card-img-top outletni" alt="Outlet" width="1300px" height="480px">
+                @endif
+    
+            </div>
             <h3 class="nama-outlet pt-5">{{ $name }}</h3>
             
             @if ($deskripsi !== null && !$deskripsi->isEmpty())
                 <p>{{ $deskripsi }}</p>
-            @endif
+            @endif  
         </div>
     </section>
 
@@ -20,10 +22,10 @@
 
     <section class="product-penjual ">
         <div class="container pt-5">
-            <div class="menus ">
+            <div class="">
                 <div class="row pt-5 ">
                     @foreach ($produks as $produk)
-                        <div class="my-3 justify-content-center col-sm-6 col-md-3 col-lg-3 ">
+                        <div class="my-3 justify-content-center col-12  col-lg-3 ">
                             <div class="card p-2 productMakan  justify-content-center"data-product-id="{{ $produk->id }}">
                                 @if ($produk->foto_produk)
                                     <div class="imagecard">

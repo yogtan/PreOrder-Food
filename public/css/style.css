@@ -376,6 +376,10 @@ body {
 
 }
 
+.card-img-top{
+    object-fit:cover;
+}
+
 
 
 
@@ -392,6 +396,7 @@ body {
         max-height: 150px;
         overflow: hidden;
         position: relative;
+        object-fit:cover;
     }
 
     .card {

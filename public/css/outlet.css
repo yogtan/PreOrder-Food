@@ -12,14 +12,13 @@ body {
     margin-bottom: 30px;
 }
 
-
 .heroutlet {
     /* margin-top: 60px; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     background-position: center;
     min-height: 100vh;
-    position: relative;
+    /* position: relative; */
     border-radius: 2% 2% 2% 2%;
 }
 
@@ -27,37 +26,34 @@ section.heroutlet img {
     border-radius: 10%;
 }
 
-.nama-outlet{
+.nama-outlet {
     font-weight: 700;
 }
 
 .text-txt {
-   font-weight: 600;
+    font-weight: 600;
 }
 
 .text-txt span {
     margin: 0px 50px;
 }
 
-.outletni{
+.outletni {
     object-fit: cover;
     border-radius: 2px;
 }
 
-
 @media (max-width: 992px) {
-   
     .heroutlet {
         margin-top: -40px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         display: flex;
         background-position: center;
         min-height: 65vh;
-      
+
         position: relative;
     }
-    .outletni{
+    .outletni {
         max-height: 300px;
     }
-    
 }
