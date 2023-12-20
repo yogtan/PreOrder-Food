@@ -15,6 +15,7 @@
                         <th scope="col">Harga Produk</th>
                         <th scope="col">Status</th>
                         <th scope="col">Tanggal Jadi</th>
+                        <th scope="col">Nomor Penjual</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,6 +27,7 @@
                             <td>{{ $orders->harga_pembayaran }}</td>
                             <td>{{ $orders->status }}</td>
                             <td>{{ $orders->tanggal_jadi }}</td>
+                            <td>{{ $foundedUser->telepon }}</td>
                         </tr>
                     @endforeach
                 </tbody>

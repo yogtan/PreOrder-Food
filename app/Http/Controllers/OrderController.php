@@ -9,6 +9,9 @@ use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Log;
+use App\Models\User;
+
 
 class OrderController extends Controller
 {
@@ -82,9 +85,31 @@ class OrderController extends Controller
         ->join('produks', 'produks.id', '=', 'pembuatans.produk_id')
         ->where('orders.user_id', Auth::id())
         ->get();
-        // dd($orders);
-        return view('history.index', compact('orders'));
+        // $userid = $orders->user_id;
+
+        // $user = User::find($orders->user_id);
+        
+        // Ambil data pengguna dan tambahkan ke dalam array
+        $foundedUser = "";
+        foreach ($orders as $order) {
+            $userId = $order->user_id;
+        
+            // Cari data akun berdasarkan user_id
+            $user = User::find($userId);
+        
+            // Lakukan sesuatu dengan data akun yang ditemukan
+            if ($user) {
+                // Misalnya, tampilkan informasi akun
+                $foundedUser = $user;
+                // Atau lakukan operasi lain sesuai kebutuhan
+            }
+        }
+    
+        Log::info("cek User: " . json_encode($foundedUser));
+        Log::info("cek data: " . json_encode($orders));
+        return view('history.index', compact('orders',"foundedUser"));
     }
+
 
     /**
      * Show the form for editing the specified resource.
